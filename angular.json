@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "itp-hms"
+    }
+  },
+  "defaultProject": "itp-hms",
+  "cli": {
+    "analytics": false
+  }
 }
