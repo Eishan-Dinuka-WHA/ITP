@@ -6,8 +6,8 @@ import { HttpClientModule} from '@angular/common/http';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 //import { AppRoutingModule } from './app-routing.module';
 import{ MatInputModule } from '@angular/material/input';
-import{ MatToolbar } from '@angular/material/toolbar';
-
+//import{ MatToolbar } from '@angular/material/toolbar';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 
@@ -31,6 +31,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LandingHomePageComponent } from './landing-home-page/landing-home-page.component';
 import { PackageHomeComponent } from './package-home/package-home.component';
 import { from } from 'rxjs';
+import { NavibarComponent } from './navibar/navibar.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { from } from 'rxjs';
     FooterComponent,
     LandingHomePageComponent,
     PackageHomeComponent,
+    NavibarComponent,
 
   ],
   imports: [
@@ -65,7 +67,7 @@ import { from } from 'rxjs';
     BrowserAnimationsModule,
     MatInputModule,
     MatProgressBarModule,
-    MatToolbar
+    MatToolbarModule
 
     //NoopAnimationsModule
   ],
