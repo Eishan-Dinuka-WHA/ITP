@@ -8,6 +8,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import{ MatInputModule } from '@angular/material/input';
 //import{ MatToolbar } from '@angular/material/toolbar';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { Routes, RouterModule } from '@angular/router'
 
 
 
@@ -32,7 +33,17 @@ import { LandingHomePageComponent } from './landing-home-page/landing-home-page.
 import { PackageHomeComponent } from './package-home/package-home.component';
 import { from } from 'rxjs';
 import { NavibarComponent } from './navibar/navibar.component';
+import { Route } from '@angular/compiler/src/core';
 
+
+const appRoutes: Routes =[
+  { path: '' , component: HomePageComponent },
+  { path: 'users' , component: CustomerRegistrationComponent } ,
+  { path: 'header' , component:HeaderComponent },
+  { path: 'navibar' , component:NavibarComponent },
+
+
+];
 
 @NgModule({
   declarations: [
@@ -67,7 +78,8 @@ import { NavibarComponent } from './navibar/navibar.component';
     BrowserAnimationsModule,
     MatInputModule,
     MatProgressBarModule,
-    MatToolbarModule
+    MatToolbarModule,
+    RouterModule.forRoot(appRoutes)
 
     //NoopAnimationsModule
   ],
