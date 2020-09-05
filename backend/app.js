@@ -40,7 +40,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/api/announcements", customerRoutes);
+app.use("/api/customer", customerRoutes);
 // app.use("/api/employees", employeesRoutes);
 // app.use("/api/equipment", equipmentRoutes);
 // app.use("/api/project", projectRoutes);

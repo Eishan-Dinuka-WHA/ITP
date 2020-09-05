@@ -1,7 +1,15 @@
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">cus code</th>
+<div style="overflow-y: scroll; overflow-x: scroll; height: 100vh; width:fit-content; margin-left: -10%;">
+  <body style="background-color: #FEFEFE; background-size: auto;">
+
+    <div style="background-color: #2BAF2B">
+      <br><p class="h1" style="text-align:center" >Customer Registry</p><br>
+    </div>
+
+    <table class="table table-striped">
+      <thead class="thead-dark">
+      <tr>
+      <th scope="col">Cus ID</th>
+      <th scope="col">User Name</th>
       <th scope="col">Title</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
@@ -19,58 +27,34 @@
       <th scope="col">Delete</th>
       <th scope="col">Edit</th>
 
-    </tr>
-  <!-- </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+        </tr>
+      </thead>
+      <!-- <mat-spinner *ngIf = "isLoading"></mat-spinner>
+      <tbody *ngIf = "!isLoading"> -->
 
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody> -->
-  </thead>
-</table>
+        <tr *ngFor="let customer of customers">
+          <td>{{ customer.cid}}</td>
+          <td>{{ customer.uname}}</td>
+          <td>{{ customer.title}}</td>
+          <td>{{ customer.fname}}</td>
+          <td>{{ customer.lname}}</td>
+          <td>{{ customer.country}}</td>
+          <td>{{ customer.state}}</td>
+          <td>{{ customer.city}}</td>
+          <td>{{ customer.street}}</td>
+          <td>{{ customer.ctype}}</td>
+          <td>{{ customer.pcode}}</td>
+          <td>{{ customer.email}}</td>
+          <td>{{ customer.mnumber}}</td>
+          <td>{{ customer.password}}</td>
+          <td>{{ customer.rpassword}}</td>
+          <td>
+            <a class="btn btn-warning pull-right" style="width:80px;">EDIT</a>
+            <a class="btn btn-danger pull-right" (click)="onDelete(customer.cid)">DELETE</a>
+          </td>
+
+        </tr>
+    <!--  </tbody>  -->
+    </table>
+  </body>
+</div>

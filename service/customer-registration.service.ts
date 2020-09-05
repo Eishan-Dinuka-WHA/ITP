@@ -68,7 +68,7 @@ export class CustomerRegistrationService{
   // }
 
 
-  addEmployee(customer: Customers){
+  addCustomer(customer: Customers){
     const customerArray: Customers = {
       cid: customer.cid,
       uname: customer.uname,
