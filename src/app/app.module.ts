@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-//import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import{ MatInputModule } from '@angular/material/input';
 //import{ MatToolbar } from '@angular/material/toolbar';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -16,7 +16,6 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
-import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
 import { PackageManagementComponent } from './package-management/package-management.component';
 import { EventManagementComponent } from './event-management/event-management.component';
 import { PaymentManagementComponent } from './payment-management/payment-management.component';
@@ -34,18 +33,10 @@ import { PackageHomeComponent } from './package-home/package-home.component';
 import { NavibarComponent } from './navibar/navibar.component';
 import { CustomerViewComponent } from './customer-registration/customer-view/customer-view.component';
 import { CustomerRegistrationService } from 'service/customer-registration.service';
+import { HomeCardComponent } from './home-page/home-card/home-card.component';
+import { CustomerNewComponent } from './customer-registration/customer-new/customer-new.component';
 
 
-const appRoutes: Routes =[
-  { path: '' , component: HomePageComponent },
-  { path: 'users' , component: CustomerRegistrationComponent } ,
-  { path: 'header' , component:HeaderComponent },
-  { path: 'navibar' , component:NavibarComponent },
-  { path: 'cus-view' , component:CustomerViewComponent },
-
-
-
-];
 
 @NgModule({
   declarations: [
@@ -53,7 +44,6 @@ const appRoutes: Routes =[
     HomePageComponent,
     HeaderComponent,
     LoginComponent,
-    CustomerRegistrationComponent,
     PackageManagementComponent,
     EventManagementComponent,
     PaymentManagementComponent,
@@ -70,11 +60,13 @@ const appRoutes: Routes =[
     PackageHomeComponent,
     NavibarComponent,
     CustomerViewComponent,
+    HomeCardComponent,
+    CustomerNewComponent,
 
   ],
   imports: [
     BrowserModule,
-    //AppRoutingModule,
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -82,7 +74,6 @@ const appRoutes: Routes =[
     MatInputModule,
     MatProgressBarModule,
     MatToolbarModule,
-    RouterModule.forRoot(appRoutes)
 
     //NoopAnimationsModule
   ],

@@ -1,0 +1,132 @@
+
+<div class="container">
+  <form #cus="ngForm" (ngSubmit)="onSubmit()">
+    <div id="user-data">
+
+      <div class="form-row">
+
+        <div class="col-md-6">
+          <label for="cid">Customer Registration Number</label><br>
+          <input type="text" id="cid" class="form-control" ngModel name="cid" #cid="ngModel" placeholder="Auto Generated" disabled>
+        </div>
+
+        <div class="col-md-6">
+          <label for="uname">User Name</label><br>
+          <input type="text" id="uname" class="form-control" ngModel name="uname" #uname="ngModel"  placeholder="User Name" required>
+        </div>
+
+      </div>
+      <br>
+      <div class="form-row">
+
+        <div class="col col-md-2">
+          <label for="title">Title</label><br>
+          <select id="title" class="form-control" ngModel name="title"  #title="ngModel" [ngModel]="defaultValue" required>
+            <option value="choose" disabled>Choose Title (Mr/Mrs/Ms/Dr/Rev)</option>
+            <option value="mr">Mr</option>
+            <option value="mrs">Mrs</option>
+            <option value="dr">Dr</option>
+            <option value="rev">Rev</option>
+          </select>
+        </div>
+
+        <div class="col col-md-4">
+          <label for="fname">First Name</label><br>
+          <input type="text" id="fname" class="form-control" ngModel name="fname"  #fname="ngModel"  placeholder="First Name" required>
+        </div>
+
+        <div class="col col-md-6">
+          <label for="lname">Last Name</label><br>
+          <input type="text" id="lname" class="form-control" ngModel name="lname"  #lname="ngModel" placeholder="Last Name" required>
+        </div>
+
+      </div>
+      <br>
+
+
+      <div class="form-row">
+
+        <div class="col-md-4">
+          <label for="country">Country</label><br>
+          <input type="text" id="country" class="form-control" ngModel name="country"  #country="ngModel" placeholder="Country" required>
+        </div>
+
+        <div class="col-md-4">
+          <label for="state">state</label><br>
+          <input type="text" id="state" class="form-control" ngModel name="state"  #state="ngModel" placeholder="State" required>
+        </div>
+
+        <div class="col-md-2">
+          <label for="city">city</label><br>
+          <input type="text" id="city" class="form-control" ngModel name="city"  #city="ngModel" placeholder="City" required>
+        </div>
+
+        <div class="col-md-2">
+          <label for="street">street</label><br>
+          <input type="text" id="street" class="form-control" ngModel name="street"  #street="ngModel" placeholder="street" required>
+        </div>
+
+      </div>
+      <br>
+
+    <div class="form-row">
+      <div class="col col-md-6">
+        <label for="ctype">Customer Type</label><br>
+        <select id="ctype" class="form-control" ngModel name="ctype"  #ctype="ngModel" required>
+          <option value="foreign">Foreign Customer</option>
+          <option value="local">Local Customer</option>
+        </select>
+      </div>
+
+      <div class="col col-md-6">
+        <label for="pcode">Postal Code</label><br>
+        <input type="text" id="pcode" class="form-control" ngModel name="pcode"  #pcode="ngModel"  placeholder="Postal Code" required>
+      </div>
+
+    </div>
+    <br>
+
+    <div class="form-row">
+
+      <div class="col-md-6">
+        <label for="email">E mail</label><br>
+        <input type="email" id="email" class="form-control" ngModel name="email"  #email="ngModel" placeholder="Email" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="mnumber">Mobile Number</label><br>
+        <input type="text" id="mnumber" class="form-control" ngModel name="mnumber"  #mnumber="ngModel" placeholder="Mobile Number" required>
+      </div>
+
+    </div>
+    <br>
+
+    <div class="form-row">
+
+      <div class="col-md-6">
+        <label for="password">Password</label><br>
+        <input type="password" id="password" class="form-control" ngModel name="password"  #password="ngModel" placeholder="Password" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="mnumber">Re-Enter Password</label><br>
+        <input type="password" id="rpassword" class="form-control" ngModel name="rpassword"  #rpassword="ngModel"  placeholder="Re-enter-password" required>
+      </div>
+
+
+    </div>
+      <div class="form-group">
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="checkbox" id="terms">
+          <label class="form-check-label" for="gridCheck"><br>Terms and Condtion</label>
+        </div>
+      </div>
+    </div>
+
+      <button class="btn btn-primary" type="submit" [disabled]="!cus.valid">Submit</button>
+      <br><br><br>
+    </form>
+
+  </div>
+
+

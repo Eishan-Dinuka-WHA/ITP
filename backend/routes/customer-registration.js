@@ -15,7 +15,8 @@ router.post("", (req, res, next) => {
     state: req.body.state,
     city: req.body.city,
     street: req.body.street,
-    customer_type: req.body.customer_type,
+    ctype: req.body.ctype,
+    pcode: req.body.pcode,
     email: req.body.email,
     mnumber: req.body.mnumber,
     password: req.body.password,
@@ -34,22 +35,22 @@ router.get("", (req, res, next) => {
   Customer.find()
     .then(documents => {
       res.status(200).json({
-        message: 'Coustomer fetched successfully',
-        Coustomer: documents
+        message: 'Customer fetched successfully',
+        customers: documents
       });
     });
 });
 
-//Reteive Employees by designation
-router.get("/:empDes", (req, res, next) => {
-  Customer.find({cusDes: req.params.cusDes})
-    .then(documents => {
-      res.status(200).json({
-        message: 'Coustomer fetched successfully by designation',
-        customer: documents
-      });
-    });
-});
+// //Reteive Employees by designation
+// router.get("/:empDes", (req, res, next) => {
+//   Customer.find({cusDes: req.params.cusDes})
+//     .then(documents => {
+//       res.status(200).json({
+//         message: 'Coustomer fetched successfully by designation',
+//         customer: documents
+//       });
+//     });
+// });
 
 
 

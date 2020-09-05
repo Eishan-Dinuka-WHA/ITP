@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Customers } from '../models/customer.model';
+
 @Injectable()
 export class CustomerRegistrationService{
   customerChanged = new Subject<Customers[]>();
@@ -11,16 +12,15 @@ export class CustomerRegistrationService{
   constructor(private http: HttpClient){}
 
   getCustomer(){
-    this.http.get<{message: string, customer: any}>('http://localhost:3000/api/customers')
+    this.http.get<{message: string, customers: any}>('http://localhost:3000/api/customers')
       .pipe(map((customerData) => {
-          return customerData.customer.map(customer => {
+          return customerData.customers.map(customer => {
             return{
-
               uname: customer.uname,
               title: customer.title,
               fname: customer.fname,
               lname: customer.lname,
-              Country: customer.Country,
+              country: customer.country,
               state: customer.state,
               city: customer.city,
               street: customer.street,
@@ -29,8 +29,8 @@ export class CustomerRegistrationService{
               email: customer.email,
               mnumber: customer.mnumber,
               password: customer.password,
-              rpasswordt: customer.rpasswordt,
-              Customerid: customer.Customerid,
+              rpassword: customer.rpassword,
+              cid: customer._id,
             };
           });
       }))

@@ -8,13 +8,13 @@ const customerSchema = mongoose.Schema({
   state: {type: String, required: true},
   city: {type: String, required: true},
   street: {type: String, required: true},
-  customer_type: {type: String, required: true},
-  postal_code: {type: String, required: true},
-  customer_type: {type: String, required: true},
+  ctype: {type: String, required: true},
+  pcode: {type: String, required: true},
   email: {type: String, required: true},
   mnumber: {type: String, required: true},
   password: {type: String, required: true},
   rpassword: {type: String, required: true}
+
 });
 
 module.exports = mongoose.model('Customer', customerSchema);
