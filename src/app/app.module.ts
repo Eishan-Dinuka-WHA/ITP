@@ -34,6 +34,7 @@ import { PackageHomeComponent } from './package-home/package-home.component';
 import { from } from 'rxjs';
 import { NavibarComponent } from './navibar/navibar.component';
 import { Route } from '@angular/compiler/src/core';
+import { CustomerViewComponent } from './customer-registration/customer-view/customer-view.component';
 
 
 const appRoutes: Routes =[
@@ -41,6 +42,8 @@ const appRoutes: Routes =[
   { path: 'users' , component: CustomerRegistrationComponent } ,
   { path: 'header' , component:HeaderComponent },
   { path: 'navibar' , component:NavibarComponent },
+  { path: 'cus-view' , component:CustomerViewComponent },
+
 
 
 ];
@@ -67,6 +70,7 @@ const appRoutes: Routes =[
     LandingHomePageComponent,
     PackageHomeComponent,
     NavibarComponent,
+    CustomerViewComponent,
 
   ],
   imports: [

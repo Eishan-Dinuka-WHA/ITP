@@ -1,43 +1,125 @@
 
 <div class="container">
-  <div class="form-row">
-    <div class="col-xs-12 col-sm-20 col-md-20 col-sm-offset-2 col-md-offset-2">
-      <form>
-        <div id="user-data">
+    <form>
+      <div id="user-data">
 
-          <div class="form-group col-md-6">
-            <label for="Customer">Customer Registration Number</label>
-            <input type="text" id="CustomerR" class="form-control" ngModel name="CustomerR" placeholder="">
+        <div class="form-row">
+
+          <div class="col-md-6">
+            <label for="customer">Customer Registration Number</label><br>
+            <input type="text" id="Customer" class="form-control" ngModel name="customer" placeholder="Cus 001">
           </div>
 
-          <div class="form-groupc col-md-6">
-            <label for="email">St</label>
-            <input type="email" id="email" class="form-control"ngModel name="email" required email>
+          <div class="col-md-6">
+            <label for="fname">User Name</label><br>
+            <input type="text" id="uname" class="form-control"ngModel name="uname"  placeholder="User Name" required>
           </div>
+
         </div>
+        <br>
+        <div class="form-row">
 
-          <div class="form-group col-md-6">
-            <label for="username">Username</label>
-            <input type="text" id="username" class="form-control" ngModel name="username" placeholder="User Name" required>
+          <div class="col col-md-2">
+            <label for="Lname">Title</label><br>
+            <input type="text" id="title" class="form-control"ngModel name="title"  placeholder="Title" required>
           </div>
 
-          <div class="form-groupc col-md-6">
-            <label for="email">Mail</label>
-            <input type="email" id="email" class="form-control"ngModel name="email" required email>
+          <div class="col col-md-4">
+            <label for="fname">First Name</label><br>
+            <input type="text" id="fname" class="form-control"ngModel name="fname"  placeholder="First Name" required>
           </div>
 
+          <div class="col col-md-6">
+            <label for="Lname">Last Name</label><br>
+            <input type="text" id="lname" class="form-control"ngModel name="lname"  placeholder="Last Name" required>
+          </div>
 
-        <div class="form-group col-md-6">
-          <label for="secret">Secret Questions</label>
-          <select id="secret" class="form-control" ngModel name="secret">
-            <option value="pet">Your first Pet?</option>
-            <option value="teacher">Your first teacher?</option>
+        </div>
+        <br>
+
+
+        <div class="form-row">
+
+          <div class="col-md-4">
+            <label for="Country">Country</label><br>
+            <input type="text" id="Country" class="form-control" ngModel name="Country" placeholder="Country" required>
+          </div>
+
+          <div class="col-md-4">
+            <label for="state">state</label><br>
+            <input type="text" id="state" class="form-control"ngModel name="state"  placeholder="State" required>
+          </div>
+
+          <div class="col-md-2">
+            <label for="city">city</label><br>
+            <input type="text" id="city" class="form-control"ngModel name="city"  placeholder="City" required>
+          </div>
+
+          <div class="col-md-2">
+            <label for="street">street</label><br>
+            <input type="text" id="street" class="form-control"ngModel name="street"  placeholder="street" required>
+          </div>
+
+        </div>
+        <br>
+
+      <div class="form-row">
+        <div class="col col-md-6">
+          <label for="ctype">Customer Type</label><br>
+          <select id="ctype" class="form-control" ngModel name="ctype" required>
+            <option value="foreign">Foreign Customer</option>
+            <option value="local">Local Customer</option>
           </select>
-
         </div>
+
+        <div class="col col-md-6">
+          <label for="pcode">Postal Code</label><br>
+          <input type="text" id="pcode" class="form-control"ngModel name="pcode"  placeholder="Postal Code" required>
+        </div>
+
+      </div>
+      <br>
+
+      <div class="form-row">
+
+        <div class="col-md-6">
+          <label for="email">E mail</label><br>
+          <input type="email" id="email" class="form-control" ngModel name="email" placeholder="Email" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="mnumber">Mobile Number</label><br>
+          <input type="text" id="mnumber" class="form-control"ngModel name="mnumber"  placeholder="Mobile Number" required>
+        </div>
+
+      </div>
+      <br>
+
+      <div class="form-row">
+
+        <div class="col-md-6">
+          <label for="password">Password</label><br>
+          <input type="password" id="password" class="form-control" ngModel name="password" placeholder="Password" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="mnumber">Re-Enter Password</label><br>
+          <input type="password" id="rpassword" class="form-control"ngModel name="rpassword"  placeholder="Re-enter-password" required>
+        </div>
+
+
+      </div>
+        <div class="form-group">
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" id="terms">
+            <label class="form-check-label" for="gridCheck"><br>Terms and Condtion</label>
+          </div>
+        </div>
+      </div>
+
         <button class="btn btn-primary" type="submit">Submit</button>
+        <br><br><br>
       </form>
 
     </div>
-  </div>
-</div>
+
