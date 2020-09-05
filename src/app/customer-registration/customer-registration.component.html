@@ -12,7 +12,7 @@
 
           <div class="col-md-6">
             <label for="fname">User Name</label><br>
-            <input type="text" id="uname" class="form-control"ngModel name="uname"  placeholder="User Name" required>
+            <input type="text" id="uname" class="form-control"ngModel name="uname" #uname="ngModel"  placeholder="User Name" required>
           </div>
 
         </div>
@@ -21,17 +21,17 @@
 
           <div class="col col-md-2">
             <label for="Lname">Title</label><br>
-            <input type="text" id="title" class="form-control"ngModel name="title"  placeholder="Title" required>
+            <input type="text" id="title" class="form-control"ngModel name="title"  #title="ngModel" placeholder="Title" required>
           </div>
 
           <div class="col col-md-4">
             <label for="fname">First Name</label><br>
-            <input type="text" id="fname" class="form-control"ngModel name="fname"  placeholder="First Name" required>
+            <input type="text" id="fname" class="form-control"ngModel name="fname"  #fname="ngModel"  placeholder="First Name" required>
           </div>
 
           <div class="col col-md-6">
-            <label for="Lname">Last Name</label><br>
-            <input type="text" id="lname" class="form-control"ngModel name="lname"  placeholder="Last Name" required>
+            <label for="lname">Last Name</label><br>
+            <input type="text" id="lname" class="form-control"ngModel name="lname"  #lname="ngModel" placeholder="Last Name" required>
           </div>
 
         </div>
@@ -41,23 +41,23 @@
         <div class="form-row">
 
           <div class="col-md-4">
-            <label for="Country">Country</label><br>
-            <input type="text" id="Country" class="form-control" ngModel name="Country" placeholder="Country" required>
+            <label for="country">Country</label><br>
+            <input type="text" id="country" class="form-control" ngModel name="country"  #country="ngModel" placeholder="Country" required>
           </div>
 
           <div class="col-md-4">
             <label for="state">state</label><br>
-            <input type="text" id="state" class="form-control"ngModel name="state"  placeholder="State" required>
+            <input type="text" id="state" class="form-control"ngModel name="state"  #state="ngModel" placeholder="State" required>
           </div>
 
           <div class="col-md-2">
             <label for="city">city</label><br>
-            <input type="text" id="city" class="form-control"ngModel name="city"  placeholder="City" required>
+            <input type="text" id="city" class="form-control"ngModel name="city"  #city="ngModel" placeholder="City" required>
           </div>
 
           <div class="col-md-2">
             <label for="street">street</label><br>
-            <input type="text" id="street" class="form-control"ngModel name="street"  placeholder="street" required>
+            <input type="text" id="street" class="form-control"ngModel name="street"  #street="ngModel" placeholder="street" required>
           </div>
 
         </div>
@@ -66,7 +66,7 @@
       <div class="form-row">
         <div class="col col-md-6">
           <label for="ctype">Customer Type</label><br>
-          <select id="ctype" class="form-control" ngModel name="ctype" required>
+          <select id="ctype" class="form-control" ngModel name="ctype"  #ctype="ngModel" required>
             <option value="foreign">Foreign Customer</option>
             <option value="local">Local Customer</option>
           </select>
@@ -74,7 +74,7 @@
 
         <div class="col col-md-6">
           <label for="pcode">Postal Code</label><br>
-          <input type="text" id="pcode" class="form-control"ngModel name="pcode"  placeholder="Postal Code" required>
+          <input type="text" id="pcode" class="form-control"ngModel name="pcode"  #pcode="ngModel"  placeholder="Postal Code" required>
         </div>
 
       </div>
@@ -84,12 +84,12 @@
 
         <div class="col-md-6">
           <label for="email">E mail</label><br>
-          <input type="email" id="email" class="form-control" ngModel name="email" placeholder="Email" required>
+          <input type="email" id="email" class="form-control" ngModel name="email"  #email="ngModel" placeholder="Email" required>
         </div>
 
         <div class="col-md-6">
           <label for="mnumber">Mobile Number</label><br>
-          <input type="text" id="mnumber" class="form-control"ngModel name="mnumber"  placeholder="Mobile Number" required>
+          <input type="text" id="mnumber" class="form-control"ngModel name="mnumber"  #mnumber="ngModel" placeholder="Mobile Number" required>
         </div>
 
       </div>
@@ -99,12 +99,12 @@
 
         <div class="col-md-6">
           <label for="password">Password</label><br>
-          <input type="password" id="password" class="form-control" ngModel name="password" placeholder="Password" required>
+          <input type="password" id="password" class="form-control" ngModel name="password"  #password="ngModel" placeholder="Password" required>
         </div>
 
         <div class="col-md-6">
           <label for="mnumber">Re-Enter Password</label><br>
-          <input type="password" id="rpassword" class="form-control"ngModel name="rpassword"  placeholder="Re-enter-password" required>
+          <input type="password" id="rpassword" class="form-control"ngModel name="rpassword"  #rpassword="ngModel"  placeholder="Re-enter-password" required>
         </div>
 
 

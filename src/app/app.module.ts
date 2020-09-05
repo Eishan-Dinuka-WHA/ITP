@@ -31,9 +31,7 @@ import { TakeawayManagementComponent } from './takeaway-management/takeaway-mana
 import { FooterComponent } from './footer/footer.component';
 import { LandingHomePageComponent } from './landing-home-page/landing-home-page.component';
 import { PackageHomeComponent } from './package-home/package-home.component';
-import { from } from 'rxjs';
 import { NavibarComponent } from './navibar/navibar.component';
-import { Route } from '@angular/compiler/src/core';
 import { CustomerViewComponent } from './customer-registration/customer-view/customer-view.component';
 import { CustomerRegistrationService } from 'service/customer-registration.service';
 

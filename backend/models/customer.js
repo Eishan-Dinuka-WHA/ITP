@@ -14,7 +14,7 @@ const customerSchema = mongoose.Schema({
   email: {type: String, required: true},
   mnumber: {type: String, required: true},
   password: {type: String, required: true},
-  re_enter_password: {type: String, required: true}
+  rpassword: {type: String, required: true}
 });
 
 module.exports = mongoose.model('Customer', customerSchema);

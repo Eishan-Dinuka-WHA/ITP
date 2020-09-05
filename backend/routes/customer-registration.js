@@ -6,10 +6,10 @@ const Customer = require('../models/customer');
 
 //Add Customer
 router.post("", (req, res, next) => {
-  const employee = new Employee({
+  const customer = new Customer({
     uname: req.body.uname,
     title: req.body.title,
-    fname: string.fname,
+    fname: req.body.fname,
     lname: req.body.lname,
     country: req.body.country,
     state: req.body.state,
@@ -19,7 +19,7 @@ router.post("", (req, res, next) => {
     email: req.body.email,
     mnumber: req.body.mnumber,
     password: req.body.password,
-    re_enter_password: req.body. re_enter_password
+    rpassword: req.body.rpassword
   });
   customer.save();
   res.status(201).json({
@@ -31,7 +31,7 @@ router.post("", (req, res, next) => {
 
 //Reteive Customer
 router.get("", (req, res, next) => {
-  Coustomer.find()
+  Customer.find()
     .then(documents => {
       res.status(200).json({
         message: 'Coustomer fetched successfully',
@@ -42,7 +42,7 @@ router.get("", (req, res, next) => {
 
 //Reteive Employees by designation
 router.get("/:empDes", (req, res, next) => {
-  Coustomer.find({cusDes: req.params.cusDes})
+  Customer.find({cusDes: req.params.cusDes})
     .then(documents => {
       res.status(200).json({
         message: 'Coustomer fetched successfully by designation',
@@ -56,7 +56,7 @@ router.get("/:empDes", (req, res, next) => {
 
 //Delete Coustomer
 router.delete("/:id", (req, res, next) => {
-  Coustomer.deleteOne({_id: req.params.id}).then(result => {
+  Customer.deleteOne({_id: req.params.id}).then(result => {
     console.log(result);
     res.status(200).json({
       message: "Coustomer Deleted"
