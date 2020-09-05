@@ -12,11 +12,10 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./customer-registration.component.css']
 })
 export class CustomerRegistrationComponent implements OnInit {
-  @ViewChild('ann', {static: false}) addCustomerForm: NgForm;
-  defaultValue = "choose";
-  defaultValue2 = "chooseValidity";
+  @ViewChild('cus', {static: false}) addCustomerForm: NgForm;
   customer: Customers = {
     cid: '',
+    uname:'',
     title: '',
     fname: '',
     lname: '',

@@ -35,6 +35,7 @@ import { from } from 'rxjs';
 import { NavibarComponent } from './navibar/navibar.component';
 import { Route } from '@angular/compiler/src/core';
 import { CustomerViewComponent } from './customer-registration/customer-view/customer-view.component';
+import { CustomerRegistrationService } from 'service/customer-registration.service';
 
 
 const appRoutes: Routes =[
@@ -87,7 +88,7 @@ const appRoutes: Routes =[
 
     //NoopAnimationsModule
   ],
-  providers: [],
+  providers: [CustomerRegistrationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
