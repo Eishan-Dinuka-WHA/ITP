@@ -10,7 +10,7 @@ import { NavibarComponent } from './navibar/navibar.component';
 
 const appRoutes: Routes =[
   { path: '' , component: HomePageComponent },
-  { path: 'users' , component: CustomerNewComponent } ,
+  { path: 'cus-new' , component:CustomerNewComponent} ,
   { path: 'header' , component:HeaderComponent },
   { path: 'navibar' , component:NavibarComponent },
   { path: 'navibar' , component:NavibarComponent },
