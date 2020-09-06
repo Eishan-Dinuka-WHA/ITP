@@ -13,6 +13,16 @@ const appRoutes: Routes =[
   { path: 'users' , component: CustomerNewComponent } ,
   { path: 'header' , component:HeaderComponent },
   { path: 'navibar' , component:NavibarComponent },
+  { path: 'navibar' , component:NavibarComponent },
+  { path: 'navibar' , component:NavibarComponent },
+  { path: 'navibar' , component:NavibarComponent },
+  { path: 'navibar' , component:NavibarComponent },
+  { path: 'navibar' , component:NavibarComponent },
+  { path: 'navibar' , component:NavibarComponent },
+  { path: 'navibar' , component:NavibarComponent },
+  { path: 'navibar' , component:NavibarComponent },
+  { path: 'navibar' , component:NavibarComponent },
+  { path: 'navibar' , component:NavibarComponent },
   { path: 'cus-view' , component:CustomerViewComponent }
 ];
 

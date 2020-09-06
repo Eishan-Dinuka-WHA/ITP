@@ -35,6 +35,7 @@ import { CustomerViewComponent } from './customer-registration/customer-view/cus
 import { CustomerRegistrationService } from 'service/customer-registration.service';
 import { HomeCardComponent } from './home-page/home-card/home-card.component';
 import { CustomerNewComponent } from './customer-registration/customer-new/customer-new.component';
+import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
 
 
 
@@ -62,6 +63,7 @@ import { CustomerNewComponent } from './customer-registration/customer-new/custo
     CustomerViewComponent,
     HomeCardComponent,
     CustomerNewComponent,
+    CustomerRegistrationComponent,
 
   ],
   imports: [
