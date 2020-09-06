@@ -1,10 +1,17 @@
 li a:hover{
-	background-color:yellowgreen;
-	font-size:15px;
+	font-weight: 700;
+  font-size:20px;
 }
+
 li a{
 	display:block;
 	padding:14px 16px;
-	color:hsl(0, 0%, 6%);
 	text-decoration:none;
 }
+
+.paddingFont{
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+

@@ -17,7 +17,6 @@
       <th scope="col">Country</th>
       <th scope="col">City</th>
       <th scope="col">State</th>
-      <th scope="col">City</th>
       <th scope="col">Street</th>
       <th scope="col">Customer Type</th>
       <th scope="col">postal code</th>
@@ -25,6 +24,8 @@
       <th scope="col">Mobile Number</th>
       <th scope="col">Password</th>
       <th scope="col">Re-Enter-password</th>
+      <th scope="col">EDIT</th>
+      <th scope="col">DELETE</th>
 
         </tr>
       </thead>
@@ -47,10 +48,9 @@
           <td>{{ customer.mnumber}}</td>
           <td>{{ customer.password}}</td>
           <td>{{ customer.rpassword}}</td>
-          <td>
-            <a class="btn btn-warning pull-right" style="width:80px;">EDIT</a>
-            <a class="btn btn-danger pull-right" (click)="onDelete(customer.cid)">DELETE</a>
-          </td>
+          <td><a class="btn btn-warning pull-right" style="width:80px;">EDIT</a></td>
+          <td><a class="btn btn-danger pull-right" (click)="onDelete(customer.cid)">DELETE</a></td>
+
 
         </tr>
     <!--  </tbody>  -->
