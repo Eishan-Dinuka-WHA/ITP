@@ -8,23 +8,84 @@ import { CustomerViewComponent } from './customer-registration/customer-view/cus
 import { CustomerNewComponent } from './customer-registration/customer-new/customer-new.component';
 import { NavibarComponent } from './navibar/navibar.component';
 import { HomeCardComponent } from './home-page/home-card/home-card.component';
+import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
+import { EmployeeManagementComponent } from './employee-management/employee-management.component';
+import { EmployeeViewComponent } from './employee-management/employee-view/employee-view.component';
+import { EventManagementComponent } from './event-management/event-management.component';
+import { EmployeeHomePageComponent } from './employee-management/employee-home-page/employee-home-page.component';
+import { EventHomeComponent } from './event-management/event-home/event-home.component';
+import { EventViewComponent } from './event-management/event-view/event-view.component';
+import { FooterComponent } from './footer/footer.component';
+import { FeedbackHomeComponent } from './feedback-management/feedback-home/feedback-home.component';
+import { FeedbackViewComponent } from './feedback-management/feedback-view/feedback-view.component';
+import { FeedbackManagementComponent } from './feedback-management/feedback-management.component';
+import { LoginComponent } from './login/login.component';
+import { AdminLoginComponent } from './login/admin-login/admin-login.component';
+import { OrderManagementComponent } from './order-management/order-management.component';
+import { PackageHomeComponent } from './package-home/package-home.component';
+import { PackageNewComponent } from './package-home/package-new/package-new.component';
+import { PackageViewComponent } from './package-home/package-view/package-view.component';
+import { PaymentHomeComponent } from './payment-management/payment-home/payment-home.component';
+import { PaymentManagementComponent } from './payment-management/payment-management.component';
+import { PaymentViewComponent } from './payment-management/payment-view/payment-view.component';
+import { RoomReservationHomeComponent } from './room-reservation-management/room-reservation-home/room-reservation-home.component';
+import { RoomReservationManagementComponent } from './room-reservation-management/room-reservation-management.component';
+import { RoomReservationViewComponent } from './room-reservation-management/room-reservation-view/room-reservation-view.component';
+import { SalaryReportHomeComponent } from './salary-report-management/salary-report-home/salary-report-home.component';
+import { SalaryReportManagementComponent } from './salary-report-management/salary-report-management.component';
+import { SalaryReportViewComponent } from './salary-report-management/salary-report-view/salary-report-view.component';
+import { SpaManagementComponent } from './spa-management/spa-management.component';
+import { SupplierHomeComponent } from './supplier-management/supplier-home/supplier-home.component';
+import { SupplierManagementComponent } from './supplier-management/supplier-management.component';
+import { SupplierViewComponent } from './supplier-management/supplier-view/supplier-view.component';
+import { TakeawayHomeComponent } from './takeaway-management/takeaway-home/takeaway-home.component';
+import { TakeawayManagementComponent } from './takeaway-management/takeaway-management.component';
+import { TakeawayViewComponent } from './takeaway-management/takeaway-view/takeaway-view.component';
+import { SpaHomeComponent } from './spa-management/spa-home/spa-home.component';
+import { SpaViewComponent } from './spa-management/spa-view/spa-view.component';
 
 const appRoutes: Routes =[
-  { path: '' , component: HomePageComponent },
-  { path: 'cus-new' , component:CustomerNewComponent} ,
+  { path: 'cusHome' , component:CustomerRegistrationComponent},
+  { path: 'cusNew' , component:CustomerNewComponent} ,
+  { path: 'cusView' , component:CustomerViewComponent },
+  { path: 'empHome' , component:EmployeeHomePageComponent},
+  { path: 'empNew' , component:EmployeeManagementComponent},
+  { path: 'empView' , component:EmployeeViewComponent},
+  { path: 'eventHome' , component:EventHomeComponent},
+  { path: 'eventNew' , component:EventManagementComponent },
+  { path: 'eventView' , component:EventViewComponent},
+  { path: 'feedbackHome' , component:FeedbackHomeComponent},
+  { path: 'feedbackNew' , component:FeedbackManagementComponent},
+  { path: 'feedbackView' , component:FeedbackViewComponent},
+  { path: 'footer' , component:FooterComponent },
   { path: 'header' , component:HeaderComponent },
-  { path: 'navibar' , component:NavibarComponent },
-  { path: 'homecard' , component:HomeCardComponent },
-  { path: 'navibar' , component:NavibarComponent },
-  { path: 'navibar' , component:NavibarComponent },
-  { path: 'navibar' , component:NavibarComponent },
-  { path: 'navibar' , component:NavibarComponent },
-  { path: 'navibar' , component:NavibarComponent },
-  { path: 'navibar' , component:NavibarComponent },
-  { path: 'navibar' , component:NavibarComponent },
-  { path: 'navibar' , component:NavibarComponent },
-  { path: 'navibar' , component:NavibarComponent },
-  { path: 'cus-view' , component:CustomerViewComponent }
+  { path: 'homepageNormal' , component:HomePageComponent},
+  { path: 'homepageAdmin' , component:HomeCardComponent},
+  { path: 'userlogin' , component:LoginComponent},
+  { path: 'adminlogin' , component:AdminLoginComponent},
+  { path: 'navibar' , component:NavibarComponent},
+  { path: 'orderHome' , component:OrderManagementComponent},
+  { path: 'packHome' , component:PackageHomeComponent},
+  { path: 'packNew' , component:PackageNewComponent},
+  { path: 'packView' , component:PackageViewComponent},
+  { path: 'payHome' , component:PaymentHomeComponent},
+  { path: 'PayNew' , component:PaymentManagementComponent},
+  { path: 'PayView' , component:PaymentViewComponent},
+  { path: 'roomHome' , component:RoomReservationHomeComponent},
+  { path: 'roomNew' , component:RoomReservationManagementComponent},
+  { path: 'roomView' , component:RoomReservationViewComponent},
+  { path: 'salaryHome' , component:SalaryReportHomeComponent},
+  { path: 'salaryNew' , component:SalaryReportManagementComponent},
+  { path: 'salaryView' , component:SalaryReportViewComponent},
+  { path: 'spaHome' , component:SpaHomeComponent},
+  { path: 'spaNew' , component:SpaManagementComponent},
+  { path: 'spaView' , component:SpaViewComponent},
+  { path: 'supHome' , component:SupplierHomeComponent},
+  { path: 'supNew' , component:SupplierManagementComponent},
+  { path: 'supview' , component:SupplierViewComponent},
+  { path: 'takeHome' , component:TakeawayHomeComponent},
+  { path: 'takeNew' , component:TakeawayManagementComponent},
+  { path: 'takeView' , component:TakeawayViewComponent}
 ];
 
 

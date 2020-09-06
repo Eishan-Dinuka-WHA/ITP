@@ -16,7 +16,6 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
-import { PackageManagementComponent } from './package-management/package-management.component';
 import { EventManagementComponent } from './event-management/event-management.component';
 import { PaymentManagementComponent } from './payment-management/payment-management.component';
 import { FeedbackManagementComponent } from './feedback-management/feedback-management.component';
@@ -28,7 +27,6 @@ import { SupplierManagementComponent } from './supplier-management/supplier-mana
 import { OrderManagementComponent } from './order-management/order-management.component';
 import { TakeawayManagementComponent } from './takeaway-management/takeaway-management.component';
 import { FooterComponent } from './footer/footer.component';
-import { LandingHomePageComponent } from './landing-home-page/landing-home-page.component';
 import { PackageHomeComponent } from './package-home/package-home.component';
 import { NavibarComponent } from './navibar/navibar.component';
 import { CustomerViewComponent } from './customer-registration/customer-view/customer-view.component';
@@ -38,6 +36,25 @@ import { CustomerNewComponent } from './customer-registration/customer-new/custo
 import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
 import { EmployeeHomePageComponent } from './employee-management/employee-home-page/employee-home-page.component';
 import { EmployeeViewComponent } from './employee-management/employee-view/employee-view.component';
+import { EventHomeComponent } from './event-management/event-home/event-home.component';
+import { EventViewComponent } from './event-management/event-view/event-view.component';
+import { FeedbackViewComponent } from './feedback-management/feedback-view/feedback-view.component';
+import { FeedbackHomeComponent } from './feedback-management/feedback-home/feedback-home.component';
+import { PackageViewComponent } from './package-home/package-view/package-view.component';
+import { PackageNewComponent } from './package-home/package-new/package-new.component';
+import { PaymentViewComponent } from './payment-management/payment-view/payment-view.component';
+import { PaymentHomeComponent } from './payment-management/payment-home/payment-home.component';
+import { RoomReservationViewComponent } from './room-reservation-management/room-reservation-view/room-reservation-view.component';
+import { RoomReservationHomeComponent } from './room-reservation-management/room-reservation-home/room-reservation-home.component';
+import { SalaryReportViewComponent } from './salary-report-management/salary-report-view/salary-report-view.component';
+import { SalaryReportHomeComponent } from './salary-report-management/salary-report-home/salary-report-home.component';
+import { SupplierViewComponent } from './supplier-management/supplier-view/supplier-view.component';
+import { SupplierHomeComponent } from './supplier-management/supplier-home/supplier-home.component';
+import { TakeawayViewComponent } from './takeaway-management/takeaway-view/takeaway-view.component';
+import { TakeawayHomeComponent } from './takeaway-management/takeaway-home/takeaway-home.component';
+import { AdminLoginComponent } from './login/admin-login/admin-login.component';
+import { SpaHomeComponent } from './spa-management/spa-home/spa-home.component';
+import { SpaViewComponent } from './spa-management/spa-view/spa-view.component';
 
 
 
@@ -47,7 +64,6 @@ import { EmployeeViewComponent } from './employee-management/employee-view/emplo
     HomePageComponent,
     HeaderComponent,
     LoginComponent,
-    PackageManagementComponent,
     EventManagementComponent,
     PaymentManagementComponent,
     FeedbackManagementComponent,
@@ -59,7 +75,6 @@ import { EmployeeViewComponent } from './employee-management/employee-view/emplo
     OrderManagementComponent,
     TakeawayManagementComponent,
     FooterComponent,
-    LandingHomePageComponent,
     PackageHomeComponent,
     NavibarComponent,
     CustomerViewComponent,
@@ -68,6 +83,25 @@ import { EmployeeViewComponent } from './employee-management/employee-view/emplo
     CustomerRegistrationComponent,
     EmployeeHomePageComponent,
     EmployeeViewComponent,
+    EventHomeComponent,
+    EventViewComponent,
+    FeedbackViewComponent,
+    FeedbackHomeComponent,
+    PackageViewComponent,
+    PackageNewComponent,
+    PaymentViewComponent,
+    PaymentHomeComponent,
+    RoomReservationViewComponent,
+    RoomReservationHomeComponent,
+    SalaryReportViewComponent,
+    SalaryReportHomeComponent,
+    SupplierViewComponent,
+    SupplierHomeComponent,
+    TakeawayViewComponent,
+    TakeawayHomeComponent,
+    AdminLoginComponent,
+    SpaHomeComponent,
+    SpaViewComponent,
 
   ],
   imports: [

@@ -63,7 +63,7 @@ export class CustomerNewComponent implements OnInit {
 
     this.customerRegistrationService.addCustomer(this.customers);
 
-    this.router.navigate(['../cus-view'], {relativeTo: this.route});
+    this.router.navigate(['../cusView'], {relativeTo: this.route});
 
   }
 

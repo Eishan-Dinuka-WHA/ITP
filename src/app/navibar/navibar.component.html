@@ -6,41 +6,114 @@
       <li class="nav-item active paddingFont">
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item paddingFont">
-        <a class="nav-link" [routerLink]="['/cus-view']">Event</a>
+
+      <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Event
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/eventHome']">Events</a>
+          <a class="dropdown-item" [routerLink]="['/eventNew']" href="#">Add Event</a>
+          <a class="dropdown-item" [routerLink]="['/eventView']" href="#">View Event</a>
+          <div class="dropdown-divider"></div>
+        </div>
       </li>
-      <li class="nav-item paddingFont">
-        <a class="nav-link" [routerLink]="['home']" >Packages</a>
-      </li>
-      <li class="nav-item paddingFont">
-        <a class="nav-link" routerLink="['']">Restaurant</a>
-      </li>
-      <li class="nav-item paddingFont">
-        <a class="nav-link"routerLink="['']">Spa</a>
-      </li>
-      <li class="nav-item paddingFont">
-        <a class="nav-link"routerLink="['']">Reservation</a>
-      </li>
-      <li class="nav-item paddingFont">
-        <a class="nav-link"routerLink="['']">Supplier</a>
-      </li>
-      <li class="nav-item paddingFont">
-        <a class="nav-link"routerLink="['']">Employee</a>
+
+<li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Packages
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/packHome']">Packages</a>
+          <a class="dropdown-item" [routerLink]="['/packNew']" href="#">Add Package</a>
+          <a class="dropdown-item" [routerLink]="['/packView']" href="#">view Package</a>
+          <div class="dropdown-divider"></div>
+        </div>
       </li>
 
       <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          More
+        Restarunt
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/homecard']">Admin Login</a>
-          <a class="dropdown-item" [routerLink]="['/cus-new']" href="#">User Login</a>
-          <a class="dropdown-item" [routerLink]="['cus-view']" href="#">Your profile</a>
-          <a class="dropdown-item" [routerLink]="['/home']" href="#">Give Feedback</a>
-          <a class="dropdown-item" [routerLink]="['']" href="#">About Us</a>
+          <a class="dropdown-item" [routerLink]="['/takeHome']">Restarunt</a>
+          <a class="dropdown-item" [routerLink]="['/takeNew']" href="#">Food Order</a>
+          <a class="dropdown-item" [routerLink]="['/takeView']" href="#">View Order</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <Span>Spa</Span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/spaHome']">Spa</a>
+          <a class="dropdown-item" [routerLink]="['/spaNew']" href="#">Add Spa Reservation</a>
+          <a class="dropdown-item" [routerLink]="['/spaView']" href="#">View Spa Reservations</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Supplier
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/supHome']">Supplier</a>
+          <a class="dropdown-item" [routerLink]="['/supNew']" href="#">Add Supplier</a>
+          <a class="dropdown-item" [routerLink]="['/supview']" href="#">View Supplier</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Employee
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/empHome']">Employees</a>
+          <a class="dropdown-item" [routerLink]="['/empNew']" href="#">Add Employee</a>
+          <a class="dropdown-item" [routerLink]="['/empView']" href="#">View Employee</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Customer
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/cusHome']">Customer</a>
+          <a class="dropdown-item" [routerLink]="['/cusNew']" href="#">Add Customer</a>
+          <a class="dropdown-item" [routerLink]="['/cusView']" href="#">View Customers</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Login
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/adminlogin']">Admin Login</a>
+          <a class="dropdown-item" [routerLink]="['/userlogin']" href="#">User Login</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+
+
+      <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Feedback
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/feedbackHome']" href="#">Feedback</a>
+          <a class="dropdown-item" [routerLink]="['/feedbackNew']" href="#">Give Feedback</a>
+          <a class="dropdown-item" [routerLink]="['/feedbackView']" href="#">View Feedbacks</a>
           <div class="dropdown-divider"></div>
 
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">About Us</a>
         </div>
       </li>
 
