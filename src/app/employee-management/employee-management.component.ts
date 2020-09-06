@@ -12,4 +12,8 @@ export class EmployeeManagementComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(){
+
+  }
+
 }
