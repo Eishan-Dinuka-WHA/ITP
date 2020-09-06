@@ -36,6 +36,8 @@ import { CustomerRegistrationService } from 'service/customer-registration.servi
 import { HomeCardComponent } from './home-page/home-card/home-card.component';
 import { CustomerNewComponent } from './customer-registration/customer-new/customer-new.component';
 import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
+import { EmployeeHomePageComponent } from './employee-management/employee-home-page/employee-home-page.component';
+import { EmployeeViewComponent } from './employee-management/employee-view/employee-view.component';
 
 
 
@@ -64,6 +66,8 @@ import { CustomerRegistrationComponent } from './customer-registration/customer-
     HomeCardComponent,
     CustomerNewComponent,
     CustomerRegistrationComponent,
+    EmployeeHomePageComponent,
+    EmployeeViewComponent,
 
   ],
   imports: [
