@@ -1,8 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-// import { NgForm } from '@angular/forms';
-// import { Employees } from 'models/employee.model';
-// import { Router, ActivatedRoute } from '@angular/router';
-// import { EmployeeService } from 'service/employee-management.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-employee-management',

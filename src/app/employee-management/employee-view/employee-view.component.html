@@ -1,0 +1,65 @@
+
+<div style="overflow-y: scroll; overflow-x: scroll; height: 100vh; width:100%">
+  <body style="background-color: #FEFEFE; background-size: auto;">
+
+    <div style="background-color: #6f84fc;width:100%">
+      <br><p class="h2" style="text-align:center" >Employee Registry</p><br>
+    </div>
+
+    <table class="table table-striped">
+      <thead class="thead-dark">
+      <tr>
+      <th scope="col">Emp ID</th>
+      <th scope="col">User Name</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">NIC</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Mobile Number</th>
+      <th scope="col">Education Details</th>
+      <th scope="col">Appointment Date</th>
+      <th scope="col">Join Date</th>
+      <th scope="col">Department</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Employee Type</th>
+      <th scope="col">Salary</th>
+      <th scope="col">password</th>
+      <th scope="col">Re-Enter-password</th>
+      <th scope="col">EDIT</th>
+      <th scope="col">DELETE</th>
+
+        </tr>
+      </thead>
+      <!-- <mat-spinner *ngIf = "isLoading"></mat-spinner>
+      <tbody *ngIf = "!isLoading"> -->
+
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.eid}}</td>
+          <td>{{ employee.uname}}</td>
+          <td>{{ employee.fname}}</td>
+          <td>{{ employee.lname}}</td>
+          <td>{{ employee.address}}</td>
+          <td>{{ employee.nic}}</td>
+          <td>{{ employee.dob}}</td>
+          <td>{{ employee.gender}}</td>
+          <td>{{ employee.mno}}</td>
+          <td>{{ employee.edd}}</td>
+          <td>{{ employee.apn}}</td>
+          <td>{{ employee.joind}}</td>
+          <td>{{ employee.dept}}</td>
+          <td>{{ employee.dcs}}</td>
+          <td>{{ employee.empty}}</td>
+          <td>{{ employee.sal}}</td>
+          <td>{{ employee.password}}</td>
+          <td>{{ employee.rpassword}}</td>
+          <td><a class="btn btn-warning pull-right" style="width:80px;">EDIT</a></td>
+          <td><a class="btn btn-danger pull-right" (click)="onDelete(employee.eid)">DELETE</a></td>
+
+
+        </tr>
+    <!--  </tbody>  -->
+    </table>
+  </body>
+</div>
