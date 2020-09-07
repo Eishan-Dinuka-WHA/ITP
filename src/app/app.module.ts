@@ -6,7 +6,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AppRoutingModule } from './app-routing.module';
 import{ MatInputModule } from '@angular/material/input';
-//import{ MatToolbar } from '@angular/material/toolbar';
+import{ MatToolbar } from '@angular/material/toolbar';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { Routes, RouterModule } from '@angular/router'
 
@@ -34,8 +34,8 @@ import { CustomerRegistrationService } from 'service/customer-registration.servi
 import { HomeCardComponent } from './home-page/home-card/home-card.component';
 import { CustomerNewComponent } from './customer-registration/customer-new/customer-new.component';
 import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
-import { EmployeeHomePageComponent } from './employee-management/employee-home-page/employee-home-page.component';
-import { EmployeeViewComponent } from './employee-management/employee-view/employee-view.component';
+//import { EmployeeHomePageComponent } from './employee-management/employee-home-page/employee-home-page.component';
+//import { EmployeeViewComponent } from './employee-management/employee-view/employee-view.component';
 import { EventHomeComponent } from './event-management/event-home/event-home.component';
 import { EventViewComponent } from './event-management/event-view/event-view.component';
 import { FeedbackViewComponent } from './feedback-management/feedback-view/feedback-view.component';
@@ -55,6 +55,10 @@ import { TakeawayHomeComponent } from './takeaway-management/takeaway-home/takea
 import { AdminLoginComponent } from './login/admin-login/admin-login.component';
 import { SpaHomeComponent } from './spa-management/spa-home/spa-home.component';
 import { SpaViewComponent } from './spa-management/spa-view/spa-view.component';
+//import { EmployeeService } from 'service/employee-management.service';
+import { InventoryManagementComponent } from './inventory-management/inventory-management.component';
+import { InventoryHomeComponent } from './inventory-management/inventory-home/inventory-home.component';
+import { InventoryViewComponent } from './inventory-management/inventory-view/inventory-view.component';
 
 
 
@@ -81,8 +85,8 @@ import { SpaViewComponent } from './spa-management/spa-view/spa-view.component';
     HomeCardComponent,
     CustomerNewComponent,
     CustomerRegistrationComponent,
-    EmployeeHomePageComponent,
-    EmployeeViewComponent,
+   // EmployeeHomePageComponent,
+   // EmployeeViewComponent,
     EventHomeComponent,
     EventViewComponent,
     FeedbackViewComponent,
@@ -102,6 +106,9 @@ import { SpaViewComponent } from './spa-management/spa-view/spa-view.component';
     AdminLoginComponent,
     SpaHomeComponent,
     SpaViewComponent,
+    InventoryManagementComponent,
+    InventoryHomeComponent,
+    InventoryViewComponent,
 
   ],
   imports: [
@@ -117,7 +124,7 @@ import { SpaViewComponent } from './spa-management/spa-view/spa-view.component';
 
     //NoopAnimationsModule
   ],
-  providers: [CustomerRegistrationService],
+  providers: [CustomerRegistrationService, EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

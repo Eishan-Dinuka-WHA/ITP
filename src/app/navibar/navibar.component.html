@@ -4,7 +4,11 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item active paddingFont">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link"[routerLink]="['/homepageNormal']">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active paddingFont">
+        <a class="nav-link"[routerLink]="['/homepageAdmin']" href="/">Admin<span class="sr-only"></span></a>
       </li>
 
       <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
@@ -73,8 +77,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" [routerLink]="['/empHome']">Employees</a>
-          <a class="dropdown-item" [routerLink]="['/empNew']" href="#">Add Employee</a>
-          <a class="dropdown-item" [routerLink]="['/empView']" href="#">View Employee</a>
+          <a class="dropdown-item" [routerLink]="['/empNew']">Add Employee</a>
+          <a class="dropdown-item" [routerLink]="['/empView']">View Employee</a>
           <div class="dropdown-divider"></div>
         </div>
       </li>
@@ -93,6 +97,18 @@
 
       <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Inventory
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/intHome']">Inventory</a>
+          <a class="dropdown-item" [routerLink]="['/intNew']" href="#">Add Inventory</a>
+          <a class="dropdown-item" [routerLink]="['/intView']" href="#">View Inventory</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Login
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -101,6 +117,7 @@
           <div class="dropdown-divider"></div>
         </div>
       </li>
+
 
 
       <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">

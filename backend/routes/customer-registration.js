@@ -41,19 +41,6 @@ router.get("", (req, res, next) => {
     });
 });
 
-// //Reteive Employees by designation
-// router.get("/:empDes", (req, res, next) => {
-//   Customer.find({cusDes: req.params.cusDes})
-//     .then(documents => {
-//       res.status(200).json({
-//         message: 'Coustomer fetched successfully by designation',
-//         customer: documents
-//       });
-//     });
-// });
-
-
-
 
 //Delete Coustomer
 router.delete("/:id", (req, res, next) => {

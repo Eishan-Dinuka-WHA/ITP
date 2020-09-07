@@ -10,9 +10,9 @@ import { NavibarComponent } from './navibar/navibar.component';
 import { HomeCardComponent } from './home-page/home-card/home-card.component';
 import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
 import { EmployeeManagementComponent } from './employee-management/employee-management.component';
-import { EmployeeViewComponent } from './employee-management/employee-view/employee-view.component';
+//import { EmployeeViewComponent } from './employee-management/employee-view/employee-view.component';
 import { EventManagementComponent } from './event-management/event-management.component';
-import { EmployeeHomePageComponent } from './employee-management/employee-home-page/employee-home-page.component';
+//import { EmployeeHomePageComponent } from './employee-management/employee-home-page/employee-home-page.component';
 import { EventHomeComponent } from './event-management/event-home/event-home.component';
 import { EventViewComponent } from './event-management/event-view/event-view.component';
 import { FooterComponent } from './footer/footer.component';
@@ -43,14 +43,17 @@ import { TakeawayManagementComponent } from './takeaway-management/takeaway-mana
 import { TakeawayViewComponent } from './takeaway-management/takeaway-view/takeaway-view.component';
 import { SpaHomeComponent } from './spa-management/spa-home/spa-home.component';
 import { SpaViewComponent } from './spa-management/spa-view/spa-view.component';
+import { InventoryHomeComponent } from './inventory-management/inventory-home/inventory-home.component';
+import { InventoryManagementComponent } from './inventory-management/inventory-management.component';
+import { InventoryViewComponent } from './inventory-management/inventory-view/inventory-view.component';
 
 const appRoutes: Routes =[
   { path: 'cusHome' , component:CustomerRegistrationComponent},
   { path: 'cusNew' , component:CustomerNewComponent} ,
   { path: 'cusView' , component:CustomerViewComponent },
-  { path: 'empHome' , component:EmployeeHomePageComponent},
-  { path: 'empNew' , component:EmployeeManagementComponent},
-  { path: 'empView' , component:EmployeeViewComponent},
+//  { path: 'empHome' , component:EmployeeHomePageComponent},
+//  { path: 'empNew' , component:EmployeeManagementComponent},
+//  { path: 'empView' , component:EmployeeViewComponent},
   { path: 'eventHome' , component:EventHomeComponent},
   { path: 'eventNew' , component:EventManagementComponent },
   { path: 'eventView' , component:EventViewComponent},
@@ -85,7 +88,10 @@ const appRoutes: Routes =[
   { path: 'supview' , component:SupplierViewComponent},
   { path: 'takeHome' , component:TakeawayHomeComponent},
   { path: 'takeNew' , component:TakeawayManagementComponent},
-  { path: 'takeView' , component:TakeawayViewComponent}
+  { path: 'takeView' , component:TakeawayViewComponent},
+  { path: 'intHome' , component:InventoryHomeComponent},
+  { path: 'intNew' , component:InventoryManagementComponent},
+  { path: 'intView' , component:InventoryViewComponent}
 ];
 
 

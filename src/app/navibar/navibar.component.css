@@ -1,6 +1,6 @@
 li a:hover{
 	font-weight: 700;
-  font-size:20px;
+  font-size:16px;
 }
 
 li a{
@@ -10,8 +10,8 @@ li a{
 }
 
 .paddingFont{
-  padding-left: 20px;
-  font-size: 18px;
+  padding-left:20px;
+  font-size:18px;
 }
 
 
