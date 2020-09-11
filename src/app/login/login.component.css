@@ -87,3 +87,10 @@ color: white;
 .links a{
 margin-left: 4px;
 }
+
+.bgImage{
+  background-image: url('../../assets/img/bac.jpg');
+  background-size:100%;
+  background-attachment: fixed;
+  height:100%;
+}

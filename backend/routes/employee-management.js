@@ -33,7 +33,7 @@ router.post("", (req, res, next) => {
 
 
 
-//Reteive Customer
+//Retreive Customer
 router.get("", (req, res, next) => {
   Employee.find()
     .then(documents => {

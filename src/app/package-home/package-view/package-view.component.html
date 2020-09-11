@@ -1,1 +1,48 @@
-<p>package-view works!</p>
+
+<div style="overflow-y: scroll; overflow-x: scroll; height: 100vh; width:100%">
+  <body style="background-color: #b9f6ca; background-size: auto;">
+
+    <div style="background-color: #6f84fc;width:100%">
+      <br><p class="h2" style="text-align:center" >package Registry</p><br>
+    </div>
+
+    <table class="table table-striped">
+      <thead class="thead-dark">
+      <tr>
+      <th scope="col">Package ID</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Booking Date</th>
+      <th scope="col">Package Amount</th>
+      <th scope="col">Additional Service</th>
+      <th scope="col">Valid Duration</th>
+      <th scope="col">Service Charges</th>
+      <th scope="col">Description</th>
+      <th scope="col">EDIT</th>
+      <th scope="col">DELETE</th>
+
+      </tr>
+      </thead>
+      <!-- <mat-spinner *ngIf = "isLoading"></mat-spinner>
+      <tbody *ngIf = "!isLoading"> -->
+
+        <tr *ngFor="let package of packages">
+          <td>{{ package.pid}}</td>
+          <td>{{ package.fname}}</td>
+          <td>{{ package.lname}}</td>
+          <td>{{ package.bdate}}</td>
+          <td>{{ package.pamount}}</td>
+          <td>{{ package.aservice}}</td>
+          <td>{{ package.vduration}}</td>
+          <td>{{ package.scharges}}</td>
+          <td>{{ package.des}}</td>
+
+          <td><a class="btn btn-warning pull-right" style="width:80px;">EDIT</a></td>
+          <td><a class="btn btn-danger pull-right" (click)="onDelete(package.pid)">DELETE</a></td>
+
+
+        </tr>
+    <!--  </tbody>  -->
+    </table>
+  </body>
+</div>

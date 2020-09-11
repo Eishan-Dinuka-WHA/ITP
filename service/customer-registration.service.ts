@@ -41,32 +41,6 @@ export class CustomerRegistrationService{
     return this.customerArr.slice();
   }
 
-  // getEmployeeByDesignation(employeeDesignation: string){
-  //   this.http.get<{message: string, employees: any}>('http://localhost:3000/api/employees/' + employeeDesignation)
-  //     .pipe(map((employeeData) => {
-  //         return employeeData.employees.map(employee => {
-  //           return{
-  //             fullName: employee.fullName,
-  //             dob: employee.dob,
-  //             nic: employee.nic,
-  //             gender: employee.gender,
-  //             address: employee.address,
-  //             cnumber: employee.cnumber,
-  //             email: employee.email,
-  //             empDes: employee.empDes,
-  //             doj: employee.doj,
-  //             comment: employee.comment,
-  //             id: employee._id
-  //           };
-  //         });
-  //     }))
-  //     .subscribe((transformedCustomer) => {
-  //       this.customerArr = transformedCustomer;
-  //       this.customerChanged.next(this.customerArr.slice());
-  //     });
-  //   return this.customerArr.slice();
-  // }
-
 
   addCustomer(customer: Customers){
     const customerArray: Customers = {

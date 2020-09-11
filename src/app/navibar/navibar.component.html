@@ -4,14 +4,22 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item active paddingFont">
-        <a class="nav-link"[routerLink]="['/homepageNormal']">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link"[routerLink]="['/homepageNormal']">Home </a>
       </li>
 
-      <li class="nav-item active paddingFont">
-        <a class="nav-link"[routerLink]="['/homepageAdmin']" href="/">Admin<span class="sr-only"></span></a>
+      <li class="nav-item dropdown paddingFont">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Room
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/roomHome']">Rooms</a>
+          <a class="dropdown-item" [routerLink]="['/roomNew']" href="#">Reserve a Room</a>
+          <a class="dropdown-item" [routerLink]="['/roomview']" href="#">View Reservation</a>
+          <div class="dropdown-divider"></div>
+        </div>
       </li>
 
-      <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+      <li class="nav-item dropdown paddingFont">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Event
         </a>
@@ -23,7 +31,7 @@
         </div>
       </li>
 
-<li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+<li class="nav-item dropdown paddingFont">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Packages
         </a>
@@ -35,7 +43,7 @@
         </div>
       </li>
 
-      <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+      <li class="nav-item dropdown paddingFont">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Restarunt
         </a>
@@ -47,7 +55,7 @@
         </div>
       </li>
 
-      <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+      <li class="nav-item dropdown paddingFont">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <Span>Spa</Span>
         </a>
@@ -59,7 +67,7 @@
         </div>
       </li>
 
-      <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+      <li class="nav-item dropdown paddingFont">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Supplier
         </a>
@@ -76,14 +84,16 @@
         Employee
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/empHome']">Employees</a>
-          <a class="dropdown-item" [routerLink]="['/empNew']">Add Employee</a>
+          <a class="dropdown-item" [routerLink]="['/empNew']">Employees</a>
+          <a class="dropdown-item" [routerLink]="['/empHome']">Add Employee</a>
           <a class="dropdown-item" [routerLink]="['/empView']">View Employee</a>
+          <a class="dropdown-item" [routerLink]="['/addSal']">Add Salary</a>
+          <a class="dropdown-item" [routerLink]="['/salView']">View Salary</a>
           <div class="dropdown-divider"></div>
         </div>
       </li>
 
-      <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+      <li class="nav-item dropdown paddingFont">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Customer
         </a>
@@ -95,7 +105,7 @@
         </div>
       </li>
 
-      <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+      <li class="nav-item dropdown paddingFont">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Inventory
         </a>
@@ -107,20 +117,7 @@
         </div>
       </li>
 
-      <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Login
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/adminlogin']">Admin Login</a>
-          <a class="dropdown-item" [routerLink]="['/userlogin']" href="#">User Login</a>
-          <div class="dropdown-divider"></div>
-        </div>
-      </li>
-
-
-
-      <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
+      <li class="nav-item dropdown paddingFont">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Feedback
         </a>
@@ -131,6 +128,17 @@
           <div class="dropdown-divider"></div>
 
           <a class="dropdown-item" href="#">About Us</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown paddingFont">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Login
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/adminlogin']">Admin Login</a>
+          <a class="dropdown-item" [routerLink]="['/userlogin']" href="#"><span class="sr-only">(current)</span>User Login</a>
+          <div class="dropdown-divider"></div>
         </div>
       </li>
 

@@ -59,6 +59,7 @@ import { EmployeeService } from 'service/employee-management.service';
 import { InventoryManagementComponent } from './inventory-management/inventory-management.component';
 import { InventoryHomeComponent } from './inventory-management/inventory-home/inventory-home.component';
 import { InventoryViewComponent } from './inventory-management/inventory-view/inventory-view.component';
+import { PackageService } from 'service/package-management.service';
 
 
 
@@ -124,7 +125,7 @@ import { InventoryViewComponent } from './inventory-management/inventory-view/in
 
     //NoopAnimationsModule
   ],
-  providers: [CustomerRegistrationService, EmployeeService],
+  providers: [CustomerRegistrationService, EmployeeService , PackageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

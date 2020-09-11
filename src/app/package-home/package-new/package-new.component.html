@@ -1,1 +1,104 @@
-<p>package-new works!</p>
+<div style="background-color:oldlace;">
+  <br>
+<img class="center" style="width: 300px; height: 200px;" src="../../assets/img/c55.png" alt="Card image cap">
+<br><br>
+<div class="container">
+  <form #pac="ngForm" (ngSubmit)="onSubmit()">
+    <div id="user-data">
+
+      <div class="form-row">
+
+        <div class="col-md-2">
+          <label for="cid">Package ID</label><br>
+          <input type="text" id="pid" class="form-control" ngModel name="pid" #pid="ngModel" placeholder="Auto Generated" disabled>
+        </div>
+
+        <div class="col col-md-5">
+          <label for="fname">First Name</label><br>
+          <input type="text" id="fname" class="form-control" ngModel name="fname"  #fname="ngModel"  placeholder="First Name" required>
+          <span class="help-block" *ngIf="!fname.valid && fname.touched" style="color: red">Please enter a First Name.</span>
+        </div>
+
+        <div class="col col-md-5">
+          <label for="lname">Last Name</label><br>
+          <input type="text" id="lname" class="form-control" ngModel name="lname"  #lname="ngModel" placeholder="Last Name" required>
+          <span class="help-block" *ngIf="!lname.valid && lname.touched" style="color: red">Please enter a Last Name.</span>
+        </div>
+
+      </div>
+      <br><br>
+
+      <div class="form-row">
+
+        <div class="col-md-12">
+          <label for="bdate">Booking Date</label><br>
+          <input type="datetime-local" id="bdate" class="form-control" ngModel name="bdate"  #bdate="ngModel" placeholder="Booking Date" required>
+          <span class="help-block" *ngIf="!bdate.valid && bdate.touched" style="color: red">Please enter a Booking Date</span>
+        </div>
+      </div>
+      <br><br>
+
+      <div class="form-row">
+
+        <div class="col-md-6">
+          <label for="pamount">Package Amount</label><br>
+          <input type="text" id="pamount" class="form-control" ngModel name="pamount"  #pamount="ngModel" placeholder="Amount" required>
+          <span class="help-block" *ngIf="!pamount.valid && pamount.touched" style="color: red">Please enter a state.</span>
+        </div>
+
+        <div class="col-md-6">
+          <label for="aservice">Additional Service</label><br>
+          <input type="text" id="aservice" class="form-control" ngModel name="aservice"  #aservice="ngModel" placeholder="Additional service" required>
+          <span class="help-block" *ngIf="!aservice.valid && aservice.touched" style="color: red">Please enter a Additional service.</span>
+        </div>
+      </div>
+
+      <br><br>
+
+    <div class="form-row">
+
+      <div class="col col-md-6">
+        <label for="vduration">Valid Duration</label><br>
+        <input type="text" id="vduration" class="form-control" ngModel name="vduration"  #vduration="ngModel"  placeholder="Valid Duration" required>
+        <span class="help-block" *ngIf="!vduration.valid && vduration.touched" style="color: red">Please enter a Duration.</span>
+      </div>
+
+      <div class="col col-md-6">
+        <label for="scharges">Service Charges</label><br>
+        <input type="text" id="scharges" class="form-control" ngModel name="scharges"  #scharges="ngModel"  placeholder="Service Charges" required>
+        <span class="help-block" *ngIf="!scharges.valid && scharges.touched" style="color: red">Please enter a Service Charges.</span>
+      </div>
+
+    </div>
+
+    <br><br>
+
+    <div class="form-row">
+
+      <div class="col-md-12">
+        <label for="des">Description</label><br>
+        <input type="text" id="des"  class="form-control" ngModel name="des"  #des="ngModel" placeholder="Service Charges" required>
+        <span class="help-block" *ngIf="!des.valid && des.touched" style="color: red">Please enter a Description</span>
+      </div>
+
+    </div>
+    <br><br>
+
+    <div class="form-row">
+
+    </div>
+    <div class="form-group">
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="terms">
+        <label class="form-check-label" for="gridCheck" style="padding-left: 25px;">Terms and Condtion</label>
+      </div>
+    </div>
+
+    </div>
+
+      <button class="btn btn-primary" type="submit" [disabled]="!pac.valid">Submit</button>
+      <br><br><br>
+    </form>
+
+  </div>
+</div>
