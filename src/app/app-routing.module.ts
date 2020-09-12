@@ -29,7 +29,7 @@ import { PaymentHomeComponent } from './payment-management/payment-home/payment-
 import { PaymentManagementComponent } from './payment-management/payment-management.component';
 import { PaymentViewComponent } from './payment-management/payment-view/payment-view.component';
 import { RoomReservationHomeComponent } from './room-reservation-management/room-reservation-home/room-reservation-home.component';
-import { RoomReservationManagementComponent } from './room-reservation-management/room-reservation-management.component';
+import { ReservationManagementComponent } from './room-reservation-management/room-reservation-management.component';
 import { RoomReservationViewComponent } from './room-reservation-management/room-reservation-view/room-reservation-view.component';
 import { SalaryReportHomeComponent } from './salary-report-management/salary-report-home/salary-report-home.component';
 import { SalaryReportManagementComponent } from './salary-report-management/salary-report-management.component';
@@ -75,7 +75,7 @@ const appRoutes: Routes =[
   { path: 'PayNew' , component:PaymentManagementComponent},
   { path: 'PayView' , component:PaymentViewComponent},
   { path: 'roomHome' , component:RoomReservationHomeComponent},
-  { path: 'roomNew' , component:RoomReservationManagementComponent},
+  { path: 'roomNew' , component:ReservationManagementComponent},
   { path: 'roomView' , component:RoomReservationViewComponent},
   { path: 'salaryHome' , component:SalaryReportHomeComponent},
   { path: 'salaryNew' , component:SalaryReportManagementComponent},

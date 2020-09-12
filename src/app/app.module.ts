@@ -20,7 +20,7 @@ import { EventManagementComponent } from './event-management/event-management.co
 import { PaymentManagementComponent } from './payment-management/payment-management.component';
 import { FeedbackManagementComponent } from './feedback-management/feedback-management.component';
 import { SpaManagementComponent } from './spa-management/spa-management.component';
-import { RoomReservationManagementComponent } from './room-reservation-management/room-reservation-management.component';
+import { ReservationManagementComponent } from './room-reservation-management/room-reservation-management.component';
 import { EmployeeManagementComponent } from './employee-management/employee-management.component';
 import { SalaryReportManagementComponent } from './salary-report-management/salary-report-management.component';
 import { SupplierManagementComponent } from './supplier-management/supplier-management.component';
@@ -61,6 +61,7 @@ import { InventoryHomeComponent } from './inventory-management/inventory-home/in
 import { InventoryViewComponent } from './inventory-management/inventory-view/inventory-view.component';
 import { PackageService } from 'service/package-management.service';
 import { SalaryService } from 'service/salary-management.service';
+import { ReservationService } from 'service/room-reservation.service';
 
 
 
@@ -74,7 +75,7 @@ import { SalaryService } from 'service/salary-management.service';
     PaymentManagementComponent,
     FeedbackManagementComponent,
     SpaManagementComponent,
-    RoomReservationManagementComponent,
+    ReservationManagementComponent,
     EmployeeManagementComponent,
     SalaryReportManagementComponent,
     SupplierManagementComponent,
@@ -126,7 +127,7 @@ import { SalaryService } from 'service/salary-management.service';
 
     //NoopAnimationsModule
   ],
-  providers: [CustomerRegistrationService, EmployeeService , PackageService , SalaryService],
+  providers: [CustomerRegistrationService, EmployeeService , PackageService , SalaryService , ReservationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
