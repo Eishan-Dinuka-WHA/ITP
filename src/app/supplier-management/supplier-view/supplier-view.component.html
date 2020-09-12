@@ -1,1 +1,55 @@
-<p>supplier-view works!</p>
+
+
+<div style="overflow-y: scroll; overflow-x: scroll; height: 100vh; width:100%">
+  <body style="background-color: #FEFEFE; background-size: auto;">
+
+    <div style="background-color: #5fc8f1">
+      <br><p class="h2" style="text-align:center" >Supplier Registry</p><br>
+    </div>
+
+
+    <table class="table table-striped">
+      <thead class="thead-dark">
+      <tr>
+      <th scope="col">Supplier ID</th>
+      <th scope="col">Supplier Name</th>
+      <th scope="col">Company Name</th>
+      <th scope="col">Business Address</th>
+      <th scope="col">Bussiness Telephone</th>
+      <th scope="col">Web</th>
+      <th scope="col">Email</th>
+      <th scope="col">Postal Code</th>
+      <th scope="col">Supplier Type</th>
+      <th scope="col">Products description</th>
+      <th scope="col">Supplier Email</th>
+      <th scope="col">Supplier Mobile Number</th>
+      <th scope="col">EDIT</th>
+      <th scope="col">DELETE</th>
+
+        </tr>
+      </thead>
+      <!-- <mat-spinner *ngIf = "isLoading"></mat-spinner>
+      <tbody *ngIf = "!isLoading"> -->
+
+        <tr *ngFor="let supplier of suppliers">
+          <td>{{ supplier.sid}}</td>
+          <td>{{ supplier.sname}}</td>
+          <td>{{ supplier.cname}}</td>
+          <td>{{ supplier.badd}}</td>
+          <td>{{ supplier.btele}}</td>
+          <td>{{ supplier.web}}</td>
+          <td>{{ supplier.email}}</td>
+          <td>{{ supplier.pcode}}</td>
+          <td>{{ supplier.stype}}</td>
+          <td>{{ supplier.pdes}}</td>
+          <td>{{ supplier.semail}}</td>
+          <td>{{ supplier.smnumber}}</td>
+          <td><a class="btn btn-warning pull-right" style="width:80px;">EDIT</a></td>
+          <td><a class="btn btn-danger pull-right" (click)="onDelete(supplier.sid)">DELETE</a></td>
+
+
+        </tr>
+    <!--  </tbody>  -->
+    </table>
+  </body>
+</div>

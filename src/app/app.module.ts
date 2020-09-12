@@ -63,6 +63,7 @@ import { PackageService } from 'service/package-management.service';
 import { SalaryService } from 'service/salary-management.service';
 import { ReservationService } from 'service/room-reservation.service';
 import { InventoryService } from 'service/inventory.service';
+import { SupplierRegistrationService } from 'service/supplier-registration.service';
 
 
 
@@ -128,7 +129,7 @@ import { InventoryService } from 'service/inventory.service';
 
     //NoopAnimationsModule
   ],
-  providers: [CustomerRegistrationService, EmployeeService , PackageService , SalaryService , ReservationService ,InventoryService],
+  providers: [CustomerRegistrationService, EmployeeService , PackageService , SalaryService , ReservationService ,InventoryService , SupplierRegistrationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

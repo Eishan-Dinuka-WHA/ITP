@@ -85,7 +85,7 @@ const appRoutes: Routes =[
   { path: 'spaView' , component:SpaViewComponent},
   { path: 'supHome' , component:SupplierHomeComponent},
   { path: 'supNew' , component:SupplierManagementComponent},
-  { path: 'supview' , component:SupplierViewComponent},
+  { path: 'supView' , component:SupplierViewComponent},
   { path: 'takeHome' , component:TakeawayHomeComponent},
   { path: 'takeNew' , component:TakeawayManagementComponent},
   { path: 'takeView' , component:TakeawayViewComponent},

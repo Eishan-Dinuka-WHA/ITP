@@ -1,1 +1,118 @@
-<p>supplier-management works!</p>
+
+<div class="container">
+  <form #sup="ngForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-row">
+
+        <div class="col-md-4">
+          <label for="sid">Supplier ID</label><br>
+          <input type="text" id="sid" class="form-control" ngModel name="sid" #sid="ngModel" placeholder="Auto Generated" disabled>
+        </div>
+
+        <div class="col-md-4">
+          <label for="sname">Supplier Name</label><br>
+          <input type="text" id="sname" class="form-control" ngModel name="sname" #sname="ngModel"  placeholder="Supplier Name" required>
+          <span class="help-block" *ngIf="!sname.valid && sname.touched" style="color: red">Please enter a Supplier Name.</span>
+        </div>
+
+        <div class="col col-md-4">
+          <label for="cname">Company Name</label><br>
+          <input type="text" id="cname" class="form-control" ngModel name="cname"  #cname="ngModel"  placeholder="Company Name" required>
+          <span class="help-block" *ngIf="!cname.valid && cname.touched" style="color: red">Please enter a Company Name.</span>
+        </div>
+
+      </div>
+      <br>
+      <div class="form-row">
+
+
+
+        <div class="col col-md-12">
+          <label for="badd">Business Address</label><br>
+          <input type="text" id="badd" class="form-control" ngModel name="badd"  #badd="ngModel" placeholder="Business Address" required>
+          <span class="help-block" *ngIf="!badd.valid && badd.touched" style="color: red">Please enter a Business Address</span>
+        </div>
+
+      </div>
+      <br>
+
+
+      <div class="form-row">
+
+
+        <div class="col-md-6">
+          <label for="btele">Bussiness Telephone</label><br>
+          <input type="text" id="btele" class="form-control" ngModel name="btele"  #btele="ngModel" placeholder="Bussiness Telephone" required>
+          <span class="help-block" *ngIf="!btele.valid && btele.touched" style="color: red">Please enter a Bussiness Telephone.</span>
+        </div>
+
+        <div class="col-md-6">
+          <label for="web">Web</label><br>
+          <input type="text" id="web" class="form-control" ngModel name="web"  #web="ngModel" placeholder="Web" required>
+          <span class="help-block" *ngIf="!web.valid && web.touched" style="color: red">Please enter a Web Address.</span>
+        </div>
+
+      </div>
+      <br>
+
+      <div class="form-row">
+
+        <div class="col-md-6">
+          <label for="email">Email</label><br>
+          <input type="text" id="email" class="form-control" ngModel name="email"  #email="ngModel" placeholder="Email" required>
+          <span class="help-block" *ngIf="!email.valid && email.touched" style="color: red">Please enter a Email.</span>
+        </div>
+
+        <div class="col col-md-6">
+          <label for="pcode">Postal Code</label><br>
+          <input type="text" id="pcode" class="form-control" ngModel name="pcode"  #pcode="ngModel"  placeholder="Postal Code" required>
+          <span class="help-block" *ngIf="!pcode.valid && pcode.touched" style="color: red">Please enter a Postal Code</span>
+        </div>
+
+      </div>
+      <br>
+
+    <div class="form-row">
+      <div class="col col-md-6">
+        <label for="stype">Supplier Type</label><br>
+        <select id="stype" class="form-control" ngModel name="stype"  #stype="ngModel" required>
+          <option value="Kitchen Items">Kitchen Items</option>
+          <option value="Other Items">Other Items</option>
+        </select>
+        <span class="help-block" *ngIf="!stype.valid && stype.touched" style="color: red">Please enter a Supplier Type</span>
+      </div>
+
+      <div class="col-md-6">
+        <label for="pdes">Products description</label><br>
+        <input type="pdes" id="pdes" class="form-control" ngModel name="pdes"  #pdes="ngModel" placeholder="Products description" required>
+        <span class="help-block" *ngIf="!pdes.valid && pdes.touched" style="color: red">Please enter a Products description.</span>
+      </div>
+
+
+
+    </div>
+    <br>
+
+    <div class="form-row">
+
+      <div class="col-md-6">
+        <label for="semail">Supplier Email</label><br>
+        <input type="semail" id="semail" class="form-control" ngModel name="semail"  #semail="ngModel" placeholder="Supplier Email" required>
+        <span class="help-block" *ngIf="!semail.valid && semail.touched" style="color: red">Please enter a Supplier Email</span>
+      </div>
+
+      <div class="col-md-6">
+        <label for="smnumber">Supplier Mobile Number</label><br>
+        <input type="text" id="smnumber" class="form-control" ngModel name="smnumber"  #smnumber="ngModel" placeholder="Supplier Mobile Number" required>
+        <span class="help-block" *ngIf="!smnumber.valid && smnumber.touched" style="color: red">Please enter a Supplier Mobile Number.</span>
+      </div>
+
+    </div>
+    <br>
+
+    <div class="form-row">
+      <button class="btn btn-primary" type="submit" [disabled]="!sup.valid">Submit</button>
+      <br><br><br>
+      </div>
+      </form>
+  </div>
