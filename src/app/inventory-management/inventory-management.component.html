@@ -1,1 +1,49 @@
-<p>inventory-management works!</p>
+<p style = "text-align:center; font-size:200%;">Add New Item </p>
+<form #inv="ngForm" (ngSubmit)="onSubmit()">
+  <div>
+  <fieldset>
+  <label for = "IT01" class = label3>Item Name:</label><br>
+  <input type = "text" id="IT01" ngModel name = "IT01" #IT01="ngModel" class = "label4" required><br>
+  <span class="help-block" *ngIf="!IT01.valid && IT01.touched" style="color: red;">Please enter a valid Item Name</span><br><br>
+  <label for = "AV01" class = label3>Avaliability:</label><br>
+  <div class="select">
+    <span class="arr"></span>
+    <p style="font-weight: 500;">Select value:</p>
+    <select id="AV01" name="Avaliability" style="width:200px;" ngModel name="AV01" #AV01="ngModel">
+      <option value = "100">100</option>
+      <option value = "500">500</option>
+      <option value = "250">250</option>
+      <option value = "10">10</option>
+      <option value = "5">5</option>
+      <option value = "2">2</option>
+    </select>
+  </div>
+  <span class="tab"></span>
+  <div class="select">
+    <span class="arr"></span>
+    <p style="font-weight: 500;">Select unit:</p>
+    <select id="AV02" name="Avaliability2" style="width:200px;" class = label4 ngModel name = "AV02" #AV02="ngModel">
+      <option value = "kg">kg</option>
+      <option value = "g">g</option>
+      <option value = "packets">Packets</option>
+      <option value = "items">Items</option>
+    </select>
+</div>
+<br><br>
+  <label for = "U1" class = label3>Unit Price:</label><br>
+  <input type = "text" id = "U1" name = "Unit price" value = "Rs. 150" class = label4 ngModel name = "U1" #U1="ngModel" required><br>
+  <span class="help-block" *ngIf="!U1.valid && U1.touched" style="color: red;">Please enter a valid unit price</span><br>
+
+  <label for = "Date1" class = label3>Added Date:</label><br>
+  <input type = "date" id = "Date1" name = "Added Date" value = "03/13/2020" class = label4 ngModel name = "Date1" #Date1="ngModel" required><br><br>
+  <span class="help-block" *ngIf="!Date1.valid && Date1.touched" style="color: red;">Please select a date</span><br>
+  <label for = "Sup" class = label3>Supplier:</label><br>
+  <input type = "text" id ="Sup" name = "Supplier" value = "System date" class = label4 ngModel name = "Sup" #Sup="ngModel" required  ><br>
+  <span class="help-block" *ngIf="!Sup.valid && Sup.touched" style="color: red;">Please select a Supplier</span><br>
+
+<br>
+<span class="tab2"></span><button type = "submit" class = button [disabled]="!inv.valid">Add Item</button><span class="tab4"></span>
+  <button type = "button" class = button (click)="clear()">Clear All</button>
+</fieldset>
+</div>
+  </form>

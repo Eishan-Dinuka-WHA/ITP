@@ -1,0 +1,173 @@
+input[type=text] {
+  width: 75%;
+  padding: 12px 20px;
+  margin: 6px 0;
+  box-sizing: border-box;
+  border-radius: 1px;
+  border:2px solid #000;
+}
+
+input[type=select] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 1px;
+  border:2px solid #000;
+}
+
+.tab {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.button {
+  background-color: #ab47bc;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 9px #6a1b9a;
+  cursor: pointer;
+}
+
+.button:hover {background-color: #6a1b9a}
+
+.button:active {
+  background-color: #ff4d4d;
+  box-shadow: 0 5px #ff80df;
+  transform: translateY(4px);
+}
+
+.tab2 {
+  display: inline-block;
+  margin-left: 25%;
+}
+
+.tab3 {
+  display: inline-block;
+  margin-left: 15%;
+}
+
+.tab4{
+  display: inline-block;
+  margin-left: 10%;
+}
+
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  color: #000;
+  font-weight:bold;
+  font-family: "Helvetica", arial, sans-serif;
+  font-size: 18px;
+  border:2px solid #000;
+  padding:5px;
+  display: inline-block !important;
+  visibility: visible !important;
+}
+
+.label3{
+  font-size: 130%;
+  color:black;
+  font-weight:bold;
+}
+
+.label4{
+  font-size:125%;
+  font-family:Gill Sans, sans-serif;
+  font-weight: 500;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+
+
+.select {
+  font-size: 19.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.select select {
+  outline: none;
+  -webkit-appearance: none;
+  display: block;
+  padding: none;
+  margin: 0;
+
+  transition: border-color 0.2s;
+  border: 3px solid;
+  border-radius: 5px;
+
+  background: #fff;
+  color: #555;
+  line-height: normal;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* .select .arr {
+  background: #fff;
+  bottom: 1px;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  width: none;
+  pointer-events: none;
+}
+.select .arr:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  margin-top: -5px;
+  pointer-events: none;
+  border-top: 10px solid #EB5168;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.select .arr:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 28px;
+  margin-top: -2px;
+  pointer-events: none;
+  border-top: 6px solid #fff;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+} */
+
+div {
+  border: 3px solid #303f9f;
+  background-color: #c5cae9;
+  padding-top: 25px;
+  padding-right: 140px;
+  padding-bottom: 25px;
+  padding-left: 190px;
+
+}
+
+input.ng-invalid.ng-touched{
+  border: 3px solid red;
+}
+

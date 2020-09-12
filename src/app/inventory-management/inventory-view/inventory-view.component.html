@@ -1,1 +1,35 @@
-<p>inventory-view works!</p>
+<h1 style = "text-align:center">Kitchen Inventry</h1>
+<br><br>
+<button type = "button" class = "button" [routerLink]="['/intNew']"><u>Add New Item</u></button><br><br>
+<table style="width:100%">
+  <tr class = textcase>
+    <th>No</th>
+    <th>Item Name</th>
+    <th>Avaliability</th>
+    <th>Unit Price</th>
+    <th>Added Date</th>
+    <th>Supplier</th>
+    <th colspan="2" style="text-align: center;">Action</th>
+  </tr>
+
+  <tr *ngFor="let inventory of inventories">
+    <td>{{ inventory.iid }}</td>
+    <td>{{ inventory.IT01 }}</td>
+    <td>{{ inventory.AV01 }} {{ inventory.AV02}}</td>
+    <td>{{ inventory.U1 }}</td>
+    <td>{{ inventory.Date1 }}</td>
+    <td>{{ inventory.Sup }}</td>
+    <td><a class="btn btn-warning pull-right" style="width:80px;">EDIT</a></td>
+    <td><a class="btn btn-danger pull-right" (click)="onDelete(inventory.iid)">DELETE</a></td>
+
+
+  </tr>
+
+
+
+
+
+
+</table>
+
+
