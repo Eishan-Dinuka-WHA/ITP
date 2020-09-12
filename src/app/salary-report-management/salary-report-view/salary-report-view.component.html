@@ -1,1 +1,69 @@
-<p>salary-report-view works!</p>
+
+<div style="overflow-y: scroll; overflow-x: scroll; height: 100vh; width:fit-content">
+  <body style="background-color: #bbdefb; width: 100%">
+
+    <div style="background-color: #5fc8f1; width:100%">
+      <br><p class="h2" style="text-align:center" >Salary Report</p><br>
+    </div>
+
+    <table class="table table-striped" style="width: fit-content;">
+      <thead class="thead-dark">
+      <tr>
+      <th scope="col">Salary ID</th>
+      <th scope="col">Employee Name</th>
+      <th scope="col">Employee Type</th>
+      <th scope="col">Department</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Toatl Overtime Hours</th>
+      <th scope="col">Total working day per month</th>
+      <th scope="col">Pay Date</th>
+      <th scope="col">Basic Salary</th>
+      <th scope="col">Overtime Working</th>
+      <th scope="col">Welfare</th>
+      <th scope="col">EPF(10%)</th>
+      <th scope="col">Bouns</th>
+      <th scope="col">Stamp</th>
+      <th scope="col">Dis.Loan</th>
+      <th scope="col">Insurance</th>
+      <th scope="col">Festival Advance</th>
+      <th scope="col">Total Deduction</th>
+      <th scope="col">Gross Pay</th>
+      <th scope="col">Net Pay</th>
+      <th scope="col" colspan="2" class="text-center">Action</th>
+
+
+        </tr>
+      </thead>
+      <!-- <mat-spinner *ngIf = "isLoading"></mat-spinner>
+      <tbody *ngIf = "!isLoading"> -->
+
+        <tr *ngFor="let salary of salarys">
+          <td>{{ salary.sid}}</td>
+          <td>{{ salary.ename}}</td>
+          <td>{{ salary.etype}}</td>
+          <td>{{ salary.dept}}</td>
+          <td>{{ salary.des}}</td>
+          <td>{{ salary.toh}}</td>
+          <td>{{ salary.twd}}</td>
+          <td>{{ salary.payd}}</td>
+          <td>{{ salary.bsal}}</td>
+          <td>{{ salary.owork}}</td>
+          <td>{{ salary.welf}}</td>
+          <td>{{ salary.epf}}</td>
+          <td>{{ salary.bonus}}</td>
+          <td>{{ salary.stamp}}</td>
+          <td>{{ salary.dloan}}</td>
+          <td>{{ salary.ins}}</td>
+          <td>{{ salary.fadvan}}</td>
+          <td>{{ salary.tde}}</td>
+          <td>{{ salary.gpay}}</td>
+          <td>{{ salary.npay}}</td>
+          <td style="padding-right: 1px;"><a class="btn btn-warning pull-right" style="width:80px;">EDIT</a></td>
+          <td style="padding-left: 1px;"><a class="btn btn-danger pull-right" style="width:80px; " (click)="onDelete(salary.sid)">DELETE</a></td>
+
+
+        </tr>
+    <!--  </tbody>  -->
+    </table>
+  </body>
+</div>

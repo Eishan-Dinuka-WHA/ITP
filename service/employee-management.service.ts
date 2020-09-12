@@ -12,7 +12,7 @@ export class EmployeeService{
 
   constructor(private http: HttpClient){}
 
-  getCustomer(){
+  getEmployee(){
     this.http.get<{message: string, employees: any}>('http://localhost:3000/api/employees')
       .pipe(map((employeeData) => {
           return employeeData.employees.map(employee => {

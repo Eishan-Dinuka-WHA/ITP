@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 const customerRoutes = require("./routes/customer-registration");
 const employeeRoutes = require("./routes/employee-management");
 const packageRoutes = require("./routes/package-management");
+const salarysRoutes = require("./routes/salary-management");
+
 // const projectRoutes = require("");
 
 const app = express();
@@ -43,6 +45,7 @@ app.use((req, res, next) => {
 app.use("/api/customers", customerRoutes);
 app.use("/api/employees", employeeRoutes);
 app.use("/api/packages", packageRoutes);
+app.use("/api/salarys", salarysRoutes);
 // app.use("/api/project", projectRoutes);
 
 module.exports = app;

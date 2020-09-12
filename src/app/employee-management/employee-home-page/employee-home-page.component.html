@@ -1,161 +1,194 @@
+<div style="background-color: #ce93d8;">
+  <br>
+  <img class="center" style="width: 300px; height: 200px;" src="../../assets/img/e1.jpg" alt="Card image cap">
+  <br>
+  <div class="container">
+    <form #emp="ngForm" (ngSubmit)="onSubmit()">
+      <div id="user-data">
 
-<div class="container">
-  <form #emp="ngForm" (ngSubmit)="onSubmit()">
-    <div id="user-data">
+        <div class="form-row">
 
-      <div class="form-row">
+          <div class="col-md-6">
+            <label for="cid">Employee ID</label><br>
+            <input type="text" id="eid" class="form-control" ngModel name="eid" #eid="ngModel"
+              placeholder="Auto Generated" disabled>
+          </div>
 
-        <div class="col-md-6">
-          <label for="cid">Employee ID</label><br>
-          <input type="text" id="eid" class="form-control" ngModel name="eid" #eid="ngModel" placeholder="Auto Generated" disabled>
+          <div class="col-md-6">
+            <label for="uname">User Name</label><br>
+            <input type="text" id="uname" class="form-control" ngModel name="uname" #uname="ngModel"
+              placeholder="User Name" required>
+            <span class="help-block" *ngIf="!uname.valid && uname.touched" style="color: red">Please enter a User
+              Name.</span>
+          </div>
+
         </div>
+        <br>
+        <div class="form-row">
 
-        <div class="col-md-6">
-          <label for="uname">User Name</label><br>
-          <input type="text" id="uname" class="form-control" ngModel name="uname" #uname="ngModel"  placeholder="User Name" required>
+          <div class="col-md-6">
+            <label for="fname">First Name</label><br>
+            <input type="text" id="fname" class="form-control" ngModel name="fname" #fname="ngModel"
+              placeholder="First Name" required>
+            <span class="help-block" *ngIf="!fname.valid && fname.touched" style="color: red">Please enter a First
+              Name.</span>
+          </div>
+
+          <div class="col-md-6">
+            <label for="lname">Last Name</label><br>
+            <input type="text" id="lname" class="form-control" ngModel name="lname" #lname="ngModel"
+              placeholder="Last Name" required>
+            <span class="help-block" *ngIf="!lname.valid && lname.touched" style="color: red">Please enter a Last
+              Name.</span>
+          </div>
+
+        </div>
+        <br>
+        <div class="form-row">
+
+          <div class="col col-md-6">
+            <label for="address">Address</label><br>
+            <input type="text" id="address" class="form-control" ngModel name="address" #address="ngModel"
+              placeholder="Address" required>
+            <span class="help-block" *ngIf="!address.valid && address.touched" style="color: red">Please enter a
+              Address</span>
+          </div>
+
+          <div class="col col-md-6">
+            <label for="nic">NIC</label><br>
+            <input type="text" id="nic" class="form-control" ngModel name="nic" #nic="ngModel" placeholder="NIC"
+              required>
+            <span class="help-block" *ngIf="!nic.valid && nic.touched" style="color: red">Please enter a NIC</span>
+          </div>
+
+        </div>
+        <br>
+
+        <div class="form-row">
+
+          <div class="col col-md-6">
+            <label for="dob">Date of Birth</label><br>
+            <input type="date" id="dob" class="form-control" ngModel name="dob" #dob="ngModel"
+              placeholder="Date of Birth" required>
+            <span class="help-block" *ngIf="!nic.valid && nic.touched" style="color: red">Please enter a DOB</span>
+          </div>
+
+          <div class="col col-md-6">
+            <label for="gender">Gender</label><br>
+            <select id="gender" class="form-control" ngModel name="gender" #gender="ngModel" required>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+
+        </div>
+        <br>
+
+
+        <div class="form-row">
+
+          <div class="col col-md-6">
+            <label for="mno">Mobile No</label><br>
+            <input type="text" id="mno" class="form-control" ngModel name="mno" #mno="ngModel" placeholder="Mobile No"
+              required>
+            <span class="help-block" *ngIf="!mno.valid && mno.touched" style="color: red">Please enter a Mobile
+              Number</span>
+          </div>
+
+          <div class="col col-md-6">
+            <label for="edd">Education Details</label><br>
+            <input type="text" id="edd" class="form-control" ngModel name="edd" #edd="ngModel"
+              placeholder="Education Details" required>
+            <span class="help-block" *ngIf="!edd.valid && edd.touched" style="color: red">Please enter a Education
+              Details</span>
+          </div>
+
+        </div>
+        <br>
+
+        <div class="form-row">
+
+          <div class="col col-md-6">
+            <label for="apn">Appointment Date</label><br>
+            <input type="datetime-local" id="apn" class="form-control" ngModel name="apn" #apn="ngModel"
+              placeholder="Appointment Date" required>
+            <span class="help-block" *ngIf="!apn.valid && apn.touched" style="color: red">Please enter a Appointment
+              Date</span>
+          </div>
+
+          <div class="col col-md-6">
+            <label for="lname">Join Date</label><br>
+            <input type="datetime-local" id="joind" class="form-control" ngModel name="joind" #joind="ngModel"
+              placeholder="Join Date" required>
+            <span class="help-block" *ngIf="!edd.valid && edd.touched" style="color: red">Please enter a Join
+              Date</span>
+          </div>
+
+        </div>
+        <br>
+
+        <div class="form-row">
+
+          <div class="col col-md-6">
+            <label for="dept">Department</label><br>
+            <input type="text" id="dept" class="form-control" ngModel name="dept" #dept="ngModel"
+              placeholder="Department" required>
+            <span class="help-block" *ngIf="!edd.valid && edd.touched" style="color: red">Please enter a
+              Department</span>
+          </div>
+
+          <div class="col col-md-6">
+            <label for="des">Designation</label><br>
+            <input type="text" id="dcs" class="form-control" ngModel name="dcs" #dcs="ngModel" placeholder="Designation"
+              required>
+            <span class="help-block" *ngIf="!dcs.valid && dcs.touched" style="color: red">Please enter a
+              Designation</span>
+          </div>
+
+        </div>
+        <br>
+
+
+        <div class="form-row">
+
+          <div class="col col-md-6">
+            <label for="empty">Employee Type</label><br>
+            <input type="text" id="empty" class="form-control" ngModel name="empty" #empty="ngModel"
+              placeholder="Employee Type" required>
+            <span class="help-block" *ngIf="!empty.valid && empty.touched" style="color: red">Please enter Employee
+              Type</span>
+          </div>
+
+          <div class="col col-md-6">
+            <label for="sal">Salary</label><br>
+            <input type="text" id="sal" class="form-control" ngModel name="sal" #sal="ngModel" placeholder="Salary"
+              required>
+          </div>
+
+        </div>
+        <br>
+
+        <div class="form-row">
+
+          <div class="col-md-6">
+            <label for="password">Password</label><br>
+            <input type="password" id="password" class="form-control" ngModel name="password" #password="ngModel"
+              placeholder="Password" required>
+            <span class="help-block" *ngIf="!password.valid && password.touched" style="color: red">Please enter
+              Password</span>
+          </div>
+
+          <div class="col-md-6">
+            <label for="mnumber">Re-Enter Password</label><br>
+            <input type="password" id="rpassword" class="form-control" ngModel name="rpassword" #rpassword="ngModel"
+              placeholder="Re-enter-password" required>
+            <span class="help-block" *ngIf="!rpassword.valid && rpassword.touched" style="color: red">Please enter
+              Re-enter password</span>
+          </div>
+
         </div>
 
       </div>
-      <br>
-      <div class="form-row">
-
-        <div class="col-md-6">
-          <label for="fname">First Name</label><br>
-          <input type="text" id="fname" class="form-control" ngModel name="fname" #fname="ngModel"  placeholder="First Name" required>
-        </div>
-
-        <div class="col-md-6">
-          <label for="lname">Last Name</label><br>
-          <input type="text" id="lname" class="form-control" ngModel name="lname" #lname="ngModel"  placeholder="Last Name" required>
-        </div>
-
-      </div>
-      <br>
-      <div class="form-row">
-
-        <div class="col col-md-6">
-          <label for="address">Address</label><br>
-          <input type="text" id="address" class="form-control" ngModel name="address"  #address="ngModel"  placeholder="Address" required>
-        </div>
-
-        <div class="col col-md-6">
-          <label for="nic">NIC</label><br>
-          <input type="text" id="nic" class="form-control" ngModel name="nic"  #nic="ngModel" placeholder="NIC" required>
-        </div>
-
-      </div>
-      <br>
-
-      <div class="form-row">
-
-        <div class="col col-md-6">
-          <label for="dob">Date of Birth</label><br>
-          <input type="text" id="dob" class="form-control" ngModel name="dob"  #dob="ngModel"  placeholder="Date of Birth" required>
-        </div>
-
-        <div class="col col-md-6">
-          <label for="gender">Gender</label><br>
-          <select id="gender" class="form-control" ngModel name="gender"  #gender="ngModel" required>
-            <option value="foreign">Male</option>
-            <option value="local">Female</option>
-          </select>
-        </div>
-
-      </div>
-      <br>
-
-
-      <div class="form-row">
-
-        <div class="col col-md-6">
-          <label for="mno">Mobile No</label><br>
-          <input type="text" id="mno" class="form-control" ngModel name="mno"  #mno="ngModel"  placeholder="Mobile No" required>
-        </div>
-
-        <div class="col col-md-6">
-          <label for="edd">Education Details</label><br>
-          <input type="text" id="edd" class="form-control" ngModel name="edd"  #edd="ngModel"  placeholder="Education Details" required>
-        </div>
-
-      </div>
-      <br>
-
-      <div class="form-row">
-
-        <div class="col col-md-6">
-          <label for="apn">Appointment Date</label><br>
-          <input type="datetime-local" id="apn" class="form-control" ngModel name="apn"  #apn="ngModel"  placeholder="Appointment Date" required>
-        </div>
-
-        <div class="col col-md-6">
-          <label for="lname">Join Date</label><br>
-          <input type="datetime-local" id="joind" class="form-control" ngModel name="joind"  #joind="ngModel" placeholder="Join Date" required>
-        </div>
-
-      </div>
-      <br>
-
-      <div class="form-row">
-
-        <div class="col col-md-6">
-          <label for="dept">Department</label><br>
-          <input type="text" id="dept" class="form-control" ngModel name="dept"  #dept="ngModel"  placeholder="Department" required>
-        </div>
-
-        <div class="col col-md-6">
-          <label for="des">Designation</label><br>
-          <input type="text" id="dcs" class="form-control" ngModel name="dcs"  #des="ngModel" placeholder="Designation" required>
-        </div>
-
-      </div>
-      <br>
-
-
-      <div class="form-row">
-
-        <div class="col col-md-6">
-          <label for="empty">Employee Type</label><br>
-          <input type="text" id="empty" class="form-control" ngModel name="empty"  #empty="ngModel"  placeholder="Employee Type" required>
-        </div>
-
-        <div class="col col-md-6">
-          <label for="sal">Salary</label><br>
-          <input type="text" id="sal" class="form-control" ngModel name="sal"  #sal="ngModel" placeholder="Salary" required>
-        </div>
-
-      </div>
-      <br>
-
-      <div class="form-row">
-
-        <div class="col col-md-6">
-          <label for="fname">Address</label><br>
-          <input type="text" id="address" class="form-control" ngModel name="address"  #address="ngModel"  placeholder="Address" required>
-        </div>
-
-        <div class="col col-md-6">
-          <label for="lname">NIC</label><br>
-          <input type="text" id="nic" class="form-control" ngModel name="nic"  #nic="ngModel" placeholder="NIC" required>
-        </div>
-
-      </div>
-       <br>
-
-    <div class="form-row">
-
-      <div class="col-md-6">
-        <label for="password">Password</label><br>
-        <input type="password" id="password" class="form-control" ngModel name="password"  #password="ngModel" placeholder="Password" required>
-      </div>
-
-      <div class="col-md-6">
-        <label for="mnumber">Re-Enter Password</label><br>
-        <input type="password" id="rpassword" class="form-control" ngModel name="rpassword"  #rpassword="ngModel"  placeholder="Re-enter-password" required>
-      </div>
-
-    </div>
-
-    </div>
       <br>
       <button class="btn btn-primary" type="submit" [disabled]="!emp.valid">Submit</button>
       <br><br><br>
@@ -163,3 +196,4 @@
 
   </div>
 
+</div>

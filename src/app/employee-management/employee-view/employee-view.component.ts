@@ -18,7 +18,7 @@ export class EmployeeViewComponent implements OnInit , OnDestroy {
 
   ngOnInit(){
     this.isLoading = true;
-    this.employees = this.employeeService.getCustomer();
+    this.employees = this.employeeService.getEmployee();
     this.subscription = this.employeeService.employeeChanged.subscribe(
       (employees: Employees[]) => {
         this.employees = employees;
