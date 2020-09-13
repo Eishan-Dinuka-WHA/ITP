@@ -1,1 +1,99 @@
-<p>spa-management works!</p>
+<br>
+<h1 class="text-center">SPA Client Intake Form</h1><br>
+<div class="container">
+  <form #sp="ngForm" (ngSubmit)="onSubmit()">
+    <div id="user-data">
+
+      <div class="form-row">
+
+        <div class="col-md-6">
+          <label for="cid">First Name</label>
+          <input type="text" id="fname" class="form-control" ngModel name="fname" #fname="ngModel" required>
+          <span class="help-block" *ngIf="!fname.valid && fname.touched" style="color: red">Please enter first
+            name.</span>
+        </div>
+
+        <div class="col-md-6">
+          <label for="uname">Last Name</label><br>
+          <input type="text" id="lname" class="form-control" ngModel name="lname" #lname="ngModel" required>
+          <span class="help-block" *ngIf="!lname.valid && lname.touched" style="color: red">Please enter last
+            name.</span>
+          <br>
+        </div>
+      </div>
+      <div class="form-row">
+        <br>
+        <div class="col-md-6">
+          <label for="age">Age</label><br>
+          <input type="text" id="age" class="form-control" ngModel name="age" #age="ngModel" required>
+          <span class="help-block" *ngIf="!age.valid && age.touched" style="color: red">Please enter age.</span><br>
+        </div>
+      </div>
+      <div class="form-row">
+        <br>
+        <div class="col-md-6">
+          <label for="uname">Gender</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" ngModel type="radio" #gender="ngModel" name="gender" id="male" value="Male">
+            <label class="form-check-label" for="inlineRadio1">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input ngModel class="form-check-input" type="radio" #gender="ngModel" name="gender" id="female"
+              value="Female">
+            <label class="form-check-label" for="inlineRadio2">Female</label>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <div class="form-row">
+        <br>
+        <div class="col-md-6">
+          <label for="uname">Phone Number</label>
+          <input type="text" id="pnumber" class="form-control" pattern="^\d{10}$" ngModel name="pnumber"
+            #pnumber="ngModel" required>
+          <span class="help-block" *ngIf="!pnumber.valid && pnumber.touched" style="color: red">Please enter valid phone
+            number</span>
+        </div>
+      </div>
+      <br><br>
+
+      <div class="form-row">
+        <p>If you have any health conditions, Please mention below</p><br><br>
+        <textarea id="condition" rows=4 class="form-control" ngModel name="condition" required #condition="ngModel"
+          required>
+          </textarea>
+        <span class="help-block" *ngIf="!condition.valid && condition.touched" style="color: red">Please enter
+          condition. If not, enter "none"</span>
+      </div><br><br>
+
+      <div class="form-row">
+        <label for="title">Package Selection</label><br>
+        <select id="cpackage" class="form-control" ngModel name="cpackage" #cpackage="ngModel" [ngModel]="defaultValue"
+          required>
+          <option value="choose" disabled>Choose your package</option>
+          <option value="Traditional Body Scrub">Traditional Body Scrub</option>
+          <option value="Thai Massage">Thai Massage</option>
+          <option value="Milk and Honey Bath">Milk and Honey Bath</option>
+          <option value="Skin Pure">Skin Pure</option>
+        </select>
+      </div>
+
+      <br>
+      <div class="form-row">
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="checkbox" id="terms">
+          <label class="form-check-label" for="gridCheck">Terms and Condtion</label>
+        </div>
+      </div>
+
+
+
+
+      <button class="btn btn-primary" type="submit" [disabled]="!sp.valid">Submit</button>
+      <br><br><br>
+
+
+    </div>
+  </form>
+</div>

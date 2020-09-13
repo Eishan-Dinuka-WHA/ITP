@@ -66,6 +66,7 @@ import { InventoryService } from 'service/inventory.service';
 import { SupplierRegistrationService } from 'service/supplier-registration.service';
 import {MatIconModule} from '@angular/material/icon';
 import { TakeawayManagementService } from 'service/takeaway-management.service';
+import { SpaManagementService } from 'service/spa-management.service';
 
 
 
@@ -132,7 +133,7 @@ import { TakeawayManagementService } from 'service/takeaway-management.service';
 
     //NoopAnimationsModule
   ],
-  providers: [CustomerRegistrationService, EmployeeService , PackageService , SalaryService , ReservationService ,InventoryService , SupplierRegistrationService , TakeawayManagementService],
+  providers: [CustomerRegistrationService, EmployeeService , PackageService , SalaryService , ReservationService ,InventoryService , SupplierRegistrationService , TakeawayManagementService , SpaManagementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

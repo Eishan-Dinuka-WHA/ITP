@@ -9,6 +9,7 @@ const salarysRoutes = require("./routes/salary-management");
 const reservationRoutes = require("./routes/room-reservation");
 const inventoryRoutes = require("./routes/Inventory-add-Items");
 const supplierRoutes = require("./routes/supplier-registration");
+const spaRoutes = require("./routes/spa-management");
 
 // const projectRoutes = require("");
 
@@ -52,5 +53,6 @@ app.use("/api/salarys", salarysRoutes);
 app.use("/api/reservations", reservationRoutes);
 app.use("/api/inventories", inventoryRoutes);
 app.use("/api/suppliers", supplierRoutes);
+app.use("/api/spas", spaRoutes);
 
 module.exports = app;

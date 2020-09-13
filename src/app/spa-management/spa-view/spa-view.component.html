@@ -1,1 +1,44 @@
-<p>spa-view works!</p>
+
+<div style="overflow-y: scroll; overflow-x: scroll; height: 100vh; width:100%">
+  <body style="background-color: #FEFEFE; background-size: auto;">
+
+    <div style="background-color: #5fc8f1;width:100%">
+      <br><p class="h2" style="text-align:center" >Spa Details</p><br>
+    </div>
+
+    <table class="table table-striped">
+      <thead class="thead-dark">
+      <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Condition</th>
+      <th scope="col">Chosen Package</th>
+      <th scope="col" colspan="2" class="text-center">Action</th>
+
+       </tr>
+      </thead>
+      <!-- <mat-spinner *ngIf = "isLoading"></mat-spinner>
+      <tbody *ngIf = "!isLoading"> -->
+
+        <tr *ngFor="let spa of spas">
+          <td>{{ spa.fname}}</td>
+          <td>{{ spa.lname}}</td>
+          <td>{{ spa.age}}</td>
+          <td>{{ spa.gender}}</td>
+          <td>{{ spa.pnumber}}</td>
+          <td>{{ spa.condition}}</td>
+          <td>{{ spa.cpackage}}</td>
+          <td class="text-center">
+            <a class="btn btn-warning pull-right" style="width:80px;">EDIT</a>
+            <a class="btn btn-danger pull-right" style="width:80px; margin-left: 10px;"(click)="onDelete(spa.sid)">DELETE</a>
+          </td>
+
+
+        </tr>
+    <!--  </tbody>  -->
+    </table>
+  </body>
+</div>
