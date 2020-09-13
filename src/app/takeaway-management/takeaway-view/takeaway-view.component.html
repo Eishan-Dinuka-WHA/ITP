@@ -1,1 +1,52 @@
-<p>takeaway-view works!</p>
+<div style="background-color:cadetblue;">
+  <div style="overflow-y: scroll; overflow-x: scroll; height: 100vh; width:100%">
+    <body style="background-color: #FEFEFE; background-size: auto;">
+
+      <div style="background-color: #5fc8f1;width:100%">
+        <br><p class="h2" style="text-align:center" >FOOD MENU DETAILS</p><br>
+      </div>
+
+      <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+        <th scope="col">Fid</th>
+        <th scope="col">Fname</th>
+        <th scope="col">Lname</th>
+        <th scope="col">Venue</th>
+        <th scope="col">Address</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">When</th>
+        <th scope="col">Time</th>
+        <th scope="col">Payment</th>
+        <th scope="col" colspan="2" class="text-center">Action</th>
+
+
+          </tr>
+        </thead>
+        <!-- <mat-spinner *ngIf = "isLoading"></mat-spinner>
+        <tbody *ngIf = "!isLoading"> -->
+
+          <tr *ngFor="let restaurant of restaurants">
+            <td>{{ restaurant.fid}}</td>
+            <td>{{ restaurant.fname}}</td>
+            <td>{{ restaurant.lname}}</td>
+            <td>{{ restaurant.venue}}</td>
+            <td>{{ restaurant.address}}</td>
+            <td>{{ restaurant.email}}</td>
+            <td>{{ restaurant.phone}}</td>
+            <td>{{ restaurant.when}}</td>
+            <td>{{ restaurant.time}}</td>
+            <td>{{ restaurant.payment}}</td>
+
+            <td><a class="btn btn-warning pull-right" style="width:80px;">UPDATE</a></td>
+            <td><a class="btn btn-danger pull-right" (click)="onDelete(restaurant.fid)">DELETE</a></td>
+
+
+          </tr>
+      <!--  </tbody>  -->
+      </table>
+    </body>
+  </div>
+  </div>
+

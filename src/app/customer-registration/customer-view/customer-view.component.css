@@ -1,0 +1,74 @@
+table, th, td {
+  border: 2px solid black;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  text-align: left;
+  padding: 3px;
+  font-size: 16px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #00cc00;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.tab {
+  display: inline-block;
+  margin-left: 100px;
+}
+
+  .button1 {
+    background-color: hsl(263, 86%, 41%);
+    border-radius: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: medium;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 2px 2px;
+    cursor: pointer;
+    padding: 10px 24px;
+    font-weight: bold;
+  }
+
+  .button1:hover {
+    background-color: #3633ee;
+  }
+
+  .button2 {
+    background-color: #ff0000;
+    border-radius: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: medium;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 2px 2px;
+    cursor: pointer;
+    padding: 10px 24px;
+    font-weight: bold;
+  }
+
+  .button2:hover {
+    background-color: #f32032;
+  }

@@ -64,6 +64,8 @@ import { SalaryService } from 'service/salary-management.service';
 import { ReservationService } from 'service/room-reservation.service';
 import { InventoryService } from 'service/inventory.service';
 import { SupplierRegistrationService } from 'service/supplier-registration.service';
+import {MatIconModule} from '@angular/material/icon';
+import { TakeawayManagementService } from 'service/takeaway-management.service';
 
 
 
@@ -126,10 +128,11 @@ import { SupplierRegistrationService } from 'service/supplier-registration.servi
     MatInputModule,
     MatProgressBarModule,
     MatToolbarModule,
+    MatIconModule,
 
     //NoopAnimationsModule
   ],
-  providers: [CustomerRegistrationService, EmployeeService , PackageService , SalaryService , ReservationService ,InventoryService , SupplierRegistrationService],
+  providers: [CustomerRegistrationService, EmployeeService , PackageService , SalaryService , ReservationService ,InventoryService , SupplierRegistrationService , TakeawayManagementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

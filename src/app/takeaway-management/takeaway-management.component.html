@@ -1,1 +1,184 @@
-<p>takeaway-management works!</p>
+<div style="background-color:cadetblue;">
+  <div class="container">
+    <form #rest="ngForm" (ngSubmit)="onSubmit()">
+      <div id="user-data">
+
+
+        <h2>Order Now</h2>
+
+        <div class="card" style="width: 20rem;">
+          <img class="card-img-top" src='../../assets/img/salad.png' alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><b>MINSTRONE MUTTON SOUP LKR.480.00</b></h5>
+            <p class="card-text"> CATEGORY : Soups</p>
+            <a href="#" class="btn btn-primary">Add 1 to order</a>
+          </div>
+        </div>
+
+        <h2>Delivery Details</h2>
+
+        <div class="form-row">
+
+          <div class="col col-md-6">
+            <label for="fname">First Name</label><br>
+            <input type="text" id="fname" class="form-control" ngModel name="fname" #fname="ngModel"
+              placeholder="First Name" required>
+            <span class="help-block" *ngIf="!fname.valid && fname.touched" style="color: red">Please enter a First
+              Name.</span>
+          </div>
+
+          <div class="col col-md-6">
+            <label for="lname">Last Name</label><br>
+            <input type="text" id="lname" class="form-control" ngModel name="lname" #lname="ngModel"
+              placeholder="Last Name" required>
+            <span class="help-block" *ngIf="!lname.valid && lname.touched" style="color: red">Please enter a Last
+              Name.</span>
+          </div>
+        </div>
+      </div><br><br>
+
+
+      <div class="form-row">
+
+        <select id="venue" class="form-control" ngModel name="venue" #venue="ngModel" [ngModel]="defaultValue" required>
+          <option value="choose">Meet at door...</option>
+          <option value="Meet at outside">Meet at outside</option>
+          <option value="Meet at Leave at door">Meet at Leave at door</option>
+          <span class="help-block" *ngIf="!venue.valid && venue.touched" style="color: red">Please enter the
+            venue.</span>
+        </select>
+
+      </div>
+      <br><br>
+
+      <div class="form-row">
+
+        <div class="col-md-4">
+          <label for="address">Address</label><br>
+          <input type="text" id="address" class="form-control" ngModel name="address" #address="ngModel"
+            placeholder="Apartment,Suit or floor" required>
+          <span class="help-block" *ngIf="!address.valid && address.touched" style="color: red">Please enter the
+            address.</span>
+        </div>
+
+        <div class="col-md-4">
+          <label for="address"></label><br>
+          <input type="text" id="address" class="form-control" ngModel name="address" #address="ngModel"
+            placeholder="Business name" required>
+          <span class="help-block" *ngIf="!address.valid && address.touched" style="color: red">Please enter the
+            Business name.</span>
+        </div>
+
+        <div class="col col-md-6">
+          <label for="address"></label><br>
+          <input type="text" id="address" class="form-control" ngModel name="address" #address="ngModel"
+            placeholder="Add delivery instructions" required>
+          <span class="help-block" *ngIf="!address.valid && address.touched" style="color: red">Please enter the
+            delivery instructions.</span>
+
+        </div>
+      </div>
+      <br><br>
+
+
+      <div class="form-row">
+
+        <div class="col-md-6">
+          <label for="email">E mail</label><br>
+          <input type="email" id="email" class="form-control" ngModel name="email" #email="ngModel" placeholder="Email"
+            required>
+          <span class="help-block" *ngIf="!email.valid && email.touched" style="color: red">Please enter the
+            Email.</span>
+
+        </div>
+      </div>
+      <br><br>
+
+
+      <div class="form-row">
+        <div class="col-md-6">
+          <label for="phone">Mobile Number</label><br>
+          <input type="text" id="phone" class="form-control" ngModel name="phone" #phone="ngModel"
+            placeholder="Mobile Number" required>
+          <span class="help-block" *ngIf="!phone.valid && phone.touched" style="color: red">Please enter the Mobile
+            Number.</span>
+
+        </div>
+      </div>
+
+      <br>
+
+      <h3>When</h3>
+
+      <div class="form-row">
+        <div class="col-sm-10">
+          <div class="form-check">
+
+
+            <input class="form-check-input" type="radio" name="gridRadios" id="when" ngModel name="when" #when="ngModel"
+              value="Now" checked>
+            <label class="form-check-label" for="gridRadios1" style="padding-left: 20px;">
+              <span class="help-block" *ngIf="!when.valid && when.touched" style="color: red">Please enter the
+                when.</span>
+              Now
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="when" ngModel name="when" #when="ngModel"
+              value="Schedule">
+            <label class="form-check-label" for="gridRadios2" style="padding-left: 20px;">
+              <span class="help-block" *ngIf="!when.valid && when.touched" style="color: red">Please enter the
+                when.</span>
+              Schedule
+            </label>
+          </div>
+        </div>
+      </div>
+      <br><br>
+
+      <div class="form-row">
+        <div class="col-md-4">
+          <label for="time">Delivery Time </label><br>
+          <input type="text" id="time" class="form-control" ngModel name="time" #time="ngModel" placeholder="Right Now"
+            required>
+          <span class="help-block" *ngIf="!time.valid && time.touched" style="color: red">Please enter the Time.</span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-4">
+          <label for="time"> </label><br>
+          <input type="text" id="time" class="form-control" ngModel name="time" #time="ngModel" placeholder="Schedule"
+            required>
+          <span class="help-block" *ngIf="!time.valid && time.touched" style="color: red">Please enter the Time.</span>
+
+        </div>
+      </div>
+
+
+      <br><br>
+
+      <h2>Payment</h2>
+
+      <div class="form-row">
+
+        <select id="payment" class="form-control" ngModel name="payment" #payment="ngModel" [ngModel]="defaultValue"
+          required>
+          <span class="help-block" *ngIf="!payment.valid && payment.touched" style="color: red">Please enter the
+            Time.</span>
+
+          <option value="choose" disabled>Choose Payment Type</option>
+          <option value="Cash">Cash</option>
+          <option value="Credit or Debit Card">Credit or Debit Card</option>
+          <option value="Gift Card">Gift Card</option>
+          <option value="PayPal">PayPal</option>
+        </select>
+
+      </div>
+      <br><br>
+      <button type="submit" class="btn btn-primary btn-lg">Confirm Order</button>
+
+
+    </form>
+    <br><br><br>
+  </div>

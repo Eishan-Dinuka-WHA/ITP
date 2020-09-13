@@ -1,14 +1,13 @@
 
 
 <div style="overflow-y: scroll; overflow-x: scroll; height: 100vh; width:100%">
-  <body style="background-color: #b9f6ca; background-size: auto;">
+  <body style="background-color: #e0fae7; background-size: auto;">
 
     <div style="background-color: #6f84fc;width:100%">
       <br><p class="h2" style="text-align:center" >Customer Registry</p><br>
     </div>
 
-    <table class="table table-striped">
-      <thead class="thead-dark">
+    <table>
       <tr>
       <th scope="col">Cus ID</th>
       <th scope="col">User Name</th>
@@ -27,11 +26,7 @@
       <th scope="col">Re-Enter-password</th>
       <th scope="col">EDIT</th>
       <th scope="col">DELETE</th>
-
       </tr>
-      </thead>
-      <!-- <mat-spinner *ngIf = "isLoading"></mat-spinner>
-      <tbody *ngIf = "!isLoading"> -->
 
         <tr *ngFor="let customer of customers">
           <td>{{ customer.cid}}</td>
@@ -49,12 +44,11 @@
           <td>{{ customer.mnumber}}</td>
           <td>{{ customer.password}}</td>
           <td>{{ customer.rpassword}}</td>
-          <td><a class="btn btn-warning pull-right" style="width:80px;">EDIT</a></td>
-          <td><a class="btn btn-danger pull-right" (click)="onDelete(customer.cid)">DELETE</a></td>
+          <td><a class="btn btn-warning pull-right" class="button1" style="width:80px;">EDIT</a></td>
+          <td><a class="btn btn-danger pull-right" class="button2"(click)="onDelete(customer.cid)">DELETE</a></td>
 
 
         </tr>
-    <!--  </tbody>  -->
     </table>
   </body>
 </div>
