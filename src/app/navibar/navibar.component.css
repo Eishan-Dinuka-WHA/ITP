@@ -1,17 +1,23 @@
 li a:hover{
-	font-weight: 700;
-  font-size:20px;
+	font-weight:600;
+  font-size: 16px;
+  background-color: rgb(40, 20, 220);
 }
 
 li a{
 	display:block;
 	padding:14px 16px;
-	text-decoration:none;
+  text-decoration:none;
+
+
 }
 
 .paddingFont{
   padding-left:10px;
-  font-size:18px;
+  font-size:16px;
 }
 
+.txt{
+  color:white;
+}
 

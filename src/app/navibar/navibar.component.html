@@ -1,144 +1,134 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="txt">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item active paddingFont">
-        <a class="nav-link"[routerLink]="['/homepageNormal']">Home </a>
+        <a class="nav-link"[routerLink]="['/homepageNormal']" style="color: white;">Home </a>
       </li>
 
       <li class="nav-item dropdown paddingFont">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: white;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Room
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]="['/roomHome']">Rooms</a>
-            <a class="dropdown-item" [routerLink]="['/roomNew']" href="#">Reserve a Room</a>
-            <a class="dropdown-item" [routerLink]="['/roomView']" href="#">View Reservation</a>
-          <div class="dropdown-divider"></div>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/roomHome']" style="color: white;" >Rooms</a>
+            <a class="dropdown-item" [routerLink]="['/roomNew']" href="#" style="color: white;">Reserve a Room</a>
+            <a class="dropdown-item" [routerLink]="['/roomView']" href="#" style="color: white;">View Reservation</a>
         </div>
       </li>
 
       <li class="nav-item dropdown paddingFont">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: white;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Event
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/eventHome']">Events</a>
-          <a class="dropdown-item" [routerLink]="['/eventNew']" href="#">Add Event</a>
-          <a class="dropdown-item" [routerLink]="['/eventView']" href="#">View Event</a>
-          <div class="dropdown-divider"></div>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/eventHome']" style="color: white;">Events</a>
+          <a class="dropdown-item" [routerLink]="['/eventNew']" href="#"style="color: white;">Add Event</a>
+          <a class="dropdown-item" [routerLink]="['/eventView']" href="#"style="color: white;">View Event</a>
         </div>
       </li>
 
 <li class="nav-item dropdown paddingFont">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"style="color: white;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Packages
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/packHome']">Packages</a>
-          <a class="dropdown-item" [routerLink]="['/packNew']" href="#">Add Package</a>
-          <a class="dropdown-item" [routerLink]="['/packView']" href="#">view Package</a>
-          <div class="dropdown-divider"></div>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/packHome']"style="color: white;">Packages</a>
+          <a class="dropdown-item" [routerLink]="['/packNew']" href="#"style="color: white;">Add Package</a>
+          <a class="dropdown-item" [routerLink]="['/packView']" href="#"style="color: white;">view Package</a>
         </div>
       </li>
 
       <li class="nav-item dropdown paddingFont">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"style="color: white;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Restarunt
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/takeHome']">Restarunt</a>
-          <a class="dropdown-item" [routerLink]="['/takeNew']" href="#">Food Order</a>
-          <a class="dropdown-item" [routerLink]="['/takeView']" href="#">View Order</a>
-          <div class="dropdown-divider"></div>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/takeHome']"style="color: white;">Restarunt</a>
+          <a class="dropdown-item" [routerLink]="['/takeNew']" href="#"style="color: white;">Food Order</a>
+          <a class="dropdown-item" [routerLink]="['/takeView']" href="#"style="color: white;">View Order</a>
         </div>
       </li>
 
       <li class="nav-item dropdown paddingFont">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"style="color: white;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <Span>Spa</Span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/spaHome']">Spa</a>
-          <a class="dropdown-item" [routerLink]="['/spaNew']" href="#">Add Spa Reservation</a>
-          <a class="dropdown-item" [routerLink]="['/spaView']" href="#">View Spa Reservations</a>
-          <div class="dropdown-divider"></div>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/spaHome']"style="color: white;">Spa</a>
+          <a class="dropdown-item" [routerLink]="['/spaNew']" href="#"style="color: white;">Add Spa Reservation</a>
+          <a class="dropdown-item" [routerLink]="['/spaView']" href="#"style="color: white;">View Spa Reservations</a>
         </div>
       </li>
 
       <li class="nav-item dropdown paddingFont">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: white;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Supplier
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/supHome']">Supplier</a>
-          <a class="dropdown-item" [routerLink]="['/supNew']" href="#">Add Supplier</a>
-          <a class="dropdown-item" [routerLink]="['/supview']" href="#">View Supplier</a>
-          <div class="dropdown-divider"></div>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/supHome']"style="color: white;">Supplier</a>
+          <a class="dropdown-item" [routerLink]="['/supNew']" href="#"style="color: white;">Add Supplier</a>
+          <a class="dropdown-item" [routerLink]="['/supview']" href="#"style="color: white;">View Supplier</a>
         </div>
       </li>
 
       <li class="nav-item dropdown paddingFont" style="padding-left: 20px;">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: white;"role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Employee
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/empNew']">Employees</a>
-          <a class="dropdown-item" [routerLink]="['/empHome']">Add Employee</a>
-          <a class="dropdown-item" [routerLink]="['/empView']">View Employee</a>
-          <a class="dropdown-item" [routerLink]="['/salaryHome']">Add Salary</a>
-          <a class="dropdown-item" [routerLink]="['/salaryView']">View Salary</a>
-          <div class="dropdown-divider"></div>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/empNew']"style="color: white;">Employees</a>
+          <a class="dropdown-item" [routerLink]="['/empHome']"style="color: white;">Add Employee</a>
+          <a class="dropdown-item" [routerLink]="['/empView']"style="color: white;">View Employee</a>
+          <a class="dropdown-item" [routerLink]="['/salaryHome']"style="color: white;">Add Salary</a>
+          <a class="dropdown-item" [routerLink]="['/salaryView']"style="color: white;">View Salary</a>
         </div>
       </li>
 
       <li class="nav-item dropdown paddingFont">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: white;"role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Customer
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/cusHome']">Customer</a>
-          <a class="dropdown-item" [routerLink]="['/cusNew']" href="#">Add Customer</a>
-          <a class="dropdown-item" [routerLink]="['/cusView']" href="#">View Customers</a>
-          <div class="dropdown-divider"></div>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/cusHome']"style="color: white;">Customer</a>
+          <a class="dropdown-item" [routerLink]="['/cusNew']" href="#"style="color: white;">Add Customer</a>
+          <a class="dropdown-item" [routerLink]="['/cusView']" href="#"style="color: white;">View Customers</a>
         </div>
       </li>
 
       <li class="nav-item dropdown paddingFont">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"style="color: white;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Inventory
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/intHome']">Inventory</a>
-          <a class="dropdown-item" [routerLink]="['/intNew']" href="#">Add Inventory</a>
-          <a class="dropdown-item" [routerLink]="['/intView']" href="#">View Inventory</a>
-          <div class="dropdown-divider"></div>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/intHome']"style="color: white;">Inventory</a>
+          <a class="dropdown-item" [routerLink]="['/intNew']" href="#"style="color: white;">Add Inventory</a>
+          <a class="dropdown-item" [routerLink]="['/intView']" href="#"style="color: white;">View Inventory</a>
         </div>
       </li>
 
       <li class="nav-item dropdown paddingFont">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: white;"role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Feedback
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/feedbackHome']" href="#">Feedback</a>
-          <a class="dropdown-item" [routerLink]="['/feedbackNew']" href="#">Give Feedback</a>
-          <a class="dropdown-item" [routerLink]="['/feedbackView']" href="#">View Feedbacks</a>
-          <div class="dropdown-divider"></div>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/feedbackHome']" href="#"style="color: white;">Feedback</a>
+          <a class="dropdown-item" [routerLink]="['/feedbackNew']" href="#"style="color: white;">Give Feedback</a>
+          <a class="dropdown-item" [routerLink]="['/feedbackView']" href="#"style="color: white;">View Feedbacks</a>
 
           <a class="dropdown-item" href="#">About Us</a>
         </div>
       </li>
 
       <li class="nav-item dropdown paddingFont">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"style="color: white;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Login
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/adminlogin']">Admin Login</a>
-          <a class="dropdown-item" [routerLink]="['/userlogin']" href="#"><span class="sr-only">(current)</span>User Login</a>
-          <div class="dropdown-divider"></div>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/adminlogin']"style="color: white;">Admin Login</a>
+          <a class="dropdown-item" [routerLink]="['/userlogin']" href="#"style="color: white;"><span class="sr-only">(current)</span>User Login</a>
         </div>
       </li>
 
@@ -146,7 +136,8 @@
     <ul></ul>
     <form class="form-inline my-2 my-lg-0 pull-right">
       <input class="form-control mr-sm-2" style="border-color: #5f3ef1;"  type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success btn-primary my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-success btn-primary my-2 my-sm-0" style="color: white;"type="submit">Search</button>
     </form>
   </div>
 </nav>
+</div>

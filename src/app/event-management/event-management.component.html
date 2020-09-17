@@ -1,1 +1,89 @@
-<p>event-management works!</p>
+<div class="formmain">
+
+  <div class="formdiv1"></div>
+
+  <div class="formdiv2">
+    <form #cusres="ngForm" (ngSubmit)="onSubmit()">
+
+      <br>
+
+      <h1 id="hd1"><b>Reservation Form</b></h1>
+
+      <br><br><br>
+
+      <div class="form-group">
+
+        <label class="lbl" for="firstName">ID </label>
+        <input type="text" id="crid" class="form-control" ngModel name="crid" #crid="ngModel" placeholder="Auto Generated" disabled required>
+        <span class="help-block" *ngIf="!crid.valid && crid.touched" style="color: red; font-size: smaller;">First Name is required*</span>
+      </div>
+
+      <div class="form-group">
+
+        <label class="lbl" for="firstName">First Name :</label>
+        <input type="text" class="form-control" ngModel name="fname" #fname="ngModel" required>
+        <span class="help-block" *ngIf="!fname.valid && fname.touched" style="color: red; font-size: smaller;">First Name is required*</span>
+      </div>
+
+      <div class="form-group">
+        <label class="lbl" for="lastName">Last Name :</label>
+        <input type="text" class="form-control" ngModel name="lname" #lname="ngModel" required>
+        <span class="help-block" *ngIf="!lname.valid && lname.touched" style="color: red; font-size: smaller;">Last Name is required*</span>
+      </div>
+
+      <div class="form-group">
+        <label class="lbl" for="address">Address :</label>
+        <textarea cols="30" rows="10" class="form-control" ngModel name="address" #address="ngModel" required></textarea>
+        <span class="help-block" *ngIf="!address.valid && address.touched" style="color: red;font-size: smaller;">Address is required*</span>
+      </div>
+
+
+      <div class="form-group">
+        <label class="lbl" for="email">Email :</label>
+        <input type="email" class="form-control" ngModel name="email" #email="ngModel" required>
+        <span class="help-block" *ngIf="!email.valid && email.touched" style="color: red;font-size: smaller;">Email is required*</span>
+      </div>
+
+
+      <div class="form-group">
+        <label class="lbl" for="phone">Phone Number :</label>
+        <input type="tel" class="form-control" ngModel name="phoneno" #phoneno="ngModel" required>
+        <span class="help-block" *ngIf="!phoneno.valid && phoneno.touched" style="font-size: smaller; color: red;">Phone Number is required*</span>
+      </div>
+
+      <div class="form-group">
+        <label class="lbl" for="calendar">Date of Event :</label>
+        <input type="date" class="form-control" ngModel name="date" #date="ngModel" required>
+        <span class="help-block" *ngIf="!date.valid && date.touched" style="color: red; font-size: smaller;">Date is required*</span>
+      </div>
+
+      <div class="form-group">
+        <label class="lbl" for="time">Time :</label>
+        <div class= "clock">
+          <div class="clockmini">
+            <input type="time" class="form-control" ngModel name="time1" #time1="ngModel" required>
+            <span class="help-block" *ngIf="!time1.valid && time1.touched" style="font-size: smaller; color: red;">Time is required*</span>
+          </div>
+          <p id="para">to</p>
+          <div class="clockmini">
+            <input type="time" class="form-control" ngModel name="time2" #time2="ngModel" required>
+            <span class="help-block" *ngIf="!time2.valid && time2.touched" style="color: red; font-size: smaller;">Time is required*</span>
+          </div>
+        </div>
+
+      </div>
+
+      <br><br><br>
+
+      <button class="btn btn-primary" type="submit" [disabled]="!cusres.valid">Submit</button>
+      <br><br><br>
+    </form>
+  </div>
+
+<div class="formdiv1"></div>
+
+</div>
+
+
+
+

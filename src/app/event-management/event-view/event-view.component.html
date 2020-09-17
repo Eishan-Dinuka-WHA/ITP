@@ -1,1 +1,42 @@
-<p>event-view works!</p>
+
+
+<div style="overflow-y: scroll; overflow-x: scroll; height: 100vh; width:100%">
+  <body style="background-color: #e0fae7; background-size: auto;">
+
+    <div style="background-color: #6f84fc; width: 100%;">
+      <br>
+      <p class="h2" style="text-align: center;">Events</p>
+    </div>
+
+    <table>
+      <tr>
+        <th scope="col">EventID</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Address</th>
+        <th scope="col">Email</th>
+        <th scope="col">PhoneNumber</th>
+        <th scope="col">Date</th>
+        <th scope="col">StartTime</th>
+        <th scope="col">EndTime</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+
+        <tr *ngFor="let creserve of customerreserve">
+          <td>{{ creserve.crid }}</td>
+          <td>{{ creserve.fname }}</td>
+          <td>{{ creserve.lname }}</td>
+          <td>{{ creserve.address }}</td>
+          <td>{{ creserve.email }}</td>
+          <td>{{ creserve.phoneno }}</td>
+          <td>{{ creserve.date }}</td>
+          <td>{{ creserve.time1 }}</td>
+          <td>{{ creserve.time2 }}</td>
+          <td><a class="btn btn-warning pull-right" class="btn1" style="width:80px;">EDIT</a></td>
+          <td><a class="btn btn-danger pull-right" class="btn2" (click)="onDelete(creserve.crid)">DELETE</a></td>
+        </tr>
+    </table>
+
+  </body>
+</div>

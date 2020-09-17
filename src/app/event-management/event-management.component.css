@@ -1,0 +1,54 @@
+.form-group{
+  width: 400px;
+  margin-left: 160px;
+
+}
+
+.clock{
+  display: flex;
+  flex-direction: row;
+}
+
+.lbl{
+  width:150px;
+  color: rgb(70, 70, 31);
+}
+
+.clockmini{
+  width: 145px;
+}
+
+#para{
+  width:100px;
+  text-align: center;
+}
+
+.btn{
+  margin-left: 350px;
+  background-color: rgb(129, 129, 85);
+  color: white;
+}
+
+.btn:hover{
+  background-color: #dedea0;
+  color: black;
+}
+
+.formdiv1{
+  width: 25%;
+  background-image: url('/assets/img/1.png');
+}
+
+.formdiv2{
+  width: 50%;
+}
+
+.formmain{
+  display: flex;
+
+}
+
+#hd1{
+  color: rgb(129, 129, 85);
+  text-align: center;
+}
