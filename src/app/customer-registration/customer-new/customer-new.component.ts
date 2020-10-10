@@ -13,6 +13,7 @@ import { from } from 'rxjs';
 export class CustomerNewComponent implements OnInit {
   @ViewChild('cus', { static: false }) addCustomerForm: NgForm;
   defaultValue: string = "choose";
+  demoBtnCLicked: boolean = false;
   customerDetails: Customers;
   customers: Customers = {
     cid: '',
@@ -43,6 +44,7 @@ export class CustomerNewComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.demoBtnCLicked = false;
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has("Customerid")) {
         this.mode = "edit";
@@ -57,6 +59,7 @@ export class CustomerNewComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    this.demoBtnCLicked = false;
     if (form.invalid) {
       return;
     }
@@ -80,7 +83,7 @@ export class CustomerNewComponent implements OnInit {
     this.submitted = true;
     if (this.mode === "create") {
       this.customerRegistrationService.addCustomer(this.customers);
-      this.router.navigate(['../../cusView'], { relativeTo: this.route });
+      this.router.navigate(['../cusView'], { relativeTo: this.route });
     } else {
       this.customerRegistrationService.updateCustomer(this.customers);
       this.router.navigate(['../../cusView'], { relativeTo: this.route });
@@ -89,5 +92,23 @@ export class CustomerNewComponent implements OnInit {
 
 
 
+  }
+
+  fillData(){
+    this.customers.uname = "Eishan321";
+    this.customers.title = "mr";
+    this.customers.fname = "Eishan";
+    this.customers.lname = "Weerasinghe";
+    this.customers.country = "SriLanka";
+    this.customers.state = "Colombo";
+    this.customers.city = "Malabe";
+    this.customers.street = "Malabe Road";
+    this.customers.ctype = "local";
+    this.customers.pcode = "87654";
+    this.customers.email = "demodata@email.com";
+    this.customers.mnumber = "097-9876-765";
+    this.customers.password = "12345";
+    this.customers.rpassword = "12345";
+    this.demoBtnCLicked = true;
   }
 }

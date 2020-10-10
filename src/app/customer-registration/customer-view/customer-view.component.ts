@@ -23,9 +23,11 @@ export class CustomerViewComponent implements OnInit, OnDestroy {
       (customers: Customers[]) => {
         this.customers = customers;
         this.isLoading = false;
+
       }
     );
     console.log(this.customers);
+
   }
 
   onDelete(cid: string){
