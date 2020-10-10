@@ -18,11 +18,10 @@ export class PackageService{
             return{
               fname: Package.fname,
               lname: Package.lname,
-              bdate: Package.bdate,
-              pamount: Package.pamount,
-              aservice: Package.aservice,
-              vduration: Package.vduration,
-              scharges: Package.scharges,
+              checkin: Package.checkin,
+              checkout: Package.checkout,
+              adults: Package.adults,
+              nofch: Package.nofch,
               des: Package.des,
               pid: Package._id,
             };
@@ -42,11 +41,10 @@ export class PackageService{
       pid: Package.pid,
       fname: Package.fname,
       lname: Package.lname,
-      bdate: Package.bdate,
-      pamount: Package.pamount,
-      aservice: Package.aservice,
-      vduration: Package.vduration,
-      scharges: Package.scharges,
+      checkin: Package.checkin,
+      checkout: Package.checkout,
+      adults: Package.adults,
+      nofch: Package.nofch,
       des: Package.des,
     };
     this.http.post<{message: string}>('http://localhost:3000/api/packages', packageArray)

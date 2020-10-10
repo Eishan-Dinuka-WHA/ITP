@@ -1,11 +1,9 @@
 
+<div style="overflow-y: scroll; overflow-x: scroll; height: 100vh; width:auto">
+  <body style="background-color: #ffffff; background-size: auto;">
 
-<div style="overflow-y: scroll; overflow-x: scroll; height: 100vh; width:100%">
-  <body style="background-color: #e0fae7; background-size: auto;">
-
-    <div style="background-color: #6f84fc;width:100%">
+    <div style="background-color: #6f84fc; width:fit-content">
       <br><p class="h2" style="text-align:center" >Customer Registry</p><br>
-    </div>
 
     <table>
       <tr>
@@ -44,11 +42,11 @@
           <td>{{ customer.mnumber}}</td>
           <td>{{ customer.password}}</td>
           <td>{{ customer.rpassword}}</td>
-          <td><a class="btn btn-warning pull-right" class="button1" style="width:80px;">EDIT</a></td>
+          <td><a class="btn btn-warning pull-right" class="button1" style="width:80px;" [routerLink]="['/edit',customer.cid]">EDIT</a></td>
           <td><a class="btn btn-danger pull-right" class="button2"(click)="onDelete(customer.cid)">DELETE</a></td>
-
 
         </tr>
     </table>
+  </div>
   </body>
 </div>

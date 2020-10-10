@@ -1,28 +1,43 @@
-<div style="background-color:oldlace;">
-  <br>
-<img class="center" style="width: 300px; height: 200px;" src="../../assets/img/c55.png" alt="Card image cap">
-<br><br>
+
+<div style="background-color:rgb(255, 255, 255);">
+<br>
+<h1 style="text-align: center;" for="cid" >Booking Your Packge</h1><br>
+<img class="center" style="width: 300px; height: 200px;" src="../../assets/img/1.jpg" alt="Card image cap">
+<br>
+<br>
+
 <div class="container">
   <form #pac="ngForm" (ngSubmit)="onSubmit()">
+
     <div id="user-data">
 
+
       <div class="form-row">
-
         <div class="col-md-2">
-          <label for="cid">Package ID</label><br>
+          <label for="cid">Booking ID</label><br>
           <input type="text" id="pid" class="form-control" ngModel name="pid" #pid="ngModel" placeholder="Auto Generated" disabled>
+          <br>
+        </div>
+      </div>
+
+      <div class="form-row">
+          <label style="color: blue; font-size:medium; font-weight: bold; position:static;"> ---------------------------------------------------------------------------------Enter Your Booking Details in here ----------------------------------------------------------------------------------- </label>
+          <br>
+      </div>
+
+      <div class="form-row">
+        <div class="col col-md-6">
+          <label for="uname">Select Your user Name</label><br>
+          <select  id="uname" class="form-control" ngModel name="uname"  #fname="ngModel" [ngModel]="defaultValue" required>
+              <option value="choose" selected disabled>Choose your Name</option>
+              <option *ngFor="let customerName of customerDetails" value="customerName.uname">{{customerName.uname}}</option>
+          </select>
         </div>
 
-        <div class="col col-md-5">
-          <label for="fname">First Name</label><br>
-          <input type="text" id="fname" class="form-control" ngModel name="fname"  #fname="ngModel"  placeholder="First Name" required>
-          <span class="help-block" *ngIf="!fname.valid && fname.touched" style="color: red">Please enter a First Name.</span>
-        </div>
-
-        <div class="col col-md-5">
-          <label for="lname">Last Name</label><br>
-          <input type="text" id="lname" class="form-control" ngModel name="lname"  #lname="ngModel" placeholder="Last Name" required>
-          <span class="help-block" *ngIf="!lname.valid && lname.touched" style="color: red">Please enter a Last Name.</span>
+        <div class="col col-md-6">
+          <label for="lname">NIC</label><br>
+          <input type="text" id="lname" class="form-control"  (change)="nicValidate(lname.value)"  ngModel name="lname"  #lname="ngModel" placeholder="Last Name" required>
+          <span class="help-block" *ngIf="!lname.valid && lname.touched" style="color: red">Please enter a valid Email</span>
         </div>
 
       </div>
@@ -31,54 +46,44 @@
       <div class="form-row">
 
         <div class="col-md-12">
-          <label for="bdate">Booking Date</label><br>
-          <input type="datetime-local" id="bdate" class="form-control" ngModel name="bdate"  #bdate="ngModel" placeholder="Booking Date" required>
-          <span class="help-block" *ngIf="!bdate.valid && bdate.touched" style="color: red">Please enter a Booking Date</span>
+          <label for="checkin">check-In </label><br>
+          <input type="datetime-local" id="checkin" class="form-control" ngModel name="checkin"  #checkin="ngModel" placeholder="Check-In" required>
+          <span class="help-block" *ngIf="!checkin.valid && checkin.touched" style="color: red">Please enter a check-In Date</span>
         </div>
       </div>
       <br><br>
 
       <div class="form-row">
 
-        <div class="col-md-6">
-          <label for="pamount">Package Amount</label><br>
-          <input type="text" id="pamount" class="form-control" ngModel name="pamount"  #pamount="ngModel" placeholder="Amount" required>
-          <span class="help-block" *ngIf="!pamount.valid && pamount.touched" style="color: red">Please enter a state.</span>
-        </div>
-
-        <div class="col-md-6">
-          <label for="aservice">Additional Service</label><br>
-          <input type="text" id="aservice" class="form-control" ngModel name="aservice"  #aservice="ngModel" placeholder="Additional service" required>
-          <span class="help-block" *ngIf="!aservice.valid && aservice.touched" style="color: red">Please enter a Additional service.</span>
+        <div class="col-md-12">
+          <label for="checkout">Check-Out</label><br>
+          <input type="datetime-local" id="checkout" class="form-control" ngModel name="checkout"  #checkout="ngModel" placeholder="Check-out" required>
+          <span class="help-block" *ngIf="!checkout.valid && checkout.touched" style="color: red">Please enter a check-Out Date</span>
         </div>
       </div>
-
       <br><br>
 
     <div class="form-row">
 
       <div class="col col-md-6">
-        <label for="vduration">Valid Duration</label><br>
-        <input type="text" id="vduration" class="form-control" ngModel name="vduration"  #vduration="ngModel"  placeholder="Valid Duration" required>
-        <span class="help-block" *ngIf="!vduration.valid && vduration.touched" style="color: red">Please enter a Duration.</span>
+        <label for="adults">Number of Adults</label><br>
+        <input type="number" id="adults" class="form-control" ngModel name="adults"  #adults="ngModel"  placeholder="Number of Adults" required>
+        <span class="help-block" *ngIf="!adults.valid && adults.touched" style="color: red">Please enter Number of Adults.</span>
       </div>
 
       <div class="col col-md-6">
-        <label for="scharges">Service Charges</label><br>
-        <input type="text" id="scharges" class="form-control" ngModel name="scharges"  #scharges="ngModel"  placeholder="Service Charges" required>
-        <span class="help-block" *ngIf="!scharges.valid && scharges.touched" style="color: red">Please enter a Service Charges.</span>
+        <label for="nofch">Number of Children</label><br>
+        <input type="number" id="nofch" class="form-control" ngModel name="nofch"  #nofch="ngModel"  placeholder="Number of Children" required>
+        <span class="help-block" *ngIf="!nofch.valid && nofch.touched" style="color: red">Please enter a Number of Children.</span>
       </div>
-
     </div>
-
     <br><br>
-
     <div class="form-row">
 
       <div class="col-md-12">
-        <label for="des">Description</label><br>
-        <input type="text" id="des"  class="form-control" ngModel name="des"  #des="ngModel" placeholder="Service Charges" required>
-        <span class="help-block" *ngIf="!des.valid && des.touched" style="color: red">Please enter a Description</span>
+        <label for="des">Special Requests</label><br>
+        <textarea cols="30" rows="10"  style="height:50;" id="des"  class="form-control" ngModel name="des"  #des="ngModel" placeholder="Service Charges" required></textarea>
+        <span class="help-block" *ngIf="!des.valid && des.touched" style="color: red">Please enter a Special Requests</span>
       </div>
 
     </div>
@@ -96,7 +101,7 @@
 
     </div>
 
-      <button class="btn btn-primary" type="submit" [disabled]="!pac.valid">Submit</button>
+      <button  style="text-align: center;" class="btn btn-primary"type="submit" [disabled]="!pac.valid">Booking</button>
       <br><br><br>
     </form>
 

@@ -136,8 +136,7 @@
 
           <div class="col-md-6">
             <label for="mnumber">EPF(10%)</label><br>
-            <input type="text" id="epf" class="form-control" ngModel name="epf" #epf="ngModel" placeholder="EPF(10%)"
-              required>
+            <input  style="color: red; font-weight: 600;" disabled type="text" id="epf" class="form-control" name="epf" #epf="ngModel" [ngModel]="this.epfAmount" required >
             <span class="help-block" *ngIf="!stamp.valid && stamp.touched" style="color: red"></span>
           </div>
         </div>
@@ -170,8 +169,8 @@
             <span class="help-block" *ngIf="!ins.valid && ins.touched" style="color: red">Please enter insurance</span>
           </div>
           <div class="col-md-6">
-            <label for="mnumber">Gross Pay</label><br>
-            <input type="text" id="gpay" class="form-control" ngModel name="gpay" #gpay="ngModel"
+            <label for="mnumber">Total Earning</label><br>
+            <input  style="color: red; font-weight: 600;" disabled type="text" id="gpay" class="form-control" [ngModel]="this.totalEarning" name="gpay" #gpay="ngModel"
               placeholder="Gross Pay" required>
             <span class="help-block" *ngIf="!stamp.valid && stamp.touched" style="color: red">Please enter gross paya</span>
           </div>
@@ -182,17 +181,21 @@
         <div class="form-row">
           <div class="col-md-6">
             <label for="tde">Total Deducation</label><br>
-            <input type="text" id="tde" class="form-control" ngModel name="tde" #tde="ngModel" placeholder="" required>
+            <input style="color: red; font-weight: 600;" disabled type="text" id="tde" class="form-control" [ngModel]="this.totalDeduction" name="tde" #tde="ngModel" required>
             <span class="help-block" *ngIf="!tde.valid && tde.touched" style="color: red">Please enter total deduction</span>
           </div>
           <div class="col-md-6">
             <label for="mnumber">Net Pay</label><br>
-            <input type="text" id="npay" class="form-control" ngModel name="npay" #npay="ngModel" placeholder=""
-              required>
+            <input style="color: red; font-weight: 600;" disabled type="text" id="npay" class="form-control" [ngModel]="this.netPay" name="npay" #npay="ngModel" required>
             <span class="help-block" *ngIf="!npay.valid && npay.touched" style="color: red">Please enter net pay</span>
           </div>
         </div>
         <br>
+
+        <button class="btn btn-primary" type="button" (click)="calculateEpf()" style="margin-left: 10px;">Calculate EPF</button>
+        <button class="btn btn-primary" type="button" (click)="calculateTotalEarning()" style="margin-left: 10px;">Calculate Total Earning</button>
+        <button class="btn btn-primary" type="button" (click)="calculateTotalDeduction()" style="margin-left: 10px;">Calculate Total Deduction</button>
+        <button class="btn btn-primary" type="button" (click)="calculateNetPay()" style="margin-left: 10px;">Calculate Netpay</button>
 
 
         <div class="form-group">

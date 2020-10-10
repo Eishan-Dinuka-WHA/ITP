@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Customers } from 'models/customer.model';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { CustomerRegistrationService } from 'service/customer-registration.service';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-customer-new',
@@ -10,11 +11,12 @@ import { CustomerRegistrationService } from 'service/customer-registration.servi
   styleUrls: ['./customer-new.component.css']
 })
 export class CustomerNewComponent implements OnInit {
-  @ViewChild('cus', {static: false}) addCustomerForm: NgForm;
+  @ViewChild('cus', { static: false }) addCustomerForm: NgForm;
   defaultValue: string = "choose";
+  customerDetails: Customers;
   customers: Customers = {
     cid: '',
-    uname:'',
+    uname: '',
     title: '',
     fname: '',
     lname: '',
@@ -27,22 +29,38 @@ export class CustomerNewComponent implements OnInit {
     email: '',
     mnumber: '',
     password: '',
-    rpassword: ''
+    rpassword: '',
   };
-  submitted=false;
+  submitted = false;
+
+  isLoading = false;
+  private mode = "create";
+  private Customerid: string;
   //private subscription: Subscription;
 
   constructor(private router: Router,
-              private customerRegistrationService: CustomerRegistrationService,
-              private route: ActivatedRoute) { }
+    private customerRegistrationService: CustomerRegistrationService,
+    private route: ActivatedRoute) { }
 
-  ngOnInit(){
+  ngOnInit() {
+    this.route.paramMap.subscribe((paramMap: ParamMap) => {
+      if (paramMap.has("Customerid")) {
+        this.mode = "edit";
+        this.Customerid = paramMap.get("Customerid");
+        this.isLoading = true;
+        this.customerDetails = this.customerRegistrationService.getCustomerByID(this.Customerid);
+      } else {
+        this.mode = "create";
+        this.Customerid = null;
+      }
+    });
   }
 
-  onSubmit(){
-    console.log(this.addCustomerForm);
-    this.submitted = true;
-    this.customers.cid = null;
+  onSubmit(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    this.customers.cid = this.Customerid;
     this.customers.uname = this.addCustomerForm.value.uname;
     this.customers.title = this.addCustomerForm.value.title;
     this.customers.fname = this.addCustomerForm.value.fname;
@@ -58,13 +76,18 @@ export class CustomerNewComponent implements OnInit {
     this.customers.password = this.addCustomerForm.value.password;
     this.customers.rpassword = this.addCustomerForm.value.rpassword;
 
-
+    console.log(this.addCustomerForm);
+    this.submitted = true;
+    if (this.mode === "create") {
+      this.customerRegistrationService.addCustomer(this.customers);
+      this.router.navigate(['../../cusView'], { relativeTo: this.route });
+    } else {
+      this.customerRegistrationService.updateCustomer(this.customers);
+      this.router.navigate(['../../cusView'], { relativeTo: this.route });
+    }
     this.addCustomerForm.reset();
 
-    this.customerRegistrationService.addCustomer(this.customers);
 
-    this.router.navigate(['../cusView'], {relativeTo: this.route});
 
   }
-
 }

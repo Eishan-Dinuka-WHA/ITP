@@ -46,10 +46,15 @@ import { SpaViewComponent } from './spa-management/spa-view/spa-view.component';
 import { InventoryHomeComponent } from './inventory-management/inventory-home/inventory-home.component';
 import { InventoryManagementComponent } from './inventory-management/inventory-management.component';
 import { InventoryViewComponent } from './inventory-management/inventory-view/inventory-view.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+import { AttendanceNewComponent } from './attendance/attendance-new/attendance-new.component';
+import { AttendanceViewComponent } from './attendance/attendance-view/attendance-view.component';
 
 const appRoutes: Routes =[
   { path: 'cusHome' , component:CustomerRegistrationComponent},
   { path: 'cusNew' , component:CustomerNewComponent} ,
+  { path: 'edit/:Customerid' , component:CustomerNewComponent} ,
+
   { path: 'cusView' , component:CustomerViewComponent },
   { path: 'empHome' , component:EmployeeHomePageComponent},
   { path: 'empNew' , component:EmployeeManagementComponent},
@@ -91,7 +96,11 @@ const appRoutes: Routes =[
   { path: 'takeView' , component:TakeawayViewComponent},
   { path: 'intHome' , component:InventoryHomeComponent},
   { path: 'intNew' , component:InventoryManagementComponent},
-  { path: 'intView' , component:InventoryViewComponent}
+  { path: 'intView' , component:InventoryViewComponent},
+  { path: 'attennew' , component:AttendanceNewComponent},
+  { path: 'attenview' , component:AttendanceViewComponent},
+  { path: 'attedel' , component:AttendanceComponent},
+
 ];
 
 

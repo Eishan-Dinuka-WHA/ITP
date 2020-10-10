@@ -1,6 +1,8 @@
-<div style="background-color: #ce93d8;">
+
+  <div class="formdiv1"></div>
+
   <br>
-  <img class="center" style="width: 300px; height: 200px;" src="../../assets/img/e1.jpg" alt="Card image cap">
+  <img class="center" style="width: 300px; height: 200px;" src="../../assets/img/h44.jpg" alt="Card image cap">
   <br>
   <div class="container">
     <form #emp="ngForm" (ngSubmit)="onSubmit()">
@@ -9,7 +11,7 @@
         <div class="form-row">
 
           <div class="col-md-6">
-            <label for="cid">Employee ID</label><br>
+            <label for="eid">Employee ID</label><br>
             <input type="text" id="eid" class="form-control" ngModel name="eid" #eid="ngModel"
               placeholder="Auto Generated" disabled>
           </div>
@@ -56,9 +58,9 @@
 
           <div class="col col-md-6">
             <label for="nic">NIC</label><br>
-            <input type="text" id="nic" class="form-control" ngModel name="nic" #nic="ngModel" placeholder="NIC"
+            <input type="text" id="nic" class="form-control" ngModel name="nic" (change)="nicValidate(nic.value)" #nic="ngModel" placeholder="NIC"
               required>
-            <span class="help-block" *ngIf="!nic.valid && nic.touched" style="color: red">Please enter a NIC</span>
+            <span class="help-block" *ngIf="nicInvalid && nic.touched" style="color: red">Please enter a valid NIC</span>
           </div>
 
         </div>
@@ -89,7 +91,7 @@
 
           <div class="col col-md-6">
             <label for="mno">Mobile No</label><br>
-            <input type="text" id="mno" class="form-control" ngModel name="mno" #mno="ngModel" placeholder="Mobile No"
+            <input type="text" id="mno"  pattern="^\d{3}-\d{4}-\d{3}$" class="form-control" ngModel name="mno" #mno="ngModel" placeholder="071-895-8989"
               required>
             <span class="help-block" *ngIf="!mno.valid && mno.touched" style="color: red">Please enter a Mobile
               Number</span>
@@ -130,21 +132,28 @@
         <div class="form-row">
 
           <div class="col col-md-6">
-            <label for="dept">Department</label><br>
-            <input type="text" id="dept" class="form-control" ngModel name="dept" #dept="ngModel"
-              placeholder="Department" required>
-            <span class="help-block" *ngIf="!edd.valid && edd.touched" style="color: red">Please enter a
-              Department</span>
+            <label for="gender">Department</label><br>
+            <select id="dept" class="form-control" ngModel name="dept" #dept="ngModel" required>
+              <option value="Food and Beverage Service Department">Food and Beverage Service Department</option>
+              <option value="Housekeeping Department">Housekeeping Department</option>
+              <option value="Human Resources (HR) Department">Human Resources (HR) Department</option>
+              <option value="Accounts and Credits Department">Accounts and Credits Department</option>
+              <option value="Sales and Marketing Department">Sales and Marketing Department</option>
+              <option value="Front Office Department">Front Office Department</option>
+            </select>
           </div>
 
           <div class="col col-md-6">
             <label for="des">Designation</label><br>
-            <input type="text" id="dcs" class="form-control" ngModel name="dcs" #dcs="ngModel" placeholder="Designation"
-              required>
-            <span class="help-block" *ngIf="!dcs.valid && dcs.touched" style="color: red">Please enter a
-              Designation</span>
+            <select id="des" class="form-control" ngModel name="des" #des="ngModel" required>
+              <option value="Female">Hotel Owner</option>
+              <option value="Female">Manager</option>
+              <option value="Female">Accountant</option>
+              <option value="Female">Chef</option>
+              <option value="Female">Waiter/waitress</option>
+              <option value="Female">Receptionists</option>
+            </select>
           </div>
-
         </div>
         <br>
 
@@ -153,15 +162,15 @@
 
           <div class="col col-md-6">
             <label for="empty">Employee Type</label><br>
-            <input type="text" id="empty" class="form-control" ngModel name="empty" #empty="ngModel"
-              placeholder="Employee Type" required>
-            <span class="help-block" *ngIf="!empty.valid && empty.touched" style="color: red">Please enter Employee
-              Type</span>
+            <select id="empty" class="form-control" ngModel name="empty" #empty="ngModel" required>
+              <option value="Select Your Designation" disabled>Perment Employee</option>
+              <option value="Female">Temparary Employee</option>
+            </select>
           </div>
 
           <div class="col col-md-6">
             <label for="sal">Salary</label><br>
-            <input type="text" id="sal" class="form-control" ngModel name="sal" #sal="ngModel" placeholder="Salary"
+            <input type="number" id="sal" class="form-control" ngModel name="sal" #sal="ngModel" placeholder="Salary"
               required>
           </div>
 
@@ -196,4 +205,6 @@
 
   </div>
 
-</div>
+<div class="formdiv1"></div>
+
+

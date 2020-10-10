@@ -40,7 +40,7 @@
 
       <div class="form-group">
         <label class="lbl" for="email">Email :</label>
-        <input type="email" class="form-control" ngModel name="email" #email="ngModel" required>
+        <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel name="email" #email="ngModel" required>
         <span class="help-block" *ngIf="!email.valid && email.touched" style="color: red;font-size: smaller;">Email is required*</span>
       </div>
 

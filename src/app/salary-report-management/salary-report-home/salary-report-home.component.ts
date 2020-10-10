@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnChanges, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Salarys } from 'models/salary.model';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -34,6 +34,10 @@ export class SalaryReportHomeComponent implements OnInit {
     gpay: '',
     npay: ''
   };
+  epfAmount: number;
+  totalEarning: number;
+  totalDeduction: number;
+  netPay: number;
   submitted=false;
   //private subscription: Subscription;
 
@@ -42,7 +46,38 @@ export class SalaryReportHomeComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit(){
+    this.epfAmount = 0;
+    this.totalEarning = 0;
+    this.totalDeduction = 0;
+    this.netPay = 0;
+
+
   }
+
+  calculateEpf(){
+    this.epfAmount = +this.addSalaryForm.value.bsal * 0.1;
+  }
+
+  calculateTotalEarning(){
+    this.totalEarning = +this.addSalaryForm.value.bsal + +this.addSalaryForm.value.owork + +this.addSalaryForm.value.welf +
+                        +this.addSalaryForm.value.bonus;
+
+  }
+
+  calculateTotalDeduction(){
+    this.totalDeduction = +this.addSalaryForm.value.fadvan +
+                          +this.addSalaryForm.value.stamp +
+                          +this.epfAmount +
+                          +this.addSalaryForm.value.dloan +
+                          +this.addSalaryForm.value.ins;
+
+  }
+
+  calculateNetPay(){
+    this.netPay = this.totalEarning - this.totalDeduction;
+  }
+
+
 
   onSubmit(){
     console.log(this.addSalaryForm);
@@ -58,15 +93,15 @@ export class SalaryReportHomeComponent implements OnInit {
     this.salarys.bsal = this.addSalaryForm.value.bsal;
     this.salarys.owork = this.addSalaryForm.value.owork;
     this.salarys.welf = this.addSalaryForm.value.welf;
-    this.salarys.epf = this.addSalaryForm.value.epf;
+    this.salarys.epf = this.epfAmount.toString();
     this.salarys.bonus = this.addSalaryForm.value.bonus;
     this.salarys.stamp = this.addSalaryForm.value.stamp;
     this.salarys.dloan = this.addSalaryForm.value.dloan;
     this.salarys.fadvan = this.addSalaryForm.value.fadvan;
     this.salarys.ins = this.addSalaryForm.value.ins;
-    this.salarys.tde = this.addSalaryForm.value.tde;
-    this.salarys.gpay = this.addSalaryForm.value.gpay;
-    this.salarys.npay = this.addSalaryForm.value.npay;
+    this.salarys.tde = this.totalDeduction.toString();
+    this.salarys.gpay = this.totalEarning.toString();
+    this.salarys.npay = this.netPay.toString();
 
 
     this.addSalaryForm.reset();

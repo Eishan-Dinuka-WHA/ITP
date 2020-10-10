@@ -1,0 +1,41 @@
+
+
+<div style="overflow-y: scroll; overflow-x: scroll; height: 100vh; width:auto">
+  <body style="background-color: #ffffff; background-size: auto;">
+
+    <div style="background-color: #6f84fc;width:auto">
+      <br><p class="h2" style="text-align:center" >Attendacne List</p><br>
+    </div>
+
+    <table>
+      <tr>
+      <th scope="col">Attendance Id</th>
+      <th scope="col">Employee Id</th>
+      <th scope="col">Full Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Arrival Time</th>
+      <th scope="col">Leaveing Time</th>
+      <th scope="col">Stataus</th>
+      <th scope="col">EDIT</th>
+      <th scope="col">DELETE</th>
+      </tr>
+
+        <tr *ngFor="let attendance of attendances">
+          <td>{{ attendance.aid}}</td>
+          <td>{{ attendance.eid}}</td>
+          <td>{{ attendance.name}}</td>
+          <td>{{ attendance.date}}</td>
+          <td>{{ attendance.des}}</td>
+          <td>{{ attendance.sta}}</td>
+          <td>{{ attendance.atime}}</td>
+          <td>{{ attendance.dtime}}</td>
+
+          <td><a class="btn btn-warning pull-right" class="button1" style="width:80px;">EDIT</a></td>
+          <td><a class="btn btn-danger pull-right" class="button2"(click)="onDelete(attendance.aid)">DELETE</a></td>
+
+
+        </tr>
+    </table>
+  </body>
+</div>

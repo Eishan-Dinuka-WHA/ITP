@@ -33,6 +33,7 @@ export class EmployeeHomePageComponent implements OnInit {
     password: '',
     rpassword: ''
   };
+  nicInvalid: boolean = true;
   submitted=false;
   //private subscription: Subscription;
 
@@ -41,6 +42,14 @@ export class EmployeeHomePageComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit(){
+  }
+
+  nicValidate(nic: string){
+    if(nic.endsWith("V") && nic.length == 10){
+      this.nicInvalid = false;
+    }else{
+      this.nicInvalid = true;
+    }
   }
 
   onSubmit(){

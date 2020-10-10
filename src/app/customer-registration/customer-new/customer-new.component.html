@@ -1,21 +1,21 @@
-<div style="background-color:oldlace;">
-  <br>
-<img class="center" style="width: 200px; height: 200px;" src="../../../assets/img/customer.png" alt="Card image cap">
+<div class="backg">
+<br>
+<img class="centers" style="width: 200px; height: 200px;" src="../../assets/img/cus.jpg" alt="Card image cap">
 <br><br>
 <div class="container">
-  <form #cus="ngForm" (ngSubmit)="onSubmit()">
+  <form #cus="ngForm" (ngSubmit)="onSubmit(cus)">
     <div id="user-data">
 
       <div class="form-row">
 
         <div class="col-md-6">
           <label for="cid">Customer Registration Number</label><br>
-          <input type="text" id="cid" class="form-control" ngModel name="cid" #cid="ngModel" placeholder="Auto Generated" disabled>
+          <input type="text" id="cid" class="form-control" [ngModel]="customerDetails?.cid" name="cid" #cid="ngModel" placeholder="Auto Generated" disabled>
         </div>
 
         <div class="col-md-6">
           <label for="uname">User Name</label><br>
-          <input type="text" id="uname" class="form-control" ngModel name="uname" #uname="ngModel"  placeholder="User Name" required>
+          <input type="text" id="uname" class="form-control" [ngModel]="customerDetails?.uname" name="uname" #uname="ngModel"  placeholder="User Name" required>
           <span class="help-block" *ngIf="!uname.valid && uname.touched" style="color: red">Please enter a User Name.</span>
         </div>
 
@@ -25,7 +25,7 @@
 
         <div class="col col-md-2">
           <label for="title">Title</label><br>
-          <select id="title" class="form-control" ngModel name="title"  #title="ngModel" [ngModel]="defaultValue" required>
+          <select id="title" class="form-control" [ngModel]="customerDetails?.title" name="title"  #title="ngModel" [ngModel]="defaultValue" required>
             <option value="choose" disabled>Choose Title (Mr/Mrs/Ms/Dr/Rev)</option>
             <option value="mr">Mr</option>
             <option value="mrs">Mrs</option>
@@ -37,13 +37,13 @@
 
         <div class="col col-md-4">
           <label for="fname">First Name</label><br>
-          <input type="text" id="fname" class="form-control" ngModel name="fname"  #fname="ngModel"  placeholder="First Name" required>
+          <input type="text" id="fname" class="form-control" [ngModel]="customerDetails?.fname" name="fname"  #fname="ngModel"  placeholder="First Name" required>
           <span class="help-block" *ngIf="!fname.valid && fname.touched" style="color: red">Please enter a First Name.</span>
         </div>
 
         <div class="col col-md-6">
           <label for="lname">Last Name</label><br>
-          <input type="text" id="lname" class="form-control" ngModel name="lname"  #lname="ngModel" placeholder="Last Name" required>
+          <input type="text" id="lname" class="form-control" [ngModel]="customerDetails?.lname" name="lname"  #lname="ngModel" placeholder="Last Name" required>
           <span class="help-block" *ngIf="!lname.valid && lname.touched" style="color: red">Please enter a Last Name.</span>
         </div>
 
@@ -55,25 +55,25 @@
 
         <div class="col-md-3">
           <label for="country">Country</label><br>
-          <input type="text" id="country" class="form-control" ngModel name="country"  #country="ngModel" placeholder="Country" required>
+          <input type="text" id="country" class="form-control" [ngModel]="customerDetails?.country" name="country"  #country="ngModel" placeholder="Country" required>
           <span class="help-block" *ngIf="!country.valid && country.touched" style="color: red">Please enter a Country.</span>
         </div>
 
         <div class="col-md-3">
           <label for="state">state</label><br>
-          <input type="text" id="state" class="form-control" ngModel name="state"  #state="ngModel" placeholder="State" required>
+          <input type="text" id="state" class="form-control" [ngModel]="customerDetails?.state" name="state"  #state="ngModel" placeholder="State" required>
           <span class="help-block" *ngIf="!state.valid && state.touched" style="color: red">Please enter a state.</span>
         </div>
 
         <div class="col-md-3">
           <label for="city">city</label><br>
-          <input type="text" id="city" class="form-control" ngModel name="city"  #city="ngModel" placeholder="City" required>
+          <input type="text" id="city" class="form-control" [ngModel]="customerDetails?.city" name="city"  #city="ngModel" placeholder="City" required>
           <span class="help-block" *ngIf="!city.valid && city.touched" style="color: red">Please enter a city.</span>
         </div>
 
         <div class="col-md-3">
           <label for="street">street</label><br>
-          <input type="text" id="street" class="form-control" ngModel name="street"  #street="ngModel" placeholder="street" required>
+          <input type="text" id="street" class="form-control" [ngModel]="customerDetails?.street" name="street"  #street="ngModel" placeholder="street" required>
           <span class="help-block" *ngIf="!street.valid && street.touched" style="color: red">Please enter a street.</span>
         </div>
 
@@ -83,7 +83,7 @@
     <div class="form-row">
       <div class="col col-md-6">
         <label for="ctype">Customer Type</label><br>
-        <select id="ctype" class="form-control" ngModel name="ctype"  #ctype="ngModel" required>
+        <select id="ctype" class="form-control" [ngModel]="customerDetails?.ctype" name="ctype"  #ctype="ngModel" required>
           <option value="foreign">Foreign Customer</option>
           <option value="local">Local Customer</option>
         </select>
@@ -91,7 +91,7 @@
 
       <div class="col col-md-6">
         <label for="pcode">Postal Code</label><br>
-        <input type="text" id="pcode" class="form-control" ngModel name="pcode"  #pcode="ngModel"  placeholder="Postal Code" required>
+        <input type="text" id="pcode" class="form-control" [ngModel]="customerDetails?.pcode" name="pcode"  #pcode="ngModel"  placeholder="Postal Code" required>
         <span class="help-block" *ngIf="!pcode.valid && pcode.touched" style="color: red">Please enter a Postal Code.</span>
       </div>
 
@@ -102,13 +102,13 @@
 
       <div class="col-md-6">
         <label for="email">E mail</label><br>
-        <input type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" ngModel name="email"  #email="ngModel" placeholder="name@example.com" required>
+        <input type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" [ngModel]="customerDetails?.email" name="email"  #email="ngModel" placeholder="name@example.com" required>
         <span class="help-block" *ngIf="!email.valid && email.touched" style="color: red">Please enter a valid email.</span>
       </div>
 
       <div class="col-md-6">
         <label for="mnumber">Mobile Number</label><br>
-        <input type="text" id="mnumber" class="form-control" ngModel name="mnumber"  #mnumber="ngModel" placeholder="Mobile Number" required>
+        <input type="text" id="mnumber" pattern="^\d{3}-\d{4}-\d{3}$" class="form-control" [ngModel]="customerDetails?.mnumber" name="mnumber"  #mnumber="ngModel" placeholder="071-000-2100" required>
         <span class="help-block" *ngIf="!mnumber.valid && mnumber.touched" style="color: red">Please enter a Mobile Number.</span>
       </div>
 
@@ -119,13 +119,13 @@
 
       <div class="col-md-6">
         <label for="password">Password</label><br>
-        <input type="password" id="password" class="form-control" ngModel name="password"  #password="ngModel" placeholder="Password" required>
+        <input type="password" id="password" class="form-control" [ngModel]="customerDetails?.password" name="password"  #password="ngModel" placeholder="Password" required>
         <span class="help-block" *ngIf="!password.valid && password.touched" style="color: red">Please enter a password.</span>
       </div>
 
       <div class="col-md-6">
         <label for="mnumber">Re-Enter Password</label><br>
-        <input type="password" id="rpassword" class="form-control" ngModel name="rpassword"  #rpassword="ngModel"  placeholder="Re-enter-password" required>
+        <input type="password" id="rpassword" class="form-control" [ngModel]="customerDetails?.rpassword" name="rpassword"  #rpassword="ngModel"  placeholder="Re-enter-password" required>
         <span class="help-block" *ngIf="!rpassword.valid && rpassword.touched" style="color: red">Please enter a Re-enter-password.</span>
       </div>
     </div>
@@ -139,7 +139,7 @@
     </div>
     </div>
 
-      <button class="btn btn-primary" type="submit" [disabled]="!cus.valid">Submit</button>
+      <button  class="btn btn-primary" type="submit" [disabled]="!cus.valid">Submit</button>
       <br><br><br>
     </form>
 

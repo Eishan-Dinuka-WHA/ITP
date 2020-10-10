@@ -11,6 +11,7 @@ const inventoryRoutes = require("./routes/Inventory-add-Items");
 const supplierRoutes = require("./routes/supplier-registration");
 const spaRoutes = require("./routes/spa-management");
 const eventRoutes = require("./routes/event-management");
+const attendanceRoutes = require("./routes/attendace-management");
 
 // const projectRoutes = require("");
 
@@ -56,5 +57,6 @@ app.use("/api/inventories", inventoryRoutes);
 app.use("/api/suppliers", supplierRoutes);
 app.use("/api/spas", spaRoutes);
 app.use("/api/events",eventRoutes);
+app.use("/api/attendanses",attendanceRoutes);
 
 module.exports = app;

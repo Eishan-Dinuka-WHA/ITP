@@ -1,0 +1,96 @@
+<div class="formmain">
+
+  <div class="formdiv1"></div>
+
+  <div class="formdiv2">
+    <form #atten="ngForm" (ngSubmit)="onSubmit()">
+      <br>
+
+      <h1 id="hd1"><b>Marking Attendance</b></h1>
+
+      <br><br><br>
+
+      <div class="form-group">
+
+        <label class="lbl" for="aid">Attendance Id</label>
+        <input type="text" id="aid" class="form-control" ngModel name="aid" #eid="ngModel"placeholder="Auto Generated" disabled>
+      </div>
+
+      <div class="form-group">
+
+        <label class="lbl" for="eid">Employee Id</label>
+        <input type="text" class="form-control" ngModel name="eid" #eid="ngModel" required>
+        <span class="help-block" *ngIf="!eid.valid && eid.touched" style="color: red; font-size: smaller;">Employee is required*</span>
+      </div>
+
+      <div class="form-group">
+        <label class="lbl" for="name">Full Name </label>
+        <input type="text" class="form-control" ngModel name="name" #name="ngModel" required>
+        <span class="help-block" *ngIf="!name.valid && name.touched" style="color: red; font-size: smaller;">Full Name is required*</span>
+      </div>
+
+      <div class="form-group">
+        <label class="lbl" for="date">Date</label>
+        <input type="date" class="form-control" ngModel name="date" #date="ngModel" required>
+        <span class="help-block" *ngIf="!date.valid && date.touched" style="color: red;font-size: smaller;">Date is required*</span>
+      </div>
+
+
+      <div class="form-group">
+        <label class="lbl" for="des"> Designation </label>
+        <input type="email" class="form-control"  ngModel name="des" #des="ngModel" required>
+        <span class="help-block" *ngIf="!des.valid && des.touched" style="color: red;font-size: smaller;">Designation is required*</span>
+      </div>
+
+      <div class="form-group">
+
+        <div class="col col-md-6">
+         <label class="lbl" for="atime">Arrival Time</label>
+          <div class= "clock">
+            <div class="clockmini">
+             <input type="time" class="form-control" ngModel name="atime" #atime="ngModel" required>
+             <span class="help-block" *ngIf="!atime.valid && atime.touched" style="font-size: smaller; color: red;">Time is required*</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-md-6">
+          <label class="lbl" for="dtime">Leaveing Time</label>
+           <div class= "clock">
+             <div class="clockmini">
+              <input type="time" class="form-control" ngModel name="dtime" #dtime="ngModel" required>
+              <span class="help-block" *ngIf="!atime.valid && atime.touched" style="font-size: smaller; color: red;">Time is required*</span>
+             </div>
+           </div>
+          </div>
+      </div>
+
+      <div class="form-group">
+
+        <br>
+        <div class="lbl">
+          <label for="title">Stataus</label><br>
+          <select id="title" class="form-control" ngModel name="sta"  #sta="ngModel" [ngModel]="defaultValue" required>
+            <option value="choose" disabled>Choose Stataus Your Status</option>
+            <option value="present">present</option>
+            <option value="Absent">Absent</option>
+            <option value="Half Day">Half Day</option>
+            <option value="HoliDay">HoliDay</option>
+          </select>
+      </div>
+      </div>
+
+      <br><br><br>
+
+      <button class="btn btn-primary" type="submit" [disabled]="!atten.valid">Submit</button>
+      <br><br><br>
+    </form>
+  </div>
+
+<div class="formdiv1"></div>
+
+</div>
+
+
+
+

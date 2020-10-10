@@ -6,3 +6,8 @@ input.ng-invalid.ng-touched{
   margin-left: auto;
   margin-right: auto;
 }
+
+.formdiv1{
+  width: 25%;
+  background-image: url('/assets/img/1.png');
+}

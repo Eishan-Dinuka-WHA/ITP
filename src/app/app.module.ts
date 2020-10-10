@@ -67,7 +67,11 @@ import { SupplierRegistrationService } from 'service/supplier-registration.servi
 import {MatIconModule} from '@angular/material/icon';
 import { TakeawayManagementService } from 'service/takeaway-management.service';
 import { SpaManagementService } from 'service/spa-management.service';
-import{ CustomerReserveService }from 'service/customer-reserve.service'
+import { CustomerReserveService }from 'service/customer-reserve.service';
+import { AttendanceComponent } from './attendance/attendance.component';
+import { AttendanceViewComponent } from './attendance/attendance-view/attendance-view.component';
+import { AttendanceNewComponent } from './attendance/attendance-new/attendance-new.component';
+import { AttendanceRegistrationService } from 'service/attendance-management.service';
 
 
 
@@ -118,6 +122,9 @@ import{ CustomerReserveService }from 'service/customer-reserve.service'
     InventoryManagementComponent,
     InventoryHomeComponent,
     InventoryViewComponent,
+    AttendanceComponent,
+    AttendanceViewComponent,
+    AttendanceNewComponent,
 
   ],
   imports: [
@@ -134,7 +141,7 @@ import{ CustomerReserveService }from 'service/customer-reserve.service'
 
     //NoopAnimationsModule
   ],
-  providers: [CustomerRegistrationService, EmployeeService , PackageService , SalaryService , ReservationService ,InventoryService , SupplierRegistrationService , TakeawayManagementService , SpaManagementService , CustomerReserveService],
+  providers: [CustomerRegistrationService, EmployeeService , PackageService , SalaryService , ReservationService ,InventoryService , SupplierRegistrationService , TakeawayManagementService , SpaManagementService , CustomerReserveService, AttendanceRegistrationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

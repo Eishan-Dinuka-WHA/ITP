@@ -9,11 +9,10 @@ router.post("", (req, res, next) => {
   const package = new Package({
     fname: req.body.fname,
     lname: req.body.lname,
-    bdate: req.body.bdate,
-    pamount: req.body.pamount,
-    aservice: req.body.aservice,
-    vduration: req.body.vduration,
-    scharges: req.body.scharges,
+    checkin: req.body.checkin,
+    checkout: req.body.checkout,
+    adults: req.body.adults,
+    nofch: req.body.nofch,
     des: req.body.des
 
   });

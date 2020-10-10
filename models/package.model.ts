@@ -3,10 +3,9 @@ export class Packages{
     public pid: string,
     public fname: string,
     public lname: string,
-    public bdate: string,
-    public pamount: string,
-    public aservice: string,
-    public vduration: string,
-    public scharges: string,
+    public checkin: string,
+    public checkout: string,
+    public adults: string,
+    public nofch: string,
     public des: string){}
 }
