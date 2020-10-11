@@ -16,10 +16,9 @@
 
           <div class="col-md-6">
 
-            <label for="ename">Select Employee Id</label><br>
+            <label for="ename">Select Name</label><br>
             <select  id="ename" class="form-control" name="ename"  #ename="ngModel" [ngModel]="defaultValue" [ngModel]="demoBtnCLicked ? salarys.ename : salaryDetails?.ename" required>
-                <option value="choose" selected disabled>Choose your Name</option>
-                <option *ngFor="let EmployeeName of EmployeeDetails" value="EmployeeName.eid">{{EmployeeName.eid}}</option>
+                <option *ngFor="let EmployeeName of EmployeeDetails" [value]=EmployeeName.fname>{{EmployeeName.fname}}</option>
             </select>
           </div>
         </div>
@@ -27,15 +26,7 @@
 
         <div class="form-row">
 
-          <div class="col-md-3">
-            <label for="des">Designation</label><br>
-            <input type="text" id="des" class="form-control" [ngModel]="demoBtnCLicked ? salarys.des : salaryDetails?.des" name="des" #des="ngModel" placeholder="Designation"
-              required>
-            <span class="help-block" *ngIf="!des.valid && des.touched" style="color: red">Please enter a
-              Designation.</span>
-          </div>
-
-          <div class="col-md-3">
+          <div class="col-md-6">
             <label for="toh">Total Over Time Hours</label><br>
             <input type="text" id="toh" class="form-control" [ngModel]="demoBtnCLicked ? salarys.toh : salaryDetails?.toh" name="des" name="toh" #toh="ngModel"
               placeholder="Total Over Time Hours" required>
@@ -131,7 +122,7 @@
               Welfare</span>
           </div>
           <div class="col-md-6">
-            <label for="dloan">Dis.Loan</label><br>
+            <label for="dloan">Loan</label><br>
             <input type="text" id="dloan" class="form-control" [ngModel]="demoBtnCLicked ? salarys.dloan : salaryDetails?.dloan" name="dloan" #dloan="ngModel"
               placeholder="Dis.Loan" required>
             <span class="help-block" *ngIf="!dloan.valid && dloan.touched" style="color: red">Please enter a
@@ -141,17 +132,18 @@
         <br>
 
         <div class="form-row">
-          <div class="col-md-6">
-            <label for="mnumber">Insurance</label><br>
-            <input type="text" id="ins" class="form-control" [ngModel]="demoBtnCLicked ? salarys.ins : salaryDetails?.ins" name="ins" #ins="ngModel" placeholder="Insurance"
-              required>
-            <span class="help-block" *ngIf="!ins.valid && ins.touched" style="color: red">Please enter insurance</span>
-          </div>
+
           <div class="col-md-6">
             <label for="mnumber">Total Earning</label><br>
             <input  style="color: red; font-weight: 600;" disabled type="text" [ngModel]="demoBtnCLicked ? salarys.gpay : salaryDetails?.gpay" id="gpay" class="form-control" [ngModel]="this.totalEarning" name="gpay" #gpay="ngModel"
               placeholder="Gross Pay" required>
             <span class="help-block" *ngIf="!stamp.valid && stamp.touched" style="color: red">Please enter gross paya</span>
+          </div>
+          <div class="col-md-6">
+            <label for="mnumber">Insurance</label><br>
+            <input type="text" id="ins" class="form-control" [ngModel]="demoBtnCLicked ? salarys.ins : salaryDetails?.ins" name="ins" #ins="ngModel" placeholder="Insurance"
+              required>
+            <span class="help-block" *ngIf="!ins.valid && ins.touched" style="color: red">Please enter insurance</span>
           </div>
         </div>
         <br>
@@ -184,8 +176,11 @@
           </div>
         </div>
 
-      </div>
-      <button class="btn btn-primary center" style="font-size: large;" type="submit" [disabled]="!sal.valid">SUBMIT</button>
+      </div >
+
+      <button class="btn btn-primary" style="font-size: large;" type="submit" [disabled]="!sal.valid">SUBMIT</button>
+      <button  class="btn btn-success" type="button" style="margin-left: 10px;" (click)="fillData()">FILL DATA</button>
+
       <br><br><br>
     </form>
 

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Attendances } from 'models/attendance.model';
-import { Router, ActivatedRoute,ParamMap } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { AttendanceRegistrationService } from 'service/attendance-management.service';
 
 
@@ -11,22 +11,22 @@ import { AttendanceRegistrationService } from 'service/attendance-management.ser
   styleUrls: ['./attendance-new.component.css']
 })
 export class AttendanceNewComponent implements OnInit {
-  @ViewChild('atten', {static:false}) attendanceForm: NgForm;
+  @ViewChild('atten', { static: false }) attendanceForm: NgForm;
   defaultValue: string = "choose";
   demoBtnCLicked: boolean = false;
   attendanceDetails: Attendances;
   attendances: Attendances = {
-    aid:'',
-    eid:'',
+    aid: '',
+    eid: '',
     name: '',
-    date:'',
-    des:'',
-    sta:'',
-    atime:'',
-    dtime:''
+    date: '',
+    des: '',
+    sta: '',
+    atime: '',
+    dtime: ''
   };
 
-  submitted=false;
+  submitted = false;
 
   isLoading = false;
   private mode = "create";
@@ -37,12 +37,12 @@ export class AttendanceNewComponent implements OnInit {
     private route: ActivatedRoute) { }
 
 
-  ngOnInit(){
+  ngOnInit() {
 
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has("Attendanceid")) {
         this.mode = "edit";
-        this.Attendanceid= paramMap.get("Attendanceid");
+        this.Attendanceid = paramMap.get("Attendanceid");
         this.isLoading = true;
         this.attendanceDetails = this.attendanceRegistrationService.getAttendanceByID(this.Attendanceid);
       } else {
@@ -60,10 +60,10 @@ export class AttendanceNewComponent implements OnInit {
     }
 
     console.log(this.attendanceForm);
-    this.submitted=true;
-    this.attendances.aid = null;
+    this.submitted = true;
+    this.attendances.aid = this.Attendanceid;
     this.attendances.eid = this.attendanceForm.value.eid;
-    this.attendances.name= this.attendanceForm.value.name;
+    this.attendances.name = this.attendanceForm.value.name;
     this.attendances.date = this.attendanceForm.value.date;
     this.attendances.sta = this.attendanceForm.value.sta;
     this.attendances.des = this.attendanceForm.value.des;
@@ -79,19 +79,19 @@ export class AttendanceNewComponent implements OnInit {
       this.router.navigate(['../attenview'], { relativeTo: this.route });
     } else {
       this.attendanceRegistrationService.updateAttendance(this.attendances);
-      this.router.navigate(['../../cusView'], { relativeTo: this.route });
+      this.router.navigate(['../../attenview'], { relativeTo: this.route });
     }
     this.attendanceForm.reset();
 
   }
-    fillData(){
-      this.attendances.eid = "aa";
-      this.attendances.name= "aa";
-      this.attendances.date ="aa";
-      this.attendances.sta = "aa";
-      this.attendances.des = "aa";
-      this.attendances.atime = "aa";
-      this.attendances.dtime = "aa";
+  fillData() {
+    this.attendances.eid = "";
+    this.attendances.name = "aa";
+    this.attendances.date = "2020-10-23";
+    this.attendances.sta = "present";
+    this.attendances.des = "aa";
+    this.attendances.atime = "23:16";
+    this.attendances.dtime = "24:16";
 
   }
 

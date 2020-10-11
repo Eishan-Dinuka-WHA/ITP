@@ -23,7 +23,6 @@ export class SalaryReportHomeComponent implements OnInit {
   salarys: Salarys = {
     sid: '',
     ename:'',
-    des: '',
     toh: '',
     twd: '',
     payd: '',
@@ -119,7 +118,6 @@ export class SalaryReportHomeComponent implements OnInit {
 
     this.salarys.sid = this.Salaryid;
     this.salarys.ename = this.addSalaryForm.value.ename;
-    this.salarys.des = this.addSalaryForm.value.des;
     this.salarys.toh = this.addSalaryForm.value.toh;
     this.salarys.twd = this.addSalaryForm.value.twd;
     this.salarys.payd = this.addSalaryForm.value.payd;
@@ -149,23 +147,18 @@ export class SalaryReportHomeComponent implements OnInit {
 
   fillData(){
 
-    this.salarys.ename = "";
-    this.salarys.des = "";
-    this.salarys.toh = "";
-    this.salarys.twd = "";
-    this.salarys.payd = "";
-    this.salarys.bsal = "";
-    this.salarys.owork = "";
-    this.salarys.welf = "";
-    this.salarys.epf ="";
-    this.salarys.bonus = "";
-    this.salarys.stamp = "";
-    this.salarys.dloan = "";
-    this.salarys.fadvan = "";
-    this.salarys.ins = "";
-    this.salarys.tde = "";
-    this.salarys.gpay = "";
-    this.salarys.npay = "";
+    this.salarys.ename = "Himesha";
+    this.salarys.toh = "400";
+    this.salarys.twd = "240";
+    this.salarys.payd = "2020-10-08";
+    this.salarys.bsal = "10000";
+    this.salarys.owork = "1000";
+    this.salarys.welf = "1000";
+    this.salarys.bonus = "1000";
+    this.salarys.stamp = "500";
+    this.salarys.dloan = "400";
+    this.salarys.fadvan = "100";
+    this.salarys.ins = "500";
     this.demoBtnCLicked = true;
 
   }

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const salarySchema = mongoose.Schema({
   ename: { type: String, required: true},
-  des: {type: String, required: true},
   toh: {type: String, required: true},
   twd: {type: String, required: true},
   payd: {type: String, required: true},

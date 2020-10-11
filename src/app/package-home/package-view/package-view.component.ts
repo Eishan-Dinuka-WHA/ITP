@@ -28,8 +28,8 @@ export class PackageViewComponent implements OnInit, OnDestroy {
     console.log(this.packages);
   }
 
-  onDelete(cid: string){
-    this.packageService.deletePackage(cid);
+  onDelete(pid: string){
+    this.packageService.deletePackage(pid);
     window.location.reload();
   }
 

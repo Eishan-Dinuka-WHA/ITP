@@ -78,7 +78,7 @@ export class EmployeeHomePageComponent implements OnInit {
     }
     console.log(this.addEmployeeForm);
     this.submitted = true;
-    this.employees.eid = null;
+    this.employees.eid = this.EmployeeId;
     this.employees.uname = this.addEmployeeForm.value.uname;
     this.employees.fname = this.addEmployeeForm.value.fname;
     this.employees.lname = this.addEmployeeForm.value.lname;
@@ -113,23 +113,23 @@ export class EmployeeHomePageComponent implements OnInit {
 
 
   fillData(){
-    this.employees.uname ="Eishan";
-    this.employees.fname = "Sithu";
-    this.employees.lname ="Himehsa";
-    this.employees.address = "123/tata/bye";
-    this.employees.nic = "mage Nic aka";
-    this.employees.dob = "1990-02-12";
-    this.employees.gender = "mala";
-    this.employees.mno = "dd";
-    this.employees.edd = "dd";
-    this.employees.apn ="dd";
-    this.employees.joind = "ddd";
-    this.employees.dept = "dd";
-    this.employees.dcs = "dd";
-    this.employees.empty = "dd";
-    this.employees.sal ="dd";
-    this.employees.password = "dd";
-    this.employees.rpassword = "dd";
+    this.employees.uname ="Sithu";
+    this.employees.fname = "Himesha";
+    this.employees.lname ="Weerasingha";
+    this.employees.address = "123/malabe";
+    this.employees.nic = "971082135V";
+    this.employees.dob = "2020-10-21T12:03";
+    this.employees.gender = "Female";
+    this.employees.mno = "071-1212-123";
+    this.employees.edd = "Diploma";
+    this.employees.apn ="2020-10-21T12:03";
+    this.employees.joind = "2020-10-21T12:03";
+    this.employees.dept = "Human Resources (HR) Department";
+    this.employees.dcs = "HR-Manager";
+    this.employees.empty = "Perment Employee";
+    this.employees.sal ="1000.00";
+    this.employees.password = "1234";
+    this.employees.rpassword = "1234";
     this.demoBtnCLicked = true;
 
   }

@@ -77,7 +77,10 @@ const appRoutes: Routes =[
   { path: 'navibar' , component:NavibarComponent},
   { path: 'orderHome' , component:OrderManagementComponent},
   { path: 'packHome' , component:PackageHomeComponent},
+
   { path: 'packNew' , component:PackageNewComponent},
+  { path: 'editp/:Packageid' , component:PackageNewComponent},
+
   { path: 'packView' , component:PackageViewComponent},
   { path: 'payHome' , component:PaymentHomeComponent},
   { path: 'PayNew' , component:PaymentManagementComponent},

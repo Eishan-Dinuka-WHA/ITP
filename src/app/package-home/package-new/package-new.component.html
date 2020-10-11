@@ -7,7 +7,7 @@
 <br>
 
 <div class="container">
-  <form #pac="ngForm" (ngSubmit)="onSubmit()">
+  <form #pac="ngForm" (ngSubmit)="onSubmit(pac)">
 
     <div id="user-data">
 
@@ -27,17 +27,16 @@
 
       <div class="form-row">
         <div class="col col-md-6">
-          <label for="uname">Select Your user Name</label><br>
-          <select  id="uname" class="form-control" ngModel name="uname"  #fname="ngModel" [ngModel]="defaultValue" required>
-              <option value="choose" selected disabled>Choose your Name</option>
-              <option *ngFor="let customerName of customerDetails" value="customerName.uname">{{customerName.uname}}</option>
+          <label for="fname">Select Your user Name</label><br>
+          <select  id="fname" class="form-control" [ngModel]="demoBtnCLicked ? packages.fname : PackageDetails?.fname" name="fname"  #fname="ngModel" required>
+              <option *ngFor="let customerName of customerDetails" [value]=customerName.fname>{{customerName.fname}}</option>
           </select>
         </div>
 
         <div class="col col-md-6">
           <label for="lname">NIC</label><br>
-          <input type="text" id="lname" class="form-control"  (change)="nicValidate(lname.value)"  ngModel name="lname"  #lname="ngModel" placeholder="Last Name" required>
-          <span class="help-block" *ngIf="!lname.valid && lname.touched" style="color: red">Please enter a valid Email</span>
+          <input type="text" id="lname" class="form-control" [ngModel]="demoBtnCLicked ? packages.lname : PackageDetails?.lname"  (change)="nicValidate(lname.value)"  name="lname"  #lname="ngModel" placeholder="NIC" required>
+          <span class="help-block" *ngIf="nicInvalid && lname.touched"style="color: red">Please enter a valid Email</span>
         </div>
 
       </div>
@@ -47,7 +46,7 @@
 
         <div class="col-md-12">
           <label for="checkin">check-In </label><br>
-          <input type="datetime-local" id="checkin" class="form-control" ngModel name="checkin"  #checkin="ngModel" placeholder="Check-In" required>
+          <input type="datetime-local" id="checkin" class="form-control" [ngModel]="demoBtnCLicked ? packages.checkin : PackageDetails?.checkin"  name="checkin"  #checkin="ngModel" placeholder="Check-In" required>
           <span class="help-block" *ngIf="!checkin.valid && checkin.touched" style="color: red">Please enter a check-In Date</span>
         </div>
       </div>
@@ -57,7 +56,7 @@
 
         <div class="col-md-12">
           <label for="checkout">Check-Out</label><br>
-          <input type="datetime-local" id="checkout" class="form-control" ngModel name="checkout"  #checkout="ngModel" placeholder="Check-out" required>
+          <input type="datetime-local" id="checkout" class="form-control"  [ngModel]="demoBtnCLicked ? packages.checkout : PackageDetails?.checkout" name="checkout"  #checkout="ngModel" placeholder="Check-out" required>
           <span class="help-block" *ngIf="!checkout.valid && checkout.touched" style="color: red">Please enter a check-Out Date</span>
         </div>
       </div>
@@ -67,13 +66,13 @@
 
       <div class="col col-md-6">
         <label for="adults">Number of Adults</label><br>
-        <input type="number" id="adults" class="form-control" ngModel name="adults"  #adults="ngModel"  placeholder="Number of Adults" required>
+        <input type="number" id="adults" class="form-control" [ngModel]="demoBtnCLicked ? packages.adults : PackageDetails?.adults" name="adults"  #adults="ngModel"  placeholder="Number of Adults" required>
         <span class="help-block" *ngIf="!adults.valid && adults.touched" style="color: red">Please enter Number of Adults.</span>
       </div>
 
       <div class="col col-md-6">
         <label for="nofch">Number of Children</label><br>
-        <input type="number" id="nofch" class="form-control" ngModel name="nofch"  #nofch="ngModel"  placeholder="Number of Children" required>
+        <input type="number" id="nofch" class="form-control" [ngModel]="demoBtnCLicked ? packages.nofch : PackageDetails?.nofch" name="nofch"  #nofch="ngModel"  placeholder="Number of Children" required>
         <span class="help-block" *ngIf="!nofch.valid && nofch.touched" style="color: red">Please enter a Number of Children.</span>
       </div>
     </div>
@@ -82,7 +81,7 @@
 
       <div class="col-md-12">
         <label for="des">Special Requests</label><br>
-        <textarea cols="30" rows="10"  style="height:50;" id="des"  class="form-control" ngModel name="des"  #des="ngModel" placeholder="Service Charges" required></textarea>
+        <textarea cols="30" rows="10"  style="height:50;" id="des"  class="form-control" [ngModel]="demoBtnCLicked ? packages.des : PackageDetails?.des" name="des"  #des="ngModel" placeholder="Service Charges" required></textarea>
         <span class="help-block" *ngIf="!des.valid && des.touched" style="color: red">Please enter a Special Requests</span>
       </div>
 
@@ -102,6 +101,8 @@
     </div>
 
       <button  style="text-align: center;" class="btn btn-primary"type="submit" [disabled]="!pac.valid">Booking</button>
+      <button  class="btn btn-success" type="button" style="margin-left: 10px;" (click)="fillData()">FILL DATA</button>
+
       <br><br><br>
     </form>
 

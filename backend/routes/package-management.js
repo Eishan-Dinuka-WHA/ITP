@@ -23,6 +23,34 @@ router.post("", (req, res, next) => {
 });
 
 
+router.put("/:id",(req,res,next)=>{
+  const package = new Package({
+    _id:req.body.pid,
+    fname: req.body.fname,
+    lname: req.body.lname,
+    checkin: req.body.checkin,
+    checkout: req.body.checkout,
+    adults: req.body.adults,
+    nofch: req.body.nofch,
+    des: req.body.des
+
+  });
+  Package.updateOne({_id: req.params.id}, package).then(result=> {
+    console.log(result);
+    res.status(200).json({message:"Updated Successful"});
+  });
+});
+
+router.get("/:id",(req, res,next)=>{
+  Package.findById(req.params.id.then(Package => {
+    if(Package){
+      res.status(200).json(Package);
+    }else{
+      res.status(404).json({message:"Customer Not Found"});
+    }
+  }));
+});
+
 
 //Reteive Package
 router.get("", (req, res, next) => {

@@ -3,13 +3,21 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Packages } from '../models/package.model';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class PackageService{
   packageChanged = new Subject<Packages[]>();
   private packageArr: Packages[] = [];
+  private PackageUpdate = new Subject<Packages[]>();
 
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient , private router :Router){}
+
+  getPackageByID(id: string){
+    return {...this.packageArr.find(pkg => pkg.pid === id)};
+
+  }
+
 
   getPackage(){
     this.http.get<{message: string, packages: any}>('http://localhost:3000/api/packages')
@@ -34,6 +42,9 @@ export class PackageService{
     return this.packageArr.slice();
   }
 
+  getPostUpdateListener() {
+    return this.PackageUpdate.asObservable();
+  }
 
 
   addPackage(Package: Packages){
@@ -54,6 +65,28 @@ export class PackageService{
         this.packageChanged.next(this.packageArr.slice());
       });
 
+  }
+
+  updatePackage(Package: Packages){
+    const packageArray: Packages = {
+      pid: Package.pid,
+      fname: Package.fname,
+      lname: Package.lname,
+      checkin: Package.checkin,
+      checkout: Package.checkout,
+      adults: Package.adults,
+      nofch: Package.nofch,
+      des: Package.des,
+    };
+    this.http.put("http://localhost:3000/api/packages/" + Package.pid, packageArray)
+      .subscribe(response => {
+        const PackageUpdate = [...this.packageArr];
+        const oldCustomersIndex = PackageUpdate.findIndex(p => p.pid === packageArray.pid);
+        PackageUpdate[oldCustomersIndex] = packageArray;
+        this.packageArr = PackageUpdate;
+        this.PackageUpdate.next([...this.packageArr]);
+
+      });
   }
 
   deletePackage(Packageid: string){

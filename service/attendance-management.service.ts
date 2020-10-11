@@ -94,6 +94,6 @@ export class AttendanceRegistrationService{
         const AttendancesUpdated = this.attendanceArr.filter(attendance => attendance.aid !== Attendancid);
         this.attendanceArr = AttendancesUpdated;
         this.AttendancesUpdated.next([...this.attendanceArr]);
-      })
+      });
   }
 }

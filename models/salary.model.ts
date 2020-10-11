@@ -2,7 +2,6 @@ export class Salarys{
   constructor(
     public sid: string,
     public ename: string,
-    public des: string,
     public toh: string,
     public twd: string,
     public payd: string,

@@ -23,7 +23,6 @@ export class SalaryService{
           return salaryData.salarys.map(salary => {
             return{
               ename: salary.ename,
-              etype: salary.etype,
               toh: salary.toh,
               twd: salary.twd,
               payd: salary.payd,
@@ -59,7 +58,6 @@ export class SalaryService{
     const salaryArray: Salarys = {
       sid: salary.sid,
       ename: salary.ename,
-      des: salary.des,
       toh: salary.toh,
       twd: salary.twd,
       payd: salary.payd,
@@ -90,7 +88,6 @@ export class SalaryService{
     const salaryArray: Salarys = {
       sid: salary.sid,
       ename: salary.ename,
-      des: salary.des,
       toh: salary.toh,
       twd: salary.twd,
       payd: salary.payd,

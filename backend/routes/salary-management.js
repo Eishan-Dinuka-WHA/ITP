@@ -6,7 +6,6 @@ const router = express.Router();
 router.post("", (req, res, next) => {
   const salary = new Salary({
     ename: req.body.ename,
-    des: req.body.des,
     toh: req.body.toh,
     twd: req.body.twd,
     payd: req.body.payd,
@@ -35,7 +34,6 @@ router.put("/:id",(req,res,next)=>{
   const salary = new Salary({
     _id:req.body.sid,
     ename: req.body.ename,
-    des: req.body.des,
     toh: req.body.toh,
     twd: req.body.twd,
     payd: req.body.payd,

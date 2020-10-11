@@ -3,6 +3,9 @@ import { Customers } from 'models/customer.model';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { CustomerRegistrationService } from 'service/customer-registration.service';
+import * as jspdf from 'jspdf';
+import html2canvas from 'html2canvas';
+
 
 @Component({
   selector: 'app-customer-view',
@@ -35,11 +38,22 @@ export class CustomerViewComponent implements OnInit, OnDestroy {
     window.location.reload();
   }
 
+  downloadPDF(){
+    var element = document.getElementById('table');
+
+    html2canvas(element).then((canvas) => {
+      var imgData = canvas.toDataURL('image/png');
+      var doc = new jspdf.jsPDF;
+      var imgHeight = canvas.height * 210 / canvas.width;
+      doc.text('Customer Registry Report', 15, 15);
+      doc.addImage(imgData, 0, 20, 210, imgHeight);
+      doc.save("report.pdf");
+    })
+
+  }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
-
-
 }
 
