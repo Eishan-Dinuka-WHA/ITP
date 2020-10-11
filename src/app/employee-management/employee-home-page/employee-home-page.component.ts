@@ -51,7 +51,7 @@ export class EmployeeHomePageComponent implements OnInit {
     this.demoBtnCLicked = false;
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has("EmployeeId")) {
-        this.mode = "editt";
+        this.mode = "edit";
         this.EmployeeId = paramMap.get("EmployeeId");
         this.isLoading = true;
         this.employeeDetails = this.employeeService.getEmployeeByID(this.EmployeeId);
@@ -118,7 +118,7 @@ export class EmployeeHomePageComponent implements OnInit {
     this.employees.lname ="Weerasingha";
     this.employees.address = "123/malabe";
     this.employees.nic = "971082135V";
-    this.employees.dob = "2020-10-21T12:03";
+    this.employees.dob = "2020-10-21";
     this.employees.gender = "Female";
     this.employees.mno = "071-1212-123";
     this.employees.edd = "Diploma";

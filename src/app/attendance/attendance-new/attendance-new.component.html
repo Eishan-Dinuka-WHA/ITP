@@ -16,19 +16,12 @@
         <input type="text" id="aid" class="form-control" [ngModel]="attendanceDetails?.aid" name="aid" #eid="ngModel"placeholder="Auto Generated" disabled>
       </div>
 
-      <div class="form-group">
-
-        <label class="lbl" for="eid">Employee Id</label>
-        <input type="text" class="form-control"  [ngModel]="demoBtnCLicked ? attendances.eid : attendanceDetails?.eid" name="eid" #eid="ngModel" required>
-        <span class="help-block" *ngIf="!eid.valid && eid.touched" style="color: red; font-size: smaller;">Employee is required*</span>
-      </div>
-
-
 
       <div class="form-group">
-        <label class="lbl" for="name">Full Name </label>
-        <input type="text" class="form-control" [ngModel]="demoBtnCLicked ? attendances.name : attendanceDetails?.name" name="name" #name="ngModel" required>
-        <span class="help-block" *ngIf="!name.valid && name.touched" style="color: red; font-size: smaller;">Full Name is required*</span>
+        <label for="name">Select Your Name</label><br>
+        <select  id="name" class="form-control" [ngModel]="demoBtnCLicked ? attendances.name : attendanceDetails?.name" name="name"  #name="ngModel" required>
+            <option *ngFor="let customerName of employeeDetails" [value]=customerName.fname>{{customerName.fname}}</option>
+        </select>
       </div>
 
       <div class="form-group">
@@ -40,9 +33,30 @@
 
       <div class="form-group">
         <label class="lbl" for="des"> Designation </label>
-        <input type="email" class="form-control"  [ngModel]="demoBtnCLicked ? attendances.des : attendanceDetails?.des" name="des" #des="ngModel" required>
-        <span class="help-block" *ngIf="!des.valid && des.touched" style="color: red;font-size: smaller;">Designation is required*</span>
+         <select  id = "des" class="form-control" [ngModel]="demoBtnCLicked ? attendances.des : attendanceDetails?.des" name="des" #des="ngModel" required>
+          <option value="HR-Manager">HR-Manager</option>
+          <option value="Room-Service">Room-Service</option>
+          <option value="Receptionists">Receptionists</option>
+          <option value="Supplier">Supplier</option>
+          <option value="Chef">Chef</option>
+          <option value="Waiter/waitress">Waiter/waitress</option>
+          </select>
       </div>
+
+      <div class="form-group">
+
+        <br>
+        <div class="lbl">
+          <label for="sta">Stataus</label><br>
+          <select id="sta" class="form-control" [ngModel]="demoBtnCLicked ? attendances.sta : attendanceDetails?.sta" name="sta"  #sta="ngModel"  required>
+            <option value="present">present</option>
+            <option value="Absent">Absent</option>
+            <option value="Half Day">Half Day</option>
+            <option value="HoliDay">HoliDay</option>
+          </select>
+      </div>
+      </div>
+
 
       <div class="form-group">
 
@@ -65,21 +79,9 @@
              </div>
            </div>
           </div>
+          <br><br><br>
       </div>
 
-      <div class="form-group">
-
-        <br>
-        <div class="lbl">
-          <label for="sta">Stataus</label><br>
-          <select id="sta" class="form-control" [ngModel]="demoBtnCLicked ? attendances.sta : attendanceDetails?.sta" name="sta"  #sta="ngModel"  required>
-            <option value="present">present</option>
-            <option value="Absent">Absent</option>
-            <option value="Half Day">Half Day</option>
-            <option value="HoliDay">HoliDay</option>
-          </select>
-      </div>
-      </div>
 
       <br><br><br>
 

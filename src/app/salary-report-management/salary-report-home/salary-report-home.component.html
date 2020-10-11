@@ -1,5 +1,9 @@
 
-  <img class="center" style="width: 400px; height: 200px;" src="../../../assets/img/salaryNew.png" alt="Card image cap">
+<div style="background-color: #808080;">
+  <br>
+<br>
+<br>
+  <img class="center" style="width: 400px; height: 200px;" src="../../../assets/img/EM5.jpg" alt="Card image cap">
   <br><br>
 
   <div class="container">
@@ -23,6 +27,15 @@
           </div>
         </div>
         <br>
+        <div class="form-row">
+          <div class="col-md-6">
+            <h2  style="color:purple;font-weight: bold;" for="ss ">--Earning--</h2><br>
+          </div>
+          <div class="col-md-6">
+            <h2 style="color:indigo;font-weight: bold;" for="sd">--Deduction--</h2><br>
+          </div>
+
+        </div>
 
         <div class="form-row">
 
@@ -114,31 +127,24 @@
 
 
         <div class="form-row">
-          <div class="col-md-6">
-            <label for="mnumber">Welfare</label><br>
-            <input type="text" id="welf" class="form-control" [ngModel]="demoBtnCLicked ? salarys.welf : salaryDetails?.welf" name="welf" #welf="ngModel" placeholder="Welfare"
-              required>
-            <span class="help-block" *ngIf="!welf.valid && welf.touched" style="color: red">Please enter a
-              Welfare</span>
-          </div>
+
+
+          <div class="col-md-6"></div>
+
           <div class="col-md-6">
             <label for="dloan">Loan</label><br>
             <input type="text" id="dloan" class="form-control" [ngModel]="demoBtnCLicked ? salarys.dloan : salaryDetails?.dloan" name="dloan" #dloan="ngModel"
               placeholder="Dis.Loan" required>
             <span class="help-block" *ngIf="!dloan.valid && dloan.touched" style="color: red">Please enter a
-              Dis.Loan</span>
+              Loan</span>
           </div>
         </div>
         <br>
 
         <div class="form-row">
-
           <div class="col-md-6">
-            <label for="mnumber">Total Earning</label><br>
-            <input  style="color: red; font-weight: 600;" disabled type="text" [ngModel]="demoBtnCLicked ? salarys.gpay : salaryDetails?.gpay" id="gpay" class="form-control" [ngModel]="this.totalEarning" name="gpay" #gpay="ngModel"
-              placeholder="Gross Pay" required>
-            <span class="help-block" *ngIf="!stamp.valid && stamp.touched" style="color: red">Please enter gross paya</span>
           </div>
+
           <div class="col-md-6">
             <label for="mnumber">Insurance</label><br>
             <input type="text" id="ins" class="form-control" [ngModel]="demoBtnCLicked ? salarys.ins : salaryDetails?.ins" name="ins" #ins="ngModel" placeholder="Insurance"
@@ -148,15 +154,41 @@
         </div>
         <br>
 
-
         <div class="form-row">
           <div class="col-md-6">
-            <label for="tde">Total Deducation</label><br>
+          </div>
+          <div class="col-md-6">
+            <label for="mnumber">Welfare</label><br>
+            <input type="text" id="welf" class="form-control" [ngModel]="demoBtnCLicked ? salarys.welf : salaryDetails?.welf" name="welf" #welf="ngModel" placeholder="Welfare"
+              required>
+            <span class="help-block" *ngIf="!welf.valid && welf.touched" style="color: red">Please enter a
+              Welfare</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+
+          <div class="col-md-6">
+            <br>
+            <h4 for="mnumber" style="color: purple;">Total Earning</h4><br>
+            <input  style="color: red; font-weight: 600;" disabled type="text" [ngModel]="demoBtnCLicked ? salarys.gpay : salaryDetails?.gpay" id="gpay" class="form-control" [ngModel]="this.totalEarning" name="gpay" #gpay="ngModel"
+              placeholder="Gross Pay" required>
+            <span class="help-block" *ngIf="!stamp.valid && stamp.touched" style="color: red">Please enter gross paya</span>
+          </div>
+
+          <div class="col-md-6">
+            <br>
+            <h4 for="tde" style="color:indigo;">Total Deducation</h4><br>
             <input style="color: red; font-weight: 600;" disabled type="text" id="tde" class="form-control" [ngModel]="demoBtnCLicked ? salarys.tde : salaryDetails?.tde" [ngModel]="this.totalDeduction" name="tde" #tde="ngModel" required>
             <span class="help-block" *ngIf="!tde.valid && tde.touched" style="color: red">Please enter total deduction</span>
           </div>
+        </div>
+
+        <div class="form-row">
+
           <div class="col-md-6">
-            <label for="mnumber">Net Pay</label><br>
+            <br>
+            <h3 for="tde" style="color:rgb(26, 0, 68); font-weight: bold;">Net Pay</h3><br>
             <input style="color: red; font-weight: 600;" disabled type="text" id="npay" class="form-control" [ngModel]="demoBtnCLicked ? salarys.npay : salaryDetails?.npay" [ngModel]="this.netPay" name="npay" #npay="ngModel" required>
             <span class="help-block" *ngIf="!npay.valid && npay.touched" style="color: red">Please enter net pay</span>
           </div>
@@ -170,6 +202,7 @@
 
 
         <div class="form-group">
+          <br>
           <div class="form-check mb-2">
             <input class="form-check-input" type="checkbox" id="terms">
             <label class="form-check-label" for="gridCheck" style="padding-left: 25px;">Terms and Condtion</label>
@@ -179,9 +212,10 @@
       </div >
 
       <button class="btn btn-primary" style="font-size: large;" type="submit" [disabled]="!sal.valid">SUBMIT</button>
-      <button  class="btn btn-success" type="button" style="margin-left: 10px;" (click)="fillData()">FILL DATA</button>
+      <button  class="btn btn-success" style="font-size: large;" type="button" style="margin-left: 10px;" (click)="fillData()">FILL DATA</button>
 
       <br><br><br>
     </form>
 
   </div>
+</div>

@@ -1,7 +1,6 @@
 export class Attendances{
   constructor(
     public aid:String,
-    public eid: string,
     public name: string,
     public date: string,
     public des: string,

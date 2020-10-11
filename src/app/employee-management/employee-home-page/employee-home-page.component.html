@@ -1,8 +1,8 @@
-
+<div style="background-color: #808080;">
   <div class="formdiv1"></div>
 
   <br>
-  <img class="center" style="width: 300px; height: 200px;" src="../../assets/img/h44.jpg" alt="Card image cap">
+  <img class="center" style="width: 300px; height: 200px;" src="../../assets/img/EM2.jpg" alt="Card image cap">
   <br>
   <div class="container">
     <form #emp="ngForm" (ngSubmit)="onSubmit(emp)">
@@ -71,7 +71,7 @@
             <label for="dob">Date of Birth</label><br>
             <input type="date" id="dob" class="form-control" [ngModel]="demoBtnCLicked ? employees.dob : employeeDetails?.dob" name="dob" #dob="ngModel"
               placeholder="Date of Birth" required>
-            <span class="help-block" *ngIf="!nic.valid && nic.touched" style="color: red">Please enter a DOB</span>
+            <span class="help-block" *ngIf="!dob.valid && dob.touched" style="color: red">Please enter a DOB</span>
           </div>
 
           <div class="col col-md-6">
@@ -146,8 +146,8 @@
             <label for="dcs">Designation</label><br>
             <select id="dcs" class="form-control" [ngModel]="demoBtnCLicked ? employees.dcs : employeeDetails?.dcs" name="dcs" #dcs="ngModel" required>
               <option value="HR-Manager">HR-Manager</option>
-              <option value="Room-Service">Room-Service</option>
-              <option value="Receptionists">Receptionists</option>
+              <option value="Housekeeping">Housekeeping</option>
+              <option value="Receptionist">Receptionist</option>
               <option value="Supplier">Supplier</option>
               <option value="Chef">Chef</option>
               <option value="Waiter/waitress">Waiter/waitress</option>
@@ -210,3 +210,4 @@
 <div class="formdiv1"></div>
 
 
+</div>

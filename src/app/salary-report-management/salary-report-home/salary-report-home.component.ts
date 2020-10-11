@@ -90,7 +90,8 @@ export class SalaryReportHomeComponent implements OnInit {
   }
 
   calculateTotalEarning(){
-    this.totalEarning = +this.addSalaryForm.value.bsal + +this.addSalaryForm.value.owork + +this.addSalaryForm.value.welf +
+    this.totalEarning = +this.addSalaryForm.value.bsal +
+                         +this.addSalaryForm.value.owork +
                         +this.addSalaryForm.value.bonus;
 
   }
@@ -99,6 +100,7 @@ export class SalaryReportHomeComponent implements OnInit {
     this.totalDeduction = +this.addSalaryForm.value.fadvan +
                           +this.addSalaryForm.value.stamp +
                           +this.epfAmount +
+                          +this.addSalaryForm.value.welf+
                           +this.addSalaryForm.value.dloan +
                           +this.addSalaryForm.value.ins;
 

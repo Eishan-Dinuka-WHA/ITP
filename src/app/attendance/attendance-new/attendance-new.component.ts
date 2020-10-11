@@ -3,6 +3,10 @@ import { NgForm } from '@angular/forms';
 import { Attendances } from 'models/attendance.model';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { AttendanceRegistrationService } from 'service/attendance-management.service';
+import { EmployeeService} from'service/employee-management.service';
+import { Employees} from 'models/employee.model';
+import { Subscription} from 'rxjs';
+import { formatCurrency } from '@angular/common';
 
 
 @Component({
@@ -14,10 +18,12 @@ export class AttendanceNewComponent implements OnInit {
   @ViewChild('atten', { static: false }) attendanceForm: NgForm;
   defaultValue: string = "choose";
   demoBtnCLicked: boolean = false;
+  private Subscription :Subscription;
   attendanceDetails: Attendances;
+  employeeDetails:Employees[]=[];
   attendances: Attendances = {
+
     aid: '',
-    eid: '',
     name: '',
     date: '',
     des: '',
@@ -34,6 +40,7 @@ export class AttendanceNewComponent implements OnInit {
 
   constructor(private router: Router,
     private attendanceRegistrationService: AttendanceRegistrationService,
+    private employeeService:EmployeeService,
     private route: ActivatedRoute) { }
 
 
@@ -51,7 +58,18 @@ export class AttendanceNewComponent implements OnInit {
       }
     });
 
+
+//------------------  using another class -------------------------------------------------------------------
+this.employeeDetails = this.employeeService.getEmployee();
+this.Subscription = this.employeeService.employeeChanged.subscribe(
+  (employees: Employees[]) => {
+    this.employeeDetails = employees;
   }
+);
+//-------------------------------------------------------------------------------------
+}
+
+
 
   onSubmit(form: NgForm) {
     this.demoBtnCLicked = false;
@@ -62,7 +80,6 @@ export class AttendanceNewComponent implements OnInit {
     console.log(this.attendanceForm);
     this.submitted = true;
     this.attendances.aid = this.Attendanceid;
-    this.attendances.eid = this.attendanceForm.value.eid;
     this.attendances.name = this.attendanceForm.value.name;
     this.attendances.date = this.attendanceForm.value.date;
     this.attendances.sta = this.attendanceForm.value.sta;
@@ -85,11 +102,10 @@ export class AttendanceNewComponent implements OnInit {
 
   }
   fillData() {
-    this.attendances.eid = "";
-    this.attendances.name = "aa";
+    this.attendances.name = "Himesha";
     this.attendances.date = "2020-10-23";
     this.attendances.sta = "present";
-    this.attendances.des = "aa";
+    this.attendances.des = "HR-Manager";
     this.attendances.atime = "23:16";
     this.attendances.dtime = "24:16";
 

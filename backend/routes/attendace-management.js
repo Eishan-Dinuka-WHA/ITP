@@ -6,7 +6,6 @@ const Attendance = require('../models/attendance');
 //Add Attendance
 router.post("", (req, res, next) => {
   const attendance = new Attendance({
-    eid: req.body.eid,
     name: req.body.name,
     date: req.body.date,
     des: req.body.des,
@@ -23,7 +22,6 @@ router.post("", (req, res, next) => {
 router.put("/:id",(req,res,next)=>{
   const attendance = new Attendance({
     _id:req.body.aid,
-    eid: req.body.eid,
     name: req.body.name,
     date: req.body.date,
     des: req.body.des,

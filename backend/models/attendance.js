@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const attendanceSchema = mongoose.Schema({
-  eid: { type: String, required: true},
   name: { type: String, required: true},
   date: { type: String, required: true},
   des: {type: String, required: true},

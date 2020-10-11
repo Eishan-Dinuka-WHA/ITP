@@ -29,7 +29,6 @@ export class AttendanceRegistrationService{
               atime: attendance.atime,
               dtime: attendance.dtime,
               sta: attendance.sta,
-              eid: attendance.eid,
               aid: attendance._id,
             };
           });
@@ -49,7 +48,6 @@ export class AttendanceRegistrationService{
   addAttendance(attendance: Attendances){
     const attendanceArray: Attendances = {
       aid: attendance.aid,
-      eid: attendance.eid,
       name: attendance.name,
       date: attendance.date,
       des: attendance.des,
@@ -69,7 +67,6 @@ export class AttendanceRegistrationService{
   updateAttendance(attendance: Attendances){
     const attendancesArray: Attendances = {
       aid: attendance.aid,
-      eid: attendance.eid,
       name: attendance.name,
       date: attendance.date,
       des: attendance.des,
