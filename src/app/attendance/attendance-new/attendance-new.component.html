@@ -23,6 +23,12 @@
         <span class="help-block" *ngIf="!eid.valid && eid.touched" style="color: red; font-size: smaller;">Employee is required*</span>
       </div>
 
+        <label for="ename">Select Employee Id</label><br>
+            <select  id="ename" class="form-control" name="ename"  #ename="ngModel" [ngModel]="defaultValue" [ngModel]="demoBtnCLicked ? salarys.ename : salaryDetails?.ename" required>
+                <option value="choose" selected disabled>Choose your Name</option>
+                <option *ngFor="let EmployeeName of EmployeeDetails" value="EmployeeName.eid">{{EmployeeName.eid}}</option>
+            </select>
+
       <div class="form-group">
         <label class="lbl" for="name">Full Name </label>
         <input type="text" class="form-control" [ngModel]="demoBtnCLicked ? attendances.name : attendanceDetails?.name" name="name" #name="ngModel" required>

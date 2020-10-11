@@ -15,36 +15,15 @@
           </div>
 
           <div class="col-md-6">
-            <label for="ename">Employee Name</label><br>
-            <input type="text" id="ename" class="form-control" [ngModel]="demoBtnCLicked ? salarys.ename : salaryDetails?.ename" name="ename" #ename="ngModel"
-              placeholder="Employee Name" required>
-            <span class="help-block" *ngIf="!ename.valid && ename.touched" style="color: red">Please enter a Employee
-              Name.</span>
-          </div>
 
+            <label for="ename">Select Employee Id</label><br>
+            <select  id="ename" class="form-control" name="ename"  #ename="ngModel" [ngModel]="defaultValue" [ngModel]="demoBtnCLicked ? salarys.ename : salaryDetails?.ename" required>
+                <option value="choose" selected disabled>Choose your Name</option>
+                <option *ngFor="let EmployeeName of EmployeeDetails" value="EmployeeName.eid">{{EmployeeName.eid}}</option>
+            </select>
+          </div>
         </div>
         <br>
-        <div class="form-row">
-
-          <div class="col col-md-6">
-            <label for="etype">Employee Type</label><br>
-            <input type="text" id="etype" class="form-control" [ngModel]="demoBtnCLicked ? salarys.etype : salaryDetails?.etype" name="etype" #etype="ngModel"
-              placeholder="Employee Type" required>
-            <span class="help-block" *ngIf="!etype.valid && etype.touched" style="color: red">Please enter a Employee
-              Type.</span>
-          </div>
-
-          <div class="col col-md-6">
-            <label for="dept">Department</label><br>
-            <input type="text" id="dept" class="form-control" [ngModel]="demoBtnCLicked ? salarys.dept : salaryDetails?.dept" name="dept" #dept="ngModel"
-              placeholder="Department" required>
-            <span class="help-block" *ngIf="!dept.valid && dept.touched" style="color: red">Please enter a
-              Department.</span>
-          </div>
-
-        </div>
-        <br>
-
 
         <div class="form-row">
 

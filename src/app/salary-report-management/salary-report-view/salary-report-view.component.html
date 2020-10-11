@@ -11,8 +11,6 @@
       <tr>
       <th scope="col">Salary ID</th>
       <th scope="col">Employee Name</th>
-      <th scope="col">Employee Type</th>
-      <th scope="col">Department</th>
       <th scope="col">Designation</th>
       <th scope="col">Toatl Overtime Hours</th>
       <th scope="col">Total working day per month</th>
@@ -40,8 +38,6 @@
         <tr *ngFor="let salary of salarys">
           <td>{{ salary.sid}}</td>
           <td>{{ salary.ename}}</td>
-          <td>{{ salary.etype}}</td>
-          <td>{{ salary.dept}}</td>
           <td>{{ salary.des}}</td>
           <td>{{ salary.toh}}</td>
           <td>{{ salary.twd}}</td>
@@ -58,7 +54,7 @@
           <td>{{ salary.tde}}</td>
           <td>{{ salary.gpay}}</td>
           <td>{{ salary.npay}}</td>
-          <td style="padding-right: 1px;"><a class="btn btn-warning pull-right" [routerLink]="['/edit',salary.sid]"  style="width:80px;">EDIT</a></td>
+          <td style="padding-right: 1px;"><a class="btn btn-warning pull-right" [routerLink]="['/editS',salary.sid]"  style="width:80px;">EDIT</a></td>
           <td style="padding-left: 1px;"><a class="btn btn-danger pull-right" style="width:80px; " (click)="onDelete(salary.sid)">DELETE</a></td>
 
 

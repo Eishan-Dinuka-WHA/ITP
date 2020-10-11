@@ -4,6 +4,10 @@ import { Salarys } from 'models/salary.model';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { SalaryService } from 'service/salary-management.service';
 
+import { EmployeeService } from 'service/employee-management.service';
+import { Employees } from 'models/employee.model';
+import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'app-salary-report-home',
   templateUrl: './salary-report-home.component.html',
@@ -12,13 +16,13 @@ import { SalaryService } from 'service/salary-management.service';
 export class SalaryReportHomeComponent implements OnInit {
   @ViewChild('sal', {static: false}) addSalaryForm: NgForm;
   defaultValue: string = "choose";
+  private subscription :Subscription
   demoBtnCLicked: boolean = false;
+  EmployeeDetails: Employees[] =[];
   salaryDetails: Salarys;
   salarys: Salarys = {
     sid: '',
     ename:'',
-    etype:'',
-    dept: '',
     des: '',
     toh: '',
     twd: '',
@@ -49,9 +53,19 @@ export class SalaryReportHomeComponent implements OnInit {
 
   constructor(private router: Router,
               private salaryService: SalaryService,
+              private employeeService:EmployeeService,
               private route: ActivatedRoute) { }
 
   ngOnInit(){
+
+    this.EmployeeDetails = this.employeeService.getEmployee();
+    this.subscription = this.employeeService.employeeChanged.subscribe(
+      (employees: Employees[]) => {
+        this.EmployeeDetails = employees;
+      }
+    );
+
+
     this.epfAmount = 0;
     this.totalEarning = 0;
     this.totalDeduction = 0;
@@ -105,8 +119,6 @@ export class SalaryReportHomeComponent implements OnInit {
 
     this.salarys.sid = this.Salaryid;
     this.salarys.ename = this.addSalaryForm.value.ename;
-    this.salarys.etype = this.addSalaryForm.value.etype;
-    this.salarys.dept = this.addSalaryForm.value.dept;
     this.salarys.des = this.addSalaryForm.value.des;
     this.salarys.toh = this.addSalaryForm.value.toh;
     this.salarys.twd = this.addSalaryForm.value.twd;
@@ -138,8 +150,6 @@ export class SalaryReportHomeComponent implements OnInit {
   fillData(){
 
     this.salarys.ename = "";
-    this.salarys.etype ="" ;
-    this.salarys.dept = "";
     this.salarys.des = "";
     this.salarys.toh = "";
     this.salarys.twd = "";

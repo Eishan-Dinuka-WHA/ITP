@@ -24,8 +24,6 @@ export class SalaryService{
             return{
               ename: salary.ename,
               etype: salary.etype,
-              dept: salary.dept,
-              des: salary.des,
               toh: salary.toh,
               twd: salary.twd,
               payd: salary.payd,
@@ -61,8 +59,6 @@ export class SalaryService{
     const salaryArray: Salarys = {
       sid: salary.sid,
       ename: salary.ename,
-      etype: salary.etype,
-      dept: salary.dept,
       des: salary.des,
       toh: salary.toh,
       twd: salary.twd,
@@ -94,8 +90,6 @@ export class SalaryService{
     const salaryArray: Salarys = {
       sid: salary.sid,
       ename: salary.ename,
-      etype: salary.etype,
-      dept: salary.dept,
       des: salary.des,
       toh: salary.toh,
       twd: salary.twd,
