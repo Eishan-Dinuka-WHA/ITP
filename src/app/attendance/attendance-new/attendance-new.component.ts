@@ -45,7 +45,7 @@ export class AttendanceNewComponent implements OnInit {
 
 
   ngOnInit() {
-
+    this.demoBtnCLicked = false;
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has("Attendanceid")) {
         this.mode = "edit";
@@ -76,7 +76,7 @@ this.Subscription = this.employeeService.employeeChanged.subscribe(
     if (form.invalid) {
       return;
     }
-
+    this.demoBtnCLicked = false;
     console.log(this.attendanceForm);
     this.submitted = true;
     this.attendances.aid = this.Attendanceid;
@@ -102,12 +102,13 @@ this.Subscription = this.employeeService.employeeChanged.subscribe(
 
   }
   fillData() {
-    this.attendances.name = "Himesha";
+    this.attendances.name = "Kalum";
     this.attendances.date = "2020-10-23";
     this.attendances.sta = "present";
     this.attendances.des = "HR-Manager";
-    this.attendances.atime = "23:16";
-    this.attendances.dtime = "24:16";
+    this.attendances.atime = "20:16";
+    this.attendances.dtime = "23:16";
+    this.demoBtnCLicked = true;
 
   }
 

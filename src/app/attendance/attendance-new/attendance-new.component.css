@@ -36,11 +36,12 @@
 
 .formdiv1{
   width: 25%;
-  background-color: turquoise;
+  background-image: url('/assets/img/s22.jpg');
 }
 
 .formdiv2{
   width: 50%;
+  background-color:  #808080;
 }
 
 .formmain{
@@ -49,7 +50,7 @@
 }
 
 #hd1{
-  color: green;
+  color: purple;
   text-align: center;
 }
 

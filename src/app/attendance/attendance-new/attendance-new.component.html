@@ -75,7 +75,7 @@
            <div class= "clock">
              <div class="clockmini">
               <input type="time" class="form-control"  [ngModel]="demoBtnCLicked ? attendances.dtime : attendanceDetails?.dtime" name="dtime" #dtime="ngModel" required>
-              <span class="help-block" *ngIf="!atime.valid && atime.touched" style="font-size: smaller; color: red;">Time is required*</span>
+              <span class="help-block" *ngIf="!dtime.valid && dtime.touched" style="font-size: smaller; color: red;">Time is required*</span>
              </div>
            </div>
           </div>
