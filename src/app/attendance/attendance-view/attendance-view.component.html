@@ -31,7 +31,7 @@
           <td>{{ attendance.atime}}</td>
           <td>{{ attendance.dtime}}</td>
 
-          <td><a class="btn btn-warning pull-right" class="button1" style="width:80px;">EDIT</a></td>
+          <td><a class="btn btn-warning pull-right" class="button1" style="width:80px;" [routerLink]="['/edit',attendance.aid]">EDIT</a></td>
           <td><a class="btn btn-danger pull-right" class="button2"(click)="onDelete(attendance.aid)">DELETE</a></td>
 
 

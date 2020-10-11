@@ -96,7 +96,7 @@ export class CustomerNewComponent implements OnInit {
 
   fillData(){
     this.customers.uname = "Eishan321";
-    this.customers.title = "mr";
+    this.customers.title = "r";
     this.customers.fname = "Eishan";
     this.customers.lname = "Weerasinghe";
     this.customers.country = "SriLanka";
@@ -105,7 +105,7 @@ export class CustomerNewComponent implements OnInit {
     this.customers.street = "Malabe Road";
     this.customers.ctype = "local";
     this.customers.pcode = "87654";
-    this.customers.email = "demodata@email.com";
+    this.customers.email = "demoData@email.com";
     this.customers.mnumber = "097-9876-765";
     this.customers.password = "12345";
     this.customers.rpassword = "12345";

@@ -1,7 +1,7 @@
 import { Component, OnChanges, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Salarys } from 'models/salary.model';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { SalaryService } from 'service/salary-management.service';
 
 @Component({
@@ -12,6 +12,8 @@ import { SalaryService } from 'service/salary-management.service';
 export class SalaryReportHomeComponent implements OnInit {
   @ViewChild('sal', {static: false}) addSalaryForm: NgForm;
   defaultValue: string = "choose";
+  demoBtnCLicked: boolean = false;
+  salaryDetails: Salarys;
   salarys: Salarys = {
     sid: '',
     ename:'',
@@ -39,6 +41,10 @@ export class SalaryReportHomeComponent implements OnInit {
   totalDeduction: number;
   netPay: number;
   submitted=false;
+
+  isLoading = false;
+  private mode = "create";
+  private Salaryid: string;
   //private subscription: Subscription;
 
   constructor(private router: Router,
@@ -51,6 +57,18 @@ export class SalaryReportHomeComponent implements OnInit {
     this.totalDeduction = 0;
     this.netPay = 0;
 
+    this.demoBtnCLicked = false;
+    this.route.paramMap.subscribe((paramMap: ParamMap) => {
+      if (paramMap.has("Salaryid")) {
+        this.mode = "edit";
+        this.Salaryid = paramMap.get("Salaryid");
+        this.isLoading = true;
+        this.salaryDetails = this.salaryService.getSalaryByID(this.Salaryid);
+      } else {
+        this.mode = "create";
+        this.Salaryid = null;
+      }
+    });
 
   }
 
@@ -79,10 +97,13 @@ export class SalaryReportHomeComponent implements OnInit {
 
 
 
-  onSubmit(){
-    console.log(this.addSalaryForm);
-    this.submitted = true;
-    this.salarys.sid = null;
+  onSubmit(form: NgForm) {
+    this.demoBtnCLicked = false;
+    if (form.invalid) {
+      return;
+    }
+
+    this.salarys.sid = this.Salaryid;
     this.salarys.ename = this.addSalaryForm.value.ename;
     this.salarys.etype = this.addSalaryForm.value.etype;
     this.salarys.dept = this.addSalaryForm.value.dept;
@@ -103,12 +124,39 @@ export class SalaryReportHomeComponent implements OnInit {
     this.salarys.gpay = this.totalEarning.toString();
     this.salarys.npay = this.netPay.toString();
 
+    console.log(this.addSalaryForm);
+    this.submitted = true;
+    if (this.mode === "create") {
+      this.salaryService.addSalary(this.salarys);
+      this.router.navigate(['../salaryView'], { relativeTo: this.route });
+    } else {
+      this.salaryService.updateSalary(this.salarys);
+      this.router.navigate(['../../salaryView'], { relativeTo: this.route });
+    }
+  }
 
-    this.addSalaryForm.reset();
+  fillData(){
 
-    this.salaryService.addSalary(this.salarys);
-
-    this.router.navigate(['../salaryView'], {relativeTo: this.route});
+    this.salarys.ename = "";
+    this.salarys.etype ="" ;
+    this.salarys.dept = "";
+    this.salarys.des = "";
+    this.salarys.toh = "";
+    this.salarys.twd = "";
+    this.salarys.payd = "";
+    this.salarys.bsal = "";
+    this.salarys.owork = "";
+    this.salarys.welf = "";
+    this.salarys.epf ="";
+    this.salarys.bonus = "";
+    this.salarys.stamp = "";
+    this.salarys.dloan = "";
+    this.salarys.fadvan = "";
+    this.salarys.ins = "";
+    this.salarys.tde = "";
+    this.salarys.gpay = "";
+    this.salarys.npay = "";
+    this.demoBtnCLicked = true;
 
   }
 

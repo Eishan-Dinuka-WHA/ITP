@@ -3,7 +3,7 @@
   <div class="formdiv1"></div>
 
   <div class="formdiv2">
-    <form #atten="ngForm" (ngSubmit)="onSubmit()">
+    <form #atten="ngForm" (ngSubmit)="onSubmit(atten)">
       <br>
 
       <h1 id="hd1"><b>Marking Attendance</b></h1>
@@ -13,32 +13,32 @@
       <div class="form-group">
 
         <label class="lbl" for="aid">Attendance Id</label>
-        <input type="text" id="aid" class="form-control" ngModel name="aid" #eid="ngModel"placeholder="Auto Generated" disabled>
+        <input type="text" id="aid" class="form-control" [ngModel]="attendanceDetails?.aid" name="aid" #eid="ngModel"placeholder="Auto Generated" disabled>
       </div>
 
       <div class="form-group">
 
         <label class="lbl" for="eid">Employee Id</label>
-        <input type="text" class="form-control" ngModel name="eid" #eid="ngModel" required>
+        <input type="text" class="form-control"  [ngModel]="demoBtnCLicked ? attendances.aid : attendanceDetails?.aid" name="eid" #eid="ngModel" required>
         <span class="help-block" *ngIf="!eid.valid && eid.touched" style="color: red; font-size: smaller;">Employee is required*</span>
       </div>
 
       <div class="form-group">
         <label class="lbl" for="name">Full Name </label>
-        <input type="text" class="form-control" ngModel name="name" #name="ngModel" required>
+        <input type="text" class="form-control" [ngModel]="demoBtnCLicked ? attendances.name : attendanceDetails?.name" name="name" #name="ngModel" required>
         <span class="help-block" *ngIf="!name.valid && name.touched" style="color: red; font-size: smaller;">Full Name is required*</span>
       </div>
 
       <div class="form-group">
         <label class="lbl" for="date">Date</label>
-        <input type="date" class="form-control" ngModel name="date" #date="ngModel" required>
+        <input type="date" class="form-control" [ngModel]="demoBtnCLicked ? attendances.date : attendanceDetails?.date" name="date" #date="ngModel" required>
         <span class="help-block" *ngIf="!date.valid && date.touched" style="color: red;font-size: smaller;">Date is required*</span>
       </div>
 
 
       <div class="form-group">
         <label class="lbl" for="des"> Designation </label>
-        <input type="email" class="form-control"  ngModel name="des" #des="ngModel" required>
+        <input type="email" class="form-control"  [ngModel]="demoBtnCLicked ? attendances.des : attendanceDetails?.des" name="des" #des="ngModel" required>
         <span class="help-block" *ngIf="!des.valid && des.touched" style="color: red;font-size: smaller;">Designation is required*</span>
       </div>
 
@@ -48,7 +48,7 @@
          <label class="lbl" for="atime">Arrival Time</label>
           <div class= "clock">
             <div class="clockmini">
-             <input type="time" class="form-control" ngModel name="atime" #atime="ngModel" required>
+             <input type="time" class="form-control" [ngModel]="demoBtnCLicked ? attendances.atime : attendanceDetails?.atime" name="atime" #atime="ngModel" required>
              <span class="help-block" *ngIf="!atime.valid && atime.touched" style="font-size: smaller; color: red;">Time is required*</span>
             </div>
           </div>
@@ -58,7 +58,7 @@
           <label class="lbl" for="dtime">Leaveing Time</label>
            <div class= "clock">
              <div class="clockmini">
-              <input type="time" class="form-control" ngModel name="dtime" #dtime="ngModel" required>
+              <input type="time" class="form-control"  [ngModel]="demoBtnCLicked ? attendances.dtime : attendanceDetails?.dtime" name="dtime" #dtime="ngModel" required>
               <span class="help-block" *ngIf="!atime.valid && atime.touched" style="font-size: smaller; color: red;">Time is required*</span>
              </div>
            </div>
@@ -69,9 +69,8 @@
 
         <br>
         <div class="lbl">
-          <label for="title">Stataus</label><br>
-          <select id="title" class="form-control" ngModel name="sta"  #sta="ngModel" [ngModel]="defaultValue" required>
-            <option value="choose" disabled>Choose Stataus Your Status</option>
+          <label for="sta">Stataus</label><br>
+          <select id="sta" class="form-control" [ngModel]="demoBtnCLicked ? attendances.sta : attendanceDetails?.sta" name="sta"  #sta="ngModel"  required>
             <option value="present">present</option>
             <option value="Absent">Absent</option>
             <option value="Half Day">Half Day</option>
@@ -83,6 +82,8 @@
       <br><br><br>
 
       <button class="btn btn-primary" type="submit" [disabled]="!atten.valid">Submit</button>
+      <button  class="btn btn-success" type="button" style="margin-left: 10px;" (click)="fillData()">FILL DATA</button>
+
       <br><br><br>
     </form>
   </div>

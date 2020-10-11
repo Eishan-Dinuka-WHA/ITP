@@ -58,7 +58,7 @@
           <td>{{ salary.tde}}</td>
           <td>{{ salary.gpay}}</td>
           <td>{{ salary.npay}}</td>
-          <td style="padding-right: 1px;"><a class="btn btn-warning pull-right" style="width:80px;">EDIT</a></td>
+          <td style="padding-right: 1px;"><a class="btn btn-warning pull-right" [routerLink]="['/edit',salary.sid]"  style="width:80px;">EDIT</a></td>
           <td style="padding-left: 1px;"><a class="btn btn-danger pull-right" style="width:80px; " (click)="onDelete(salary.sid)">DELETE</a></td>
 
 

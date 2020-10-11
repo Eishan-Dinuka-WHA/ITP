@@ -56,7 +56,10 @@ const appRoutes: Routes =[
   { path: 'edit/:Customerid' , component:CustomerNewComponent} ,
 
   { path: 'cusView' , component:CustomerViewComponent },
+
   { path: 'empHome' , component:EmployeeHomePageComponent},
+  { path: 'edit/:EmployeeId' , component:EmployeeHomePageComponent},
+
   { path: 'empNew' , component:EmployeeManagementComponent},
   { path: 'empView' , component:EmployeeViewComponent},
   { path: 'eventHome' , component:EventHomeComponent},
@@ -82,7 +85,10 @@ const appRoutes: Routes =[
   { path: 'roomHome' , component:RoomReservationHomeComponent},
   { path: 'roomNew' , component:ReservationManagementComponent},
   { path: 'roomView' , component:RoomReservationViewComponent},
+
   { path: 'salaryHome' , component:SalaryReportHomeComponent},
+  { path: 'edit/:Salaryid' , component:SalaryReportHomeComponent},
+
   { path: 'salaryNew' , component:SalaryReportManagementComponent},
   { path: 'salaryView' , component:SalaryReportViewComponent},
   { path: 'spaHome' , component:SpaHomeComponent},
@@ -98,6 +104,8 @@ const appRoutes: Routes =[
   { path: 'intNew' , component:InventoryManagementComponent},
   { path: 'intView' , component:InventoryViewComponent},
   { path: 'attennew' , component:AttendanceNewComponent},
+
+  { path: 'edit/:Attendanceid' , component:AttendanceNewComponent},
   { path: 'attenview' , component:AttendanceViewComponent},
   { path: 'attedel' , component:AttendanceComponent},
 

@@ -30,7 +30,7 @@ export class AttendanceViewComponent implements OnInit, OnDestroy {
   }
 
   onDelete(aid: string){
-    this.attendanceRegistrationService.deleteCustomer(aid);
+    this.attendanceRegistrationService.deleteAttendance(aid);
     window.location.reload();
   }
 

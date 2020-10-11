@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Employees } from 'models/employee.model';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { EmployeeService } from 'service/employee-management.service';
+import { from } from 'rxjs';
 
 
 @Component({
@@ -13,6 +14,8 @@ import { EmployeeService } from 'service/employee-management.service';
 export class EmployeeHomePageComponent implements OnInit {
   @ViewChild('emp', {static: false}) addEmployeeForm: NgForm;
   defaultValue: string = "choose";
+  demoBtnCLicked: boolean = false;
+  employeeDetails:Employees;
   employees: Employees = {
     eid: '',
     uname:'',
@@ -35,6 +38,9 @@ export class EmployeeHomePageComponent implements OnInit {
   };
   nicInvalid: boolean = true;
   submitted=false;
+  isLoading = false;
+  private mode ="create";
+  private EmployeeId:string;
   //private subscription: Subscription;
 
   constructor(private router: Router,
@@ -42,7 +48,20 @@ export class EmployeeHomePageComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit(){
+    this.demoBtnCLicked = false;
+    this.route.paramMap.subscribe((paramMap: ParamMap) => {
+      if (paramMap.has("EmployeeId")) {
+        this.mode = "editt";
+        this.EmployeeId = paramMap.get("EmployeeId");
+        this.isLoading = true;
+        this.employeeDetails = this.employeeService.getEmployeeByID(this.EmployeeId);
+      } else {
+        this.mode = "create";
+        this.EmployeeId = null;
+      }
+    });
   }
+
 
   nicValidate(nic: string){
     if(nic.endsWith("V") && nic.length == 10){
@@ -52,7 +71,11 @@ export class EmployeeHomePageComponent implements OnInit {
     }
   }
 
-  onSubmit(){
+  onSubmit(form: NgForm){
+    this.demoBtnCLicked = false;
+    if(form.invalid){
+      return;
+    }
     console.log(this.addEmployeeForm);
     this.submitted = true;
     this.employees.eid = null;
@@ -74,13 +97,40 @@ export class EmployeeHomePageComponent implements OnInit {
     this.employees.password = this.addEmployeeForm.value.password;
     this.employees.rpassword = this.addEmployeeForm.value.rpassword;
 
-
+    console.log(this.addEmployeeForm);
+    this.submitted = true;
+    if (this.mode === "create") {
+      this.employeeService.addEmployee(this.employees);
+      this.router.navigate(['../empView'], { relativeTo: this.route });
+    } else {
+      this.employeeService.updateEmployee(this.employees);
+      this.router.navigate(['../../empView'], { relativeTo: this.route });
+    }
     this.addEmployeeForm.reset();
-
-    this.employeeService.addEmployee(this.employees);
-
-    this.router.navigate(['../empView'], {relativeTo: this.route});
 
   }
 
+
+
+  fillData(){
+    this.employees.uname ="Eishan";
+    this.employees.fname = "Sithu";
+    this.employees.lname ="Himehsa";
+    this.employees.address = "123/tata/bye";
+    this.employees.nic = "mage Nic aka";
+    this.employees.dob = "1990-02-12";
+    this.employees.gender = "mala";
+    this.employees.mno = "dd";
+    this.employees.edd = "dd";
+    this.employees.apn ="dd";
+    this.employees.joind = "ddd";
+    this.employees.dept = "dd";
+    this.employees.dcs = "dd";
+    this.employees.empty = "dd";
+    this.employees.sal ="dd";
+    this.employees.password = "dd";
+    this.employees.rpassword = "dd";
+    this.demoBtnCLicked = true;
+
+  }
 }
