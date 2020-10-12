@@ -45,6 +45,7 @@ export class AttendanceNewComponent implements OnInit {
 
 
   ngOnInit() {
+    // update the Employee
     this.demoBtnCLicked = false;
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has("Attendanceid")) {
@@ -66,7 +67,7 @@ this.Subscription = this.employeeService.employeeChanged.subscribe(
     this.employeeDetails = employees;
   }
 );
-//-------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
 }
 
 

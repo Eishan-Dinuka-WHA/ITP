@@ -115,7 +115,7 @@ export class PackageNewComponent implements OnInit {
     this.packages.checkout = "2020-10-21T12:03";
     this.packages.adults = "3";
     this.packages.nofch = "5";
-    this.packages.des = "water";
+    this.packages.des = "I want something";
     this.demoBtnCLicked = true;
   }
 }

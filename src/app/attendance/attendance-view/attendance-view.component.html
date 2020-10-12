@@ -5,9 +5,8 @@
 
     <div style="background-color: #6f84fc;width:auto">
       <br><p class="h2" style="text-align:center" >Attendacne List</p><br>
-    </div>
-
-    <table>
+      <td><a class="btn btn-danger pull-right" class="button2"(click)="downloadPDF()">Generate Report</a></td>
+      <table id="table1">
       <tr>
       <th scope="col">Attendance Id</th>
       <th scope="col">Name</th>
@@ -32,6 +31,7 @@
           <td><a class="btn btn-warning pull-right" class="button1" style="width:80px;" [routerLink]="['/editA',attendance.aid]">EDIT</a></td>
           <td><a class="btn btn-danger pull-right" class="button2" (click)="onDelete(attendance.aid)">DELETE</a></td>
         </tr>
-    </table>
-  </body>
-</div>
+      </table>
+    </div>
+    </body>
+  </div>

@@ -59,7 +59,8 @@ export class ReservationService{
       pcode: reservation.pcode,
       edate: reservation.edate,
       ddate: reservation.ddate,
-      mnumber: reservation.mnumber
+      mnumber: reservation.mnumber,
+
     };
     this.http.post<{message: string}>('http://localhost:3000/api/reservations', reservationArray)
       .subscribe((responseData) => {
@@ -67,7 +68,6 @@ export class ReservationService{
         this.reservationArr.push(reservationArray);
         this.reservationChanged.next(this.reservationArr.slice());
       });
-
   }
 
   deleteReservation(id: string){

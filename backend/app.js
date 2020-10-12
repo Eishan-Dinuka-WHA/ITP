@@ -33,7 +33,7 @@ mongoose
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//CROS definitions
+   //CROS definitions============================================
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
@@ -41,6 +41,7 @@ app.use((req, res, next) => {
     "Origin, X-Requested-width, Content-Type, Accept"
   );
 
+  //===============================================================
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, PUT, PATCH, DELETE, OPTIONS"

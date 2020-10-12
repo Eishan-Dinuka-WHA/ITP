@@ -4,10 +4,8 @@
 
     <div style="background-color: #6f84fc; width:100%;">
       <br><p class="h2" style="text-align:center" >Packages Booking Details</p><br>
-
-
-    <table class="table table-striped">
-      <thead class="thead-dark">
+      <td><a class="btn btn-danger pull-right" class="button2"(click)="downloadPDF()">Generate Report</a></td>
+      <table id="table2">
       <tr>
       <th scope="col">Booking ID</th>
       <th scope="col">UserName</th>
@@ -21,10 +19,6 @@
       <th scope="col">DELETE</th>
 
       </tr>
-      </thead>
-      <!-- <mat-spinner *ngIf = "isLoading"></mat-spinner>
-      <tbody *ngIf = "!isLoading"> -->
-
         <tr *ngFor="let package of packages">
           <td>{{ package.pid}}</td>
           <td>{{ package.fname}}</td>

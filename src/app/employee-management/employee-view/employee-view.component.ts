@@ -3,6 +3,8 @@ import { Employees } from 'models/employee.model';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { EmployeeService } from 'service/employee-management.service';
+import * as jspdf from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-employee-view',
@@ -31,6 +33,20 @@ export class EmployeeViewComponent implements OnInit , OnDestroy {
   onDelete(eid: string){
     this.employeeService.deleteEmployee(eid);
     window.location.reload();
+  }
+
+  downloadPDF(){
+    var element = document.getElementById('tablee');
+
+    html2canvas(element).then((canvas) => {
+      var imgData = canvas.toDataURL('image/png');
+      var doc = new jspdf.jsPDF;
+      var imgHeight = canvas.height * 210 / canvas.width;
+      doc.text('Employee Registry Report', 15, 15);
+      doc.addImage(imgData, 0, 20, 210, imgHeight);
+      doc.save("report.pdf");
+    })
+
   }
 
   ngOnDestroy(): void {

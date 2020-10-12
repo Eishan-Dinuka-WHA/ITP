@@ -4,6 +4,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { AttendanceRegistrationService } from 'service/attendance-management.service';
+import * as jspdf from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-attendance-view',
@@ -33,6 +35,21 @@ export class AttendanceViewComponent implements OnInit, OnDestroy {
     this.attendanceRegistrationService.deleteAttendance(aid);
     window.location.reload();
   }
+
+  downloadPDF(){
+    var element = document.getElementById('table1');
+
+    html2canvas(element).then((canvas) => {
+      var imgData = canvas.toDataURL('image/png');
+      var doc = new jspdf.jsPDF;
+      var imgHeight = canvas.height * 210 / canvas.width;
+      doc.text('Attendance Registry Report', 15, 15);
+      doc.addImage(imgData, 0, 20, 210, imgHeight);
+      doc.save("report.pdf");
+    })
+
+  }
+
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
