@@ -19,6 +19,7 @@ export class AttendanceViewComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router, private attendanceRegistrationService: AttendanceRegistrationService) { }
 
+
   ngOnInit(){
     this.isLoading = true;
     this.attendances = this.attendanceRegistrationService.getAttendance();

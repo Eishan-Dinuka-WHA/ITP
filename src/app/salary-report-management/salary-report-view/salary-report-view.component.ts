@@ -6,6 +6,7 @@ import { SalaryService } from 'service/salary-management.service';
 import * as jspdf from 'jspdf';
 import html2canvas from 'html2canvas';
 
+
 @Component({
   selector: 'app-salary-report-view',
   templateUrl: './salary-report-view.component.html',

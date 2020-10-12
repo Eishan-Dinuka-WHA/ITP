@@ -35,6 +35,7 @@ export class EmployeeViewComponent implements OnInit , OnDestroy {
     window.location.reload();
   }
 
+
   downloadPDF(){
     var element = document.getElementById('tablee');
 
