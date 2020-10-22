@@ -109,7 +109,7 @@ export class PackageNewComponent implements OnInit {
   }
 
   fillData(){
-    this.packages.fname ="eishan";
+    this.packages.fname ="Eishan";
     this.packages.lname = "971068123V";
     this.packages.checkin = "2020-10-21T12:03";
     this.packages.checkout = "2020-10-21T12:03";
