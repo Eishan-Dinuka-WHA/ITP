@@ -47,9 +47,7 @@ export class SalaryReportViewComponent implements OnInit,OnDestroy {
       doc.addImage(imgData, 0, 20, 210, imgHeight);
       doc.save("report.pdf");
     })
-
   }
-
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
