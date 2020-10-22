@@ -115,7 +115,7 @@ export class EmployeeHomePageComponent implements OnInit {
   fillData(){
     this.employees.uname ="Sithu";
     this.employees.fname = "Himesha";
-    this.employees.lname ="Weerasingha";
+    this.employees.lname ="Weerasinghe";
     this.employees.address = "123/malabe";
     this.employees.nic = "971082135V";
     this.employees.dob = "2020-10-21";

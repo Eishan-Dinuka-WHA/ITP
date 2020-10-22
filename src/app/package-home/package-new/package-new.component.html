@@ -36,7 +36,7 @@
         <div class="col col-md-6">
           <label for="lname">NIC</label><br>
           <input type="text" id="lname" class="form-control" [ngModel]="demoBtnCLicked ? packages.lname : PackageDetails?.lname"  (change)="nicValidate(lname.value)"  name="lname"  #lname="ngModel" placeholder="NIC" required>
-          <span class="help-block" *ngIf="nicInvalid && lname.touched"style="color: red">Please enter a valid Email</span>
+          <span class="help-block" *ngIf="nicInvalid && lname.touched"style="color: red">Please enter a valid NIC</span>
         </div>
 
       </div>
