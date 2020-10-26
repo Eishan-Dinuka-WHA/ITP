@@ -108,7 +108,7 @@
       <div class="col-md-6">
         <label for="mnumber">Mobile Number</label><br>
         <input type="text" id="mnumber" pattern="^\d{3}-\d{4}-\d{3}$" class="form-control" [ngModel]="demoBtnCLicked ? customers.mnumber : customerDetails?.mnumber" name="mnumber"  #mnumber="ngModel" placeholder="071-000-2100" required>
-        <span class="help-block" *ngIf="!mnumber.valid && mnumber.touched" style="color: red">Please enter a Mobile Number.</span>
+        <span class="help-block" *ngIf="!mnumber.valid && mnumber.touched" style="color: red">Please enter a Valid Mobile Number.</span>
       </div>
 
     </div>
