@@ -1,158 +1,189 @@
+<div style="background-color: rgb(108, 122, 250);">
+  <div class="container">
+    <form>
+      <form #rom="ngForm" (ngSubmit)="onSubmit(rom)">
+        <div id="user-data">
+          <div class="form-row">
+            <div class="col-md-6">
+              <label for="cn">Customer Registration Number</label><br>
+              <input type="text" id="cn" class="form-control" [ngModel]="reservationDetails?.cn" name="cn" #cn="ngModel"
+                placeholder="Auto Generated" disabled>
 
-<div class="container">
-  <form>
-<form #rom="ngForm" (ngSubmit)="onSubmit()">
-    <div id="user-data">
+            </div>
+            <div class="col-md-6">
+              <label for="cname">Customer Name</label><br>
+              <input type="text" id="cname" class="form-control"
+                [ngModel]="demoBtnCLicked ?reservations.cname : reservationDetails?.cname " name="cname"
+                #cname="ngModel" placeholder="Customer Name" required>
+              <span class="help-block" *ngIf="!cname.valid && cname.touched" style="color: red">Please enter a First
+                Name.</span>
+            </div>
 
-      <div class="form-row">
-        <div class="col-md-6">
-          <label for="cid">Customer Registration Number</label><br>
-          <input type="text" id="cid" class="form-control" ngModel name="cid" #cid="ngModel" placeholder="Auto Generated" disabled>
+            <div class="col-md-6">
+              <label for="date of birthday">Date of Birthday</label><br>
+              <input type="date" id="birthday" class="form-control"
+                [ngModel]="demoBtnCLicked ?reservations.birthday :  reservationDetails?.birthday" name="birthday"
+                #birthday="ngModel" placeholder="Date of Birthday" required>
+              <span class="help-block" *ngIf="!birthday.valid && birthday.touched" style="color: red">Please enter a
+                date.</span>
+            </div>
 
+          </div>
+          <br>
+          <div class="form-row">
+
+            <div class="col col-md-2">
+              <label for="gender">Gender</label><br>
+
+              <select id="gender" class="form-control"
+                [ngModel]="demoBtnCLicked ?reservations.gender : reservationDetails?.gender" name="gender"
+                #gender="ngModel" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+
+              </select>
+
+            </div>
+
+            <div class="col col-md-4">
+              <label for="email">Email Address</label><br>
+              <input type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control"
+                [ngModel]="demoBtnCLicked ?reservations.email :reservationDetails?.email" name="email" #email="ngModel"
+                placeholder="Email Address" required>
+              <span class="help-block" *ngIf="!email.valid && email.touched" style="color: red">Please enter an
+                email.</span>
+            </div>
+
+            <div class="col col-md-6">
+              <label for="phone number">Office Phone Number(format: xxx-xxxx-xxx)</label><br>
+              <input type="office phone number" id="phone" pattern="^\d{3}-\d{4}-\d{3}$" class="form-control"
+                [ngModel]="demoBtnCLicked ?reservations.phone :reservationDetails?.phone" name="phone" #phone="ngModel"
+                placeholder="Phone Number" required>
+              <span class="help-block" *ngIf="!phone.valid && phone.touched" style="color: red">Please enter a phone
+                number.</span>
+            </div>
+
+          </div>
+          <br>
+
+
+          <div class="form-row">
+
+            <div class="col-md-4">
+              <label for="country">Country</label><br>
+              <input type="text" id="country" class="form-control"
+                [ngModel]="demoBtnCLicked ?reservations.country :reservationDetails?.country" name="country"
+                #country="ngModel" placeholder="Country" required>
+              <span class="help-block" *ngIf="!country.valid && country.touched" style="color: red">Please enter a
+                country.</span>
+            </div>
+
+            <div class="col-md-4">
+              <label for="state">State</label><br>
+              <input type="text" id="state" class="form-control"
+                [ngModel]="demoBtnCLicked ?reservations.state:reservationDetails?.state" name="state" #state="ngModel"
+                placeholder="State" required>
+              <span class="help-block" *ngIf="!state.valid && state.touched" style="color: red">Please enter a
+                state.</span>
+            </div>
+
+            <div class="col-md-2">
+              <label for="city">City</label><br>
+              <input type="text" id="city" class="form-control"
+                [ngModel]="demoBtnCLicked ?reservations.city :reservationDetails?.city" name="city" #city="ngModel"
+                placeholder="City" required>
+              <span class="help-block" *ngIf="!city.valid && city.touched" style="color: red">Please enter a
+                city.</span>
+            </div>
+
+            <div class="col-md-2">
+              <label for="street">Street</label><br>
+              <input type="text" id="street" class="form-control"
+                [ngModel]="demoBtnCLicked ?reservations.street :reservationDetails?.street" name="street"
+                #street="ngModel" placeholder="street" required>
+              <span class="help-block" *ngIf="!street.valid && street.touched" style="color: red">Please enter a
+                street.</span>
+            </div>
+
+          </div>
+          <br>
+
+          <div class="form-row">
+            <div class="col col-md-6">
+              <label for="cchoise">Customer Choice</label><br>
+              <select id="cchoise" class="form-control"
+                [ngModel]="demoBtnCLicked ?reservations.cchoise :reservationDetails?.cchoise" name="cchoise"
+                #cchoise="ngModel" required>
+                <option value="Deluxe rooms">Deluxe rooms</option>
+                <option value="Superior rooms">Superior rooms</option>
+                <option value="Standard rooms">Standard rooms</option>
+              </select>
+
+            </div>
+
+            <div class="col col-md-6">
+              <label for="pcode">Postal Code</label><br>
+              <input type="text" id="pcode" class="form-control"
+                [ngModel]="demoBtnCLicked ?reservations.pcode :reservationDetails?.pcode" name="pcode" #pcode="ngModel"
+                placeholder="Postal Code" required>
+              <span class="help-block" *ngIf="!pcode.valid && pcode.touched" style="color: red">Please enter a postal
+                code.</span>
+            </div>
+
+          </div>
+          <br>
+
+          <div class="form-row">
+
+            <div class="col-md-6">
+              <label for=" edate">Entry Date</label><br>
+              <input type=" date" id="edate" class="datepicker"
+                [ngModel]="demoBtnCLicked ?reservations.edate :reservationDetails?.edate" name="edate" #edate="ngModel"
+                placeholder="Entry Date" required>
+              <span class="help-block" *ngIf="!edate.valid && edate.touched" style="color: red">Please enter a
+                date.</span>
+            </div>
+
+            <div class="col-md-6">
+              <label for="ddate">Departure Date</label><br>
+              <input type="date" id="ddate" class="form-control"
+                [ngModel]="demoBtnCLicked ?reservations.ddate :reservationDetails?.ddate" name="ddate" #ddate="ngModel"
+                placeholder="Depature Date" required>
+              <span class="help-block" *ngIf="!ddate.valid && ddate.touched" style="color: red">Please enter a
+                date.</span>
+            </div>
+
+          </div>
+          <br>
+
+          <div class="form-row">
+
+            <div class="col-md-6">
+              <label for="mnumber">Mobile Number</label><br>
+              <input type="text" id="mnumber" pattern="^\d{3}-\d{4}-\d{3}$" class="form-control"
+                [ngModel]="demoBtnCLicked ?reservations.mnumber :reservationDetails?.mnumber" name="mnumber"
+                #mnumber="ngModel" placeholder="Mobile Number" required>
+              <span class="help-block" *ngIf="!mnumber.valid && mnumber.touched" style="color: red">Please enter a
+                number.</span>
+            </div>
+
+
+
+
+          </div>
+          <div class="form-group">
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="terms">
+              <label class="form-check-label" for="gridCheck"><br>Terms and Condtion</label>
+            </div>
+          </div>
         </div>
 
 
 
-        <div class="col-md-6">
-          <label for="cname">Customer Name</label><br>
-          <input type="text" id="cname" class="form-control" ngModel name="cname" #cname="ngModel" placeholder="Customer Name" required>
-          <span class="help-block" *ngIf="!cname.valid && cname.touched" style="color: red">Please enter a First Name.</span>
-        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!rom.valid">Submit</button>
+        <button class="btn btn-success" type="button" style="margin-left: 10px;" (click)="fillData()">FILL DATA</button>
 
-        <div class="col-md-6">
-          <label for="date of birthday">Date of Birthday</label><br>
-          <input type="date" id="birthday" class="form-control" ngModel name="birthday" #birthday="ngModel"  placeholder="Date of Birthday" required>
-          <span class="help-block" *ngIf="!birthday.valid && birthday.touched" style="color: red">Please enter a date.</span>
-        </div>
-
-      </div>
-      <br>
-      <div class="form-row">
-
-        <div class="col col-md-2">
-          <label for="gender">Gender</label><br>
-          <select id="gender" class="form-control" ngModel name="gender"  #gender="ngModel" [ngModel]="gender" required>
-            <option value="choose" disabled>Choose gender (Male/female/Other)</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-
-          </select>
-
-        </div>
-
-        <div class="col col-md-4">
-          <label for="email">Email Address</label><br>
-          <input type="email" id="email" class="form-control" ngModel name="email"  #email="ngModel"  placeholder="Email Address" required>
-          <span class="help-block" *ngIf="!email.valid && email.touched" style="color: red">Please enter an email.</span>
-        </div>
-
-        <div class="col col-md-6">
-          <label for="phone number">Office Phone Number</label><br>
-          <input type="office phone number" id="phone" class="form-control" ngModel name="phone"  #phone="ngModel" placeholder="Phone Number" required>
-          <span class="help-block" *ngIf="!phone.valid && phone.touched" style="color: red">Please enter a phone number.</span>
-        </div>
-
-      </div>
-      <br>
-
-
-      <div class="form-row">
-
-        <div class="col-md-4">
-          <label for="country">Country</label><br>
-          <input type="text" id="country" class="form-control" ngModel name="country"  #country="ngModel" placeholder="Country" required>
-          <span class="help-block" *ngIf="!country.valid && country.touched" style="color: red">Please enter a country.</span>
-        </div>
-
-        <div class="col-md-4">
-          <label for="state">State</label><br>
-          <input type="text" id="state" class="form-control" ngModel name="state"  #state="ngModel" placeholder="State" required>
-          <span class="help-block" *ngIf="!state.valid && state.touched" style="color: red">Please enter a state.</span>
-        </div>
-
-        <div class="col-md-2">
-          <label for="city">City</label><br>
-          <input type="text" id="city" class="form-control" ngModel name="city"  #city="ngModel" placeholder="City" required>
-          <span class="help-block" *ngIf="!city.valid && city.touched" style="color: red">Please enter a city.</span>
-        </div>
-
-        <div class="col-md-2">
-          <label for="street">Street</label><br>
-          <input type="text" id="street" class="form-control" ngModel name="street"  #street="ngModel" placeholder="street" required>
-          <span class="help-block" *ngIf="!street.valid && street.touched" style="color: red">Please enter a street.</span>
-        </div>
-
-      </div>
-      <br>
-
-    <div class="form-row">
-      <div class="col col-md-6">
-        <label for="cchoise">Customer Choice</label><br>
-        <select id="cchoise" class="form-control" ngModel name="cchoise"  #cchoise="ngModel" required>
-          <option value="Deluxe rooms">Deluxe rooms</option>
-          <option value="Superior rooms">Superior rooms</option>
-          <option value="Standard rooms">Standard rooms</option>
-        </select>
-
-      </div>
-
-      <div class="col col-md-6">
-        <label for="pcode">Postal Code</label><br>
-        <input type="text" id="pcode" class="form-control" ngModel name="pcode"  #pcode="ngModel"  placeholder="Postal Code" required>
-        <span class="help-block" *ngIf="!pcode.valid && pcode.touched" style="color: red">Please enter a postal code.</span>
-      </div>
-
-    </div>
-    <br>
-
-    <div class="form-row">
-
-      <div class="col-md-6">
-        <label for=" edate">Entry Date</label><br>
-        <input type=" date" id="edate" class="form-control" ngModel name="edate"  #edate="ngModel" placeholder="Entry Date" required>
-        <span class="help-block" *ngIf="!edate.valid && edate.touched" style="color: red">Please enter a date.</span>
-      </div>
-
-      <div class="col-md-6">
-        <label for="ddate">Departure Date</label><br>
-        <input type="date" id="ddate" class="form-control" ngModel name="ddate"  #ddate="ngModel" placeholder="Depature Date" required>
-        <span class="help-block" *ngIf="!ddate.valid && ddate.touched" style="color: red">Please enter a date.</span>
-      </div>
-
-    </div>
-    <br>
-
-    <div class="form-row">
-
-      <div class="col-md-6">
-        <label for="mnumber">Mobile Number</label><br>
-        <input type="text" id="mnumber" class="form-control" ngModel name="mnumber"  #mnumber="ngModel" placeholder="Mobile Number" required>
-        <span class="help-block" *ngIf="!mnumber.valid && mnumber.touched" style="color: red">Please enter a number.</span>
-      </div>
-
-
-
-
-    </div>
-      <div class="form-group">
-        <div class="form-check mb-2">
-          <input class="form-check-input" type="checkbox" id="terms">
-          <label class="form-check-label" for="gridCheck"><br>Terms and Condtion</label>
-        </div>
-      </div>
-    </div>
-
-    <button class="btn btn-primary" type="submit" [disabled]="!rom.valid">Submit</button>
-
-      <!-- <button class="btn btn-primary" type="submit">New Resevation</button>
-      <button class="btn btn-primary" type="submit">Edit exiting Reservation</button> -->
-      <br><br><br>
+        <br><br><br>
       </form>
-
-
-
-
-
-
-

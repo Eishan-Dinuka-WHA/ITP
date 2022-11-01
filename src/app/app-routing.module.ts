@@ -87,6 +87,7 @@ const appRoutes: Routes =[
   { path: 'PayView' , component:PaymentViewComponent},
   { path: 'roomHome' , component:RoomReservationHomeComponent},
   { path: 'roomNew' , component:ReservationManagementComponent},
+  { path: 'editRoom/:Reservationid' , component:ReservationManagementComponent},
   { path: 'roomView' , component:RoomReservationViewComponent},
 
   { path: 'salaryHome' , component:SalaryReportHomeComponent},

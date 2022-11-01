@@ -3,14 +3,19 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Reservations } from '../models/room.model';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class ReservationService{
   reservationChanged = new Subject<Reservations[]>();
   private reservationArr: Reservations[] = [];
+  private ReservationsUpdated = new Subject<Reservations[]>();
 
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient , private router:Router){}
 
+  getRservationByID(id : string){
+    return{...this.reservationArr.find(rus => rus.cn===id)}
+  }
   getReservation(){
     this.http.get<{message: string, reservations: any}>('http://localhost:3000/api/reservations')
       .pipe(map((reservationData) => {
@@ -43,6 +48,10 @@ export class ReservationService{
   }
 
 
+  getPostUpdateListener() {
+    return this.reservationChanged.asObservable();
+  }
+
   addReservation(reservation: Reservations){
     const reservationArray: Reservations = {
       cn: reservation.cn,
@@ -70,10 +79,44 @@ export class ReservationService{
       });
   }
 
-  deleteReservation(id: string){
-    this.http.delete("http://localhost:3000/api/reservations/" + id)
+  updateReservation(reservation:  Reservations){
+    const reservationArray:  Reservations = {
+      cn: reservation.cn,
+      cname: reservation.cname,
+      birthday: reservation.birthday,
+      gender: reservation.gender,
+      email: reservation.email,
+      phone : reservation.phone,
+      country: reservation.country,
+      state: reservation.state,
+      city: reservation.city,
+      street: reservation.street,
+      cchoise: reservation.cchoise,
+      pcode: reservation.pcode,
+      edate: reservation.edate,
+      ddate: reservation.ddate,
+      mnumber: reservation.mnumber
+
+
+    };
+    this.http.put("http://localhost:3000/api/reservations/" + reservation.cn, reservationArray)
+      .subscribe(response => {
+        const ReservationsUpdated = [...this.reservationArr];
+        const oldReservationsIndex = ReservationsUpdated.findIndex(p => p.cn === reservationArray.cn);
+        ReservationsUpdated[oldReservationsIndex] = reservationArray;
+        this.reservationArr = ReservationsUpdated;
+        this.ReservationsUpdated.next([...this.reservationArr]);
+
+      });
+  }
+
+
+  deleteReservation(Reservationid: string){
+    this.http.delete("http://localhost:3000/api/reservations/" + Reservationid)
       .subscribe(() => {
-        console.log('Deleted');
+        const ReservationsUpdated = this.reservationArr.filter(reservation => reservation.cn !== Reservationid);
+        this.reservationArr = ReservationsUpdated;
+        this.ReservationsUpdated.next([...this.reservationArr]);
       })
   }
 }

@@ -1,15 +1,16 @@
 
+
 <div style="overflow-y: scroll; overflow-x: scroll; height: 100vh; width:100%">
   <body style="background-color: #FEFEFE; background-size: auto;">
 
     <div style="background-color: #5fc8f1">
       <br><p class="h2" style="text-align:center" >Room Registry</p><br>
-    </div>
-
-    <table class="table table-striped">
-      <thead class="thead-dark">
+      </div>
+      <td><a class="btn btn-danger pull-right" class="button2"(click)="downloadPDF()">Generate Report</a></td>
+    <table id="tableres">
       <tr>
-        <th scope="col">Customer Registation number</th>
+
+      <th scope="col">Customer Registation number</th>
       <th scope="col">Customer Name</th>
       <th scope="col">Date of Birthday</th>
       <th scope="col">Gender</th>
@@ -24,11 +25,10 @@
       <th scope="col">Entry Date</th>
       <th scope="col">Departure Date</th>
       <th scope="col">Mobile Number</th>
+      <th scope="col">Action</th>
 
-        </tr>
-      </thead>
-      <!-- <mat-spinner *ngIf = "isLoading"></mat-spinner>
-      <tbody *ngIf = "!isLoading"> -->
+
+       </tr>
 
         <tr *ngFor="let room of reservations">
           <td>{{ room.cn}}</td>
@@ -47,15 +47,15 @@
           <td>{{ room.ddate}}</td>
           <td>{{ room.mnumber}}</td>
 
-          <td>
-            <a class="btn btn-warning pull-right" style="width:80px;">EDIT</a>
-            <a class="btn btn-danger pull-right" (click)="onDelete(room.cn)">DELETE</a>
-          </td>
+            <td><a class="btn btn-warning pull-right" class="button1" style="width:80px;" [routerLink]="['/editRoom',room.cn]">EDIT</a></td>
+           <td> <a class="btn btn-danger pull-right"class="button2" (click)="onDelete(room.cn)">DELETE</a></td>
+
 
         </tr>
-    <!--  </tbody>  -->
     </table>
   </body>
 </div>
+
+
 
 
